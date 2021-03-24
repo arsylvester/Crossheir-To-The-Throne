@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Strike" ID="{F5C97345-4E66-4ACF-A965-136D0EACF0B2}" ShortID="355529351">
+					<PropertyList>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Strike" ID="{A264D237-357B-4FAC-B5EF-2A6165FB0DAB}">
+							<Language>SFX</Language>
+							<AudioFile>Strike.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1068684440"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Strike" ID="{A264D237-357B-4FAC-B5EF-2A6165FB0DAB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
