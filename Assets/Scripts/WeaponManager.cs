@@ -15,6 +15,7 @@ public class WeaponManager : MonoBehaviour
     bool isReloading = false;
     int currentAmmo = 3;
     int killStreak = 0;
+    int shotStreak = 0;
     bool missedShot = true;
     
     [Header("HUD")]
@@ -78,13 +79,24 @@ public class WeaponManager : MonoBehaviour
             handleShoot();
 
             if (missedShot)
+            {
                 killStreak = 0;
+                shotStreak = 0;
+            }
+            else
+                shotStreak++;
 
             if (killStreak > prevKillStreak + 1)
                 collateral();
 
+            /*
             if (killStreak != 0 && killStreak % 3 == 0)
                 tripleKill();
+            */
+            if (shotStreak != 0 && shotStreak % 3 == 0)
+            {
+                tripleKill();
+            }
             else
             {
                 currentAmmo -= 1;

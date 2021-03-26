@@ -7,8 +7,8 @@ public class HudManager : MonoBehaviour
 {
     [SerializeField] Text tripleKill;
     [SerializeField] Text collateral;
-    Queue<Text> txtFeed = new Queue<Text>();
-    bool isPrintingFeed = false;
+    private Queue<Text> txtFeed = new Queue<Text>();
+    private bool isPrintingFeed = false;
 
     void Start()
     {
