@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class TargetMovement : MonoBehaviour
 {
+    [Header("Hit Rotation")]
     [SerializeField] float hitRotation = 90;
     [SerializeField] float rotateSpeed = .1f;
+    [Header("Track Movement")]
+    [SerializeField] bool moveOnTrack = false;
+    [SerializeField] Transform trackStart;
+    [SerializeField] Transform trackEnd;
+    [SerializeField] float trackMoveSpeed = 1f;
+
     bool isHit = false;
+    float currentTrackLerp = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +25,7 @@ public class TargetMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //FOR TESTING (REMOVE)
         if(Input.GetKeyDown(KeyCode.A) && !isHit)
         {
             MoveToHitPosition();
@@ -24,6 +33,20 @@ public class TargetMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.S) && isHit)
         {
             MoveToReadyPosition();
+        }
+
+        if(moveOnTrack && !isHit)
+        {
+            transform.position = Vector3.Lerp(trackStart.position, trackEnd.position, currentTrackLerp);
+            currentTrackLerp += trackMoveSpeed * Time.deltaTime;
+
+            if(currentTrackLerp > 1)
+            {
+                Transform temp = trackStart;
+                trackStart = trackEnd;
+                trackEnd = temp;
+                currentTrackLerp = 0;
+            }
         }
     }
 
@@ -35,8 +58,8 @@ public class TargetMovement : MonoBehaviour
 
     public void MoveToReadyPosition()
     {
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x - hitRotation, transform.eulerAngles.y, transform.eulerAngles.z);
         isHit = false;
+        StartCoroutine(RotateOvertime(transform.eulerAngles.x - hitRotation));
     }
 
     IEnumerator RotateOvertime(float newX)
