@@ -36,6 +36,11 @@ public class PlayerInput : MonoBehaviour
         return Input.GetButtonDown("Reload") && CanProcessInput();
     }
 
+    public bool GetAimInputDown()
+    {
+        return Input.GetButton("Fire2") && CanProcessInput();
+    }
+
     public Vector3 GetMoveInput()
     {
         if (CanProcessInput())
