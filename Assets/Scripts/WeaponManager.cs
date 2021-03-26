@@ -14,6 +14,9 @@ public class WeaponManager : MonoBehaviour
     //Gun vars
     bool isReloading = false;
     int currentAmmo = 3;
+    int killStreak = 0;
+    int shotStreak = 0;
+    bool missedShot = true;
     
     [Header("HUD")]
     public Text ammo;
@@ -23,6 +26,7 @@ public class WeaponManager : MonoBehaviour
 
     PlayerInput m_InputHandler;
     PlayerController m_PlayerController;
+    [SerializeField] HudManager m_HudManager; //this one needs to be set in the inspector
 
     public bool isAiming { get; private set; }
     public bool wasAiming { get; private set; }
@@ -70,13 +74,38 @@ public class WeaponManager : MonoBehaviour
     {
         if (currentAmmo != 0 && !inShotDelay())
         {
+            missedShot = true;
+            int prevKillStreak = killStreak;
             handleShoot();
-            currentAmmo -= 1;
-            ammo.text = currentAmmo + "";
-            updateHUD();
+
+            if (missedShot)
+            {
+                killStreak = 0;
+                shotStreak = 0;
+            }
+            else
+                shotStreak++;
+
+            if (killStreak > prevKillStreak + 1)
+                collateral();
+
+            /*
+            if (killStreak != 0 && killStreak % 3 == 0)
+                tripleKill();
+            */
+            if (shotStreak != 0 && shotStreak % 3 == 0)
+            {
+                tripleKill();
+            }
+            else
+            {
+                currentAmmo -= 1;
+                ammo.text = currentAmmo + "";
+                updateHUD();
+            }
+            
             return true;
         }
-
         return false;
     }
 
@@ -97,6 +126,8 @@ public class WeaponManager : MonoBehaviour
             {
                 h.collider.GetComponentInParent<TargetMovement>().MoveToHitPosition(); //Play knock down animation
                 print("target hit: " + h.collider.name);
+                missedShot = false;
+                killStreak++;
             }
             else
             {
@@ -105,6 +136,25 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
+    }
+
+    void tripleKill()
+    {
+        //Display triple kill graphic on HUD
+        print("Triple Kill");
+        m_HudManager.DisplayTripleKill();
+
+        //Special reload
+        currentAmmo = 3;
+        ammo.text = currentAmmo + "";
+        updateHUD();
+    }
+
+    void collateral()
+    {
+        //Display collateral graphic on HUD
+        print("Collateral");
+        m_HudManager.DisplayCollateral();
     }
 
     bool inShotDelay() //Return true if it hasn't been x time since the last shot
