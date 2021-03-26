@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class WeaponManager : MonoBehaviour
 {
     // This class handles all the gun logic
-    
+
+    [Header("FOV")]
     public float defaultFOV = 60f;
     [SerializeField] float aimingFOV = 30f;
 
+    //Gun vars
     bool isReloading = false;
     int currentAmmo = 3;
+    
+    [Header("HUD")]
     public Text ammo;
     [SerializeField] GameObject bulletImpact;
     [SerializeField] RawImage[] dots;
@@ -28,11 +32,8 @@ public class WeaponManager : MonoBehaviour
         m_InputHandler = GetComponent<PlayerInput>();
         m_PlayerController = GetComponent<PlayerController>();
         setFOV(defaultFOV);
-
-        for (int x = 0; x < 3; x++)
-        {
-            dotsActive[x] = true;
-        }
+        updateHUD();
+        ammo.text = currentAmmo + "";
     }
 
     void Update()
@@ -81,15 +82,29 @@ public class WeaponManager : MonoBehaviour
 
     void handleShoot() //Actually fires the gun
     {
-        
-        if (Physics.Raycast(m_PlayerController.PlayerCamera.transform.position, m_PlayerController.PlayerCamera.transform.forward,
-            out RaycastHit hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore))
+        RaycastHit[] hits;
+        hits = Physics.RaycastAll(m_PlayerController.PlayerCamera.transform.position, 
+            m_PlayerController.PlayerCamera.transform.forward, Mathf.Infinity); //TODO: make this not infinity to boost performance.
+
+        //RaycastAll returns an unsorted array, so we need to sort by distance from gun
+        System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance)); //Honestly i'm too scared to look up how poorly optimized this is
+
+        for (int k = 0; k < hits.Length; k++)
         {
-            //print(hit.point);
-            Debug.DrawRay(m_PlayerController.PlayerCamera.transform.position, transform.TransformDirection(m_PlayerController.PlayerCamera.transform.forward) * hit.distance, Color.yellow); // this just doesn't work?
-            Instantiate(bulletImpact, hit.point, Quaternion.identity); //create clone of prefab at the hit point.
+            RaycastHit h = hits[k];
+
+            if (h.collider.CompareTag("Target")) //If bullet collides with a target
+            {
+                h.collider.GetComponentInParent<TargetMovement>().MoveToHitPosition(); //Play knock down animation
+                print("target hit: " + h.collider.name);
+            }
+            else
+            {
+                print("hit: " + h.collider.name);
+                return; //Return to just ignore everything else in the array
+            }
         }
-        
+
     }
 
     bool inShotDelay() //Return true if it hasn't been x time since the last shot
@@ -133,7 +148,7 @@ public class WeaponManager : MonoBehaviour
         //WeaponCamera.fieldOfView = fov * WeaponFovMultiplier;
     }
 
-    void updateHUD()
+    void updateHUD() //Refresh HUD ammo icons to match currentAmmo
     {
         int c = 0;
 

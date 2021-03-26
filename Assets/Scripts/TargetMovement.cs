@@ -26,11 +26,11 @@ public class TargetMovement : MonoBehaviour
     void Update()
     {
         //FOR TESTING (REMOVE)
-        if(Input.GetKeyDown(KeyCode.A) && !isHit)
+        if(Input.GetKeyDown(KeyCode.Z) && !isHit)
         {
             MoveToHitPosition();
         }
-        if(Input.GetKeyDown(KeyCode.S) && isHit)
+        if(Input.GetKeyDown(KeyCode.X) && isHit)
         {
             MoveToReadyPosition();
         }
@@ -71,7 +71,7 @@ public class TargetMovement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(Mathf.LerpAngle(startRotation, newX, scaledSpeed), transform.eulerAngles.y, transform.eulerAngles.z);
             scaledSpeed += rotateSpeed * Time.deltaTime;
-            print(scaledSpeed);
+            //print(scaledSpeed);
             yield return new WaitForEndOfFrame();
         }
     }
