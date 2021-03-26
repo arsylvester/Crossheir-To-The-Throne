@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
 
     public float lookSensitivity = 1f;
     public bool InvertYAxis = false;
+    public bool fireInputWasDown;
 
     void Start()
     {
@@ -18,6 +19,21 @@ public class PlayerInput : MonoBehaviour
     public bool CanProcessInput()
     {
         return Cursor.lockState == CursorLockMode.Locked;
+    }
+
+    public bool GetFireInputDown()
+    {
+        return Input.GetButton("Fire1") && CanProcessInput();
+    }
+
+    public bool GetFireInputReleased()
+    {
+        return !GetFireInputDown() && fireInputWasDown && CanProcessInput();
+    }
+
+    public bool GetReloadButtonDown()
+    {
+        return Input.GetButtonDown("Reload") && CanProcessInput();
     }
 
     public Vector3 GetMoveInput()
@@ -44,16 +60,6 @@ public class PlayerInput : MonoBehaviour
     public float GetLookInputsVertical()
     {
         return GetMouseLookAxis("Mouse Y");
-    }
-
-    public bool GetReloadButtonDown()
-    {
-        if (CanProcessInput())
-        {
-            return Input.GetButtonDown("Reload");
-        }
-
-        return false;
     }
 
     float GetMouseLookAxis(string mouseInputName)
