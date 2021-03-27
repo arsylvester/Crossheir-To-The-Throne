@@ -13,7 +13,7 @@ public class TargetMovement : MonoBehaviour
     [SerializeField] Transform trackEnd;
     [SerializeField] float trackMoveSpeed = 1f;
 
-    bool isHit = false;
+    public bool isHit = false;
     float currentTrackLerp = 0;
 
     // Start is called before the first frame update
@@ -53,6 +53,8 @@ public class TargetMovement : MonoBehaviour
             GetComponentInChildren<Collider>().enabled = false;
             AkSoundEngine.PostEvent("TargetHit", gameObject);
             StartCoroutine(RotateOvertime(transform.eulerAngles.x + hitRotation));
+            if(this.GetComponentInParent<TargetSetController>() != null)
+                this.GetComponentInParent<TargetSetController>().checkIfDefeated();
         }
     }
 
