@@ -150,6 +150,7 @@ public class WeaponManager : MonoBehaviour
         //Special reload
         currentAmmo = 3;
         ammo.text = currentAmmo + "";
+        RevolverAnimator.SetTrigger("special reload");
         updateHUD();
     }
 
