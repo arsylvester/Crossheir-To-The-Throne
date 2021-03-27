@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{6A80CFC5-53FD-4E92-9356-1D415FEC78FA}">
 					<ObjectInclusionList>
+						<ObjectRef Name="TargetHit" ID="{9B5A494E-DAB3-41FA-8B06-117C197881EC}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestEvent" ID="{DBF2C882-D10E-4A2F-A817-E239F6CFE8D3}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
