@@ -5,7 +5,6 @@ using UnityEngine;
 // For controlling a group of targets
 public class TargetSetController : MonoBehaviour
 {
-    //public List<TargetMovement> targets;
     public bool setDefeated = false;
 
     // Start is called before the first frame update
@@ -18,9 +17,9 @@ public class TargetSetController : MonoBehaviour
     void Update()
     {
         //FOR TESTING (REMOVE)
-        if (Input.GetKeyDown(KeyCode.C))
+        //if (Input.GetKeyDown(KeyCode.C))
         {
-            activateSet();
+            //activateSet();
         }
     }
 
@@ -30,13 +29,24 @@ public class TargetSetController : MonoBehaviour
         {
             GameObject child = transform.GetChild(i).gameObject;
             child.GetComponentInChildren<TargetMovement>().MoveToReadyPosition();
-            print("Getting target ready");
+            //print("Getting target ready");
+        }
+    }
+
+    public void deactivateSet()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            child.GetComponentInChildren<TargetMovement>().MoveToHitPosition();
         }
     }
 
     public void checkIfDefeated()
     {
         bool allDown = true;
+
+        //print("Checking for defeat");
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -45,7 +55,10 @@ public class TargetSetController : MonoBehaviour
                 allDown = false;
         }
         setDefeated = allDown;
-        if(setDefeated)
+        if (setDefeated)
+        {
+            //print("next set starting");
             this.GetComponentInParent<RoomController>().nextSet();
+        }
     }
 }
