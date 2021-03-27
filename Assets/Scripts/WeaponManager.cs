@@ -107,6 +107,8 @@ public class WeaponManager : MonoBehaviour
                 updateHUD();
             }
 
+            AkSoundEngine.PostEvent("GunFire", gameObject);
+
             RevolverAnimator.SetTrigger("shoot");
 
             return true;
