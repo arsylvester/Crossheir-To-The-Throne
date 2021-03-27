@@ -13,7 +13,7 @@ public class TargetMovement : MonoBehaviour
     [SerializeField] Transform trackEnd;
     [SerializeField] float trackMoveSpeed = 1f;
 
-    bool isHit = false;
+    public bool isHit = false;
     float currentTrackLerp = 0;
 
     // Start is called before the first frame update
@@ -52,8 +52,12 @@ public class TargetMovement : MonoBehaviour
 
     public void MoveToHitPosition()
     {
-        isHit = true;
-        StartCoroutine(RotateOvertime(transform.eulerAngles.x + hitRotation));
+        if (!isHit)
+        {
+            isHit = true;
+            StartCoroutine(RotateOvertime(transform.eulerAngles.x + hitRotation));
+            this.GetComponentInParent<TargetSetController>().checkIfDefeated();
+        }
     }
 
     public void MoveToReadyPosition()

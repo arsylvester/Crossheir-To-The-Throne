@@ -122,7 +122,7 @@ public class WeaponManager : MonoBehaviour
         {
             RaycastHit h = hits[k];
 
-            if (h.collider.CompareTag("Target")) //If bullet collides with a target
+            if (h.collider.CompareTag("Target") && !h.collider.GetComponentInParent<TargetMovement>().isHit) //If bullet collides with a target and target hasn't been hit
             {
                 h.collider.GetComponentInParent<TargetMovement>().MoveToHitPosition(); //Play knock down animation
                 print("target hit: " + h.collider.name);

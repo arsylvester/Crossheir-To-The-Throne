@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TimerStarter : MonoBehaviour
 {
+    public GameObject room;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +20,6 @@ public class TimerStarter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         TimeMaster.startTimer();
+        room.GetComponent<RoomController>().startRoom();
     }
 }

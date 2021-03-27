@@ -23,10 +23,13 @@ public class TimeMaster : MonoBehaviour
     {
         if(timerActive)
         {
+            // Unity String formatting is actually garbage
             float currentTime = Time.time - startTime;
             int minutes = (int)currentTime / 60;
-            
-            timerText = minutes.ToString("00") + ":" + (currentTime - minutes).ToString("00.##");
+            currentTime = currentTime % 60;
+            int seconds = (int)currentTime;
+            currentTime -= seconds;
+            timerText = minutes.ToString("00") + ":" + seconds.ToString("00") + "." + ((int)(currentTime * 100)).ToString("00");
         }
         uiText.text = timerText;
     }
