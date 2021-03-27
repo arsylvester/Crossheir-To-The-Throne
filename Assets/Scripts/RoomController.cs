@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviour
 {
-    public GameObject Target;
+    public GameObject door;
     public List<TargetSetController> targetSets;
 
     int activeSet = 0;
@@ -12,7 +12,11 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        for(int i = 0; i < targetSets.Count; i++)
+        {
+            targetSets[i].deactivateSet();
+        }
+        door.SetActive(true);
     }
 
     // Update is called once per frame
@@ -25,11 +29,15 @@ public class RoomController : MonoBehaviour
     {
         activeSet = 0;
         targetSets[activeSet].activateSet();
+        door.SetActive(true);
     }
 
     public void nextSet()
     {
         activeSet++;
-        targetSets[activeSet].activateSet();
+        if (activeSet < targetSets.Count)
+            targetSets[activeSet].activateSet();
+        else
+            door.SetActive(false);
     }
 }
