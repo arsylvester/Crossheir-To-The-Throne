@@ -92,6 +92,192 @@
 						<ActiveSource Name="450853__kyles__gun-lee-enfield-303-rifle-clean-shot" ID="{37807601-95F2-4E1C-9A8C-39D27498104D}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="402790__acidsnowflake__cocking-a-revolver" ID="{7EB437C0-FFFF-4474-B291-F658EA121900}" ShortID="563177890">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="402790__acidsnowflake__cocking-a-revolver" ID="{7EC9BFDF-0682-41CE-A49E-5436141FBC25}">
+							<Language>SFX</Language>
+							<AudioFile>402790__acidsnowflake__cocking-a-revolver.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="300791291"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="402790__acidsnowflake__cocking-a-revolver" ID="{7EC9BFDF-0682-41CE-A49E-5436141FBC25}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="111676__dredile__revolvercock1" ID="{24C3234C-5241-4EFE-B8BF-3723E1B05C65}" ShortID="897025277">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="111676__dredile__revolvercock1" ID="{E4D0F551-067C-4F5D-8C6A-3BE405B27882}">
+							<Language>SFX</Language>
+							<AudioFile>111676__dredile__revolvercock1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="877140193"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="111676__dredile__revolvercock1" ID="{E4D0F551-067C-4F5D-8C6A-3BE405B27882}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="337233__anthousai__bullet-shells-single-consolidated" ID="{CB4F8E18-A03B-468A-8C61-3267EDE8908D}" ShortID="34782474">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{3BF78454-F0EF-4E27-9C72-0319A87F1797}">
+							<Language>SFX</Language>
+							<AudioFile>337233__anthousai__bullet-shells-single-consolidated.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="669763688"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{3BF78454-F0EF-4E27-9C72-0319A87F1797}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="352719__dalesome__woosh-stick-swung-in-the-air" ID="{1DFB6A3B-74D1-4D0D-925E-A5D3D69AE960}" ShortID="158818574">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="352719__dalesome__woosh-stick-swung-in-the-air" ID="{220455A4-06A0-4202-B507-CDDBC9E230D4}">
+							<Language>SFX</Language>
+							<AudioFile>352719__dalesome__woosh-stick-swung-in-the-air.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="90429713"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="352719__dalesome__woosh-stick-swung-in-the-air" ID="{220455A4-06A0-4202-B507-CDDBC9E230D4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Folder Name="Bullets" ID="{1865F5CD-7A22-45E2-86E1-9AC92133AE47}" ShortID="170953120">
+					<ChildrenList>
+						<Sound Name="BulletDrop1" ID="{96292705-EC0D-410D-A18F-F68870272940}" ShortID="128089879">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{91428F9A-AE21-447F-A9CC-C00F952790DF}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.893205820732526"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>337233__anthousai__bullet-shells-single-consolidated.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="829689240"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{91428F9A-AE21-447F-A9CC-C00F952790DF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BulletDrop2" ID="{A0264B47-C325-4CBA-A170-CA2CBDF41649}" ShortID="650879259">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{D417D33C-6FB5-49E8-B583-05DED94AC811}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.90342298387097"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.15955667758737"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>337233__anthousai__bullet-shells-single-consolidated.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="648394659"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{D417D33C-6FB5-49E8-B583-05DED94AC811}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BulletDrop3" ID="{E5B19898-0B27-4FD9-9D60-810C7E7A60E4}" ShortID="182080663">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{F3E3630B-B86F-452F-A55B-D05835FC7A6F}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="7.33920809811828"/>
+										<Property Name="TrimEnd" Type="Real64" Value="8.71631774949598"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>337233__anthousai__bullet-shells-single-consolidated.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1002095734"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="337233__anthousai__bullet-shells-single-consolidated" ID="{F3E3630B-B86F-452F-A55B-D05835FC7A6F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

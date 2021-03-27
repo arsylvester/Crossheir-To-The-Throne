@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b03443b4edec1248af23a9d535d70347
     GuidInternal: 
-    m_lastTime: -8585847804544539949
+    m_lastTime: -8585847256292393969
     List:
     - name: Main
       guid: c5cf806afd53924e93561d415fec78fa
@@ -94,8 +94,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 07750a400b10a44480e10a69ac9d07a3
     GuidInternal: 
-    m_lastTime: -8585847804544689985
+    m_lastTime: -8585847256292594015
     List:
+    - name: BulletDrop
+      guid: 31a850874024a546ae4d0be295bb533d
+      id: 238663194
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: BulletDrop
+        ObjectType: 3
+        guid: 31a850874024a546ae4d0be295bb533d
+      Path: Events\Default Work Unit\BulletDrop
+      maxAttenuation: 0
+      maxDuration: 1.37711
+      minDuration: 1.37711
     - name: GunFire
       guid: 001e6b1bd564c2499f1d2b8574c73ae0
       id: 2975448509
@@ -113,6 +130,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 2.669333
       minDuration: 2.669333
+    - name: ReloadClick
+      guid: 5a6d8e3b4526c244b686ac41eeb19d59
+      id: 3551877634
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: ReloadClick
+        ObjectType: 3
+        guid: 5a6d8e3b4526c244b686ac41eeb19d59
+      Path: Events\Default Work Unit\ReloadClick
+      maxAttenuation: 0
+      maxDuration: 0.673379
+      minDuration: 0.673379
+    - name: Spin
+      guid: aa51b6f020defd47a79482df3f23e74b
+      id: 823131329
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: Spin
+        ObjectType: 3
+        guid: aa51b6f020defd47a79482df3f23e74b
+      Path: Events\Default Work Unit\Spin
+      maxAttenuation: 0
+      maxDuration: 0.560854
+      minDuration: 0.560854
     - name: TargetHit
       guid: 4e495a9bb3dafa418b06117c197881ec
       id: 3822001633
@@ -203,8 +254,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585847837658711917
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000090000000a000000
+  ExpandedFileSystemItemIds: 02000000030000000500000006000000090000000a0000000b0000000c000000
+  ExpandedWaapiItemIds: 050000000600000007000000090000000a0000000b0000000c000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
