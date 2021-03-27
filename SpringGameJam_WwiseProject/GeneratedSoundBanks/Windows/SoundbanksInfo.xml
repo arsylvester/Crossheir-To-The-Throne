@@ -16,11 +16,59 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="4168993179">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2208206877">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="238663194" Name="BulletDrop" ObjectPath="\Events\Default Work Unit\BulletDrop" DurationType="OneShot" DurationMin="1.377110" DurationMax="1.377110">
+					<IncludedMemoryFiles>
+						<File Id="648394659" Language="SFX">
+							<ShortName>337233__anthousai__bullet-shells-single-consolidated.wav</ShortName>
+							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_0B852FF2.wem</Path>
+						</File>
+						<File Id="829689240" Language="SFX">
+							<ShortName>337233__anthousai__bullet-shells-single-consolidated.wav</ShortName>
+							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_3C26B311.wem</Path>
+						</File>
+						<File Id="1002095734" Language="SFX">
+							<ShortName>337233__anthousai__bullet-shells-single-consolidated.wav</ShortName>
+							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_BCA6B571.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2975448509" Name="GunFire" ObjectPath="\Events\Default Work Unit\GunFire" DurationType="OneShot" DurationMin="2.669333" DurationMax="2.669333">
+					<IncludedMemoryFiles>
+						<File Id="359345031" Language="SFX">
+							<ShortName>450853__kyles__gun-lee-enfield-303-rifle-clean-shot.wav</ShortName>
+							<Path>SFX\450853__kyles__gun-lee-enfield-303-rifle-clean-shot_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3551877634" Name="ReloadClick" ObjectPath="\Events\Default Work Unit\ReloadClick" DurationType="OneShot" DurationMin="0.673379" DurationMax="0.673379">
+					<IncludedMemoryFiles>
+						<File Id="877140193" Language="SFX">
+							<ShortName>111676__dredile__revolvercock1.wav</ShortName>
+							<Path>SFX\111676__dredile__revolvercock1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="823131329" Name="Spin" ObjectPath="\Events\Default Work Unit\Spin" DurationType="OneShot" DurationMin="0.560854" DurationMax="0.560854">
+					<IncludedMemoryFiles>
+						<File Id="90429713" Language="SFX">
+							<ShortName>352719__dalesome__woosh-stick-swung-in-the-air.wav</ShortName>
+							<Path>SFX\352719__dalesome__woosh-stick-swung-in-the-air_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3822001633" Name="TargetHit" ObjectPath="\Events\Default Work Unit\TargetHit" DurationType="OneShot" DurationMin="0.178844" DurationMax="0.178844">
+					<IncludedMemoryFiles>
+						<File Id="1026188703" Language="SFX">
+							<ShortName>Coin2(16).wav</ShortName>
+							<Path>SFX\Coin2(16)_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1097980931" Name="TestEvent" ObjectPath="\Events\Default Work Unit\TestEvent" DurationType="OneShot" DurationMin="1.369977" DurationMax="1.369977">
 					<IncludedMemoryFiles>
 						<File Id="1068684440" Language="SFX">
