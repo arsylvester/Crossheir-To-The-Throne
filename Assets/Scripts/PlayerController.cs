@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Camera PlayerCamera;
     public float RotationSpeed = 1f; // not sure why we need rotation speed and input sens
-    //public float AimingRotationMultiplier = 1f; // only used for ADS
+    public float AimingRotationMultiplier = 0.5f; // only used for ADS
     float m_CameraVerticalAngle = 0f;
     public float MaxSpeedOnGround = 10f;
     public float MovementSharpnessOnGround = 15; //"Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite"
@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour
 
     PlayerInput m_InputHandler;
     CharacterController m_Controller;
+    WeaponManager m_WeaponManager;
 
-    /*
     public float RotationMultiplier
     {
         get
         {
-            if (m_WeaponsManager.IsAiming)
+            if (m_WeaponManager.isAiming)
             {
                 return AimingRotationMultiplier;
             }
@@ -30,12 +30,12 @@ public class PlayerController : MonoBehaviour
             return 1f;
         }
     }
-    */
 
     void Start()
     {
         m_InputHandler = GetComponent<PlayerInput>();
         m_Controller = GetComponent<CharacterController>();
+        m_WeaponManager = GetComponent<WeaponManager>();
 
         m_Controller.enableOverlapRecovery = true; //no idea what this does lmao
     }
@@ -49,12 +49,12 @@ public class PlayerController : MonoBehaviour
     void manageAiming()
     {
         // horizontal character rotation
-        //transform.Rotate(new Vector3(0f, (m_InputHandler.GetLookInputsHorizontal() * RotationSpeed * RotationMultiplier), 0f), Space.Self); //Original code that allows for ADS
-        transform.Rotate(new Vector3(0f, (m_InputHandler.GetLookInputsHorizontal() * RotationSpeed), 0f), Space.Self);
+        transform.Rotate(new Vector3(0f, (m_InputHandler.GetLookInputsHorizontal() * RotationSpeed * RotationMultiplier), 0f), Space.Self); //Original code that allows for ADS
+        //transform.Rotate(new Vector3(0f, (m_InputHandler.GetLookInputsHorizontal() * RotationSpeed), 0f), Space.Self);
 
         // vertical camera rotation
-        //m_CameraVerticalAngle += m_InputHandler.GetLookInputsVertical() * RotationSpeed * RotationMultiplier;
-        m_CameraVerticalAngle += m_InputHandler.GetLookInputsVertical() * RotationSpeed;
+        m_CameraVerticalAngle += m_InputHandler.GetLookInputsVertical() * RotationSpeed * RotationMultiplier;
+        //m_CameraVerticalAngle += m_InputHandler.GetLookInputsVertical() * RotationSpeed;
 
         // limit the camera's vertical angle to min/max
         m_CameraVerticalAngle = Mathf.Clamp(m_CameraVerticalAngle, -89f, 89f);
