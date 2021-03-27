@@ -9,6 +9,7 @@ public class WeaponManager : MonoBehaviour
 
     [Header("FOV")]
     public float defaultFOV = 60f;
+    public float playerFOV = 60f;
     [SerializeField] float aimingFOV = 30f;
 
     //Gun vars
@@ -40,6 +41,7 @@ public class WeaponManager : MonoBehaviour
         setFOV(MenuManager.getFov());
         updateHUD();
         ammo.text = currentAmmo + "";
+        playerFOV = MenuManager.getFov();
         aimingFOV = MenuManager.getFov() / 2;
     }
 
@@ -190,7 +192,7 @@ public class WeaponManager : MonoBehaviour
         }
         else if (wasAiming)
         {
-            if (m_PlayerController.PlayerCamera.fieldOfView < defaultFOV)
+            if (m_PlayerController.PlayerCamera.fieldOfView < playerFOV)
                 m_PlayerController.PlayerCamera.fieldOfView++;
             else
                 wasAiming = false;
