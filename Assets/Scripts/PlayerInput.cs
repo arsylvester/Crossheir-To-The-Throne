@@ -6,14 +6,18 @@ public class PlayerInput : MonoBehaviour
 {
     // Fair warning: I'm taking a lot of this initial code from the unity fps tutorial
 
-    public static float lookSensitivity = 1f;
-    public static bool InvertYAxis = false;
+    public float lookSensitivity = 1f;
+    public bool InvertYAxis = false;
     public bool fireInputWasDown;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //Pull from static variables set to the PlayerPref value
+        lookSensitivity = MenuManager.getSens();
+        InvertYAxis = MenuManager.getInvertY();
     }
 
     public bool CanProcessInput()

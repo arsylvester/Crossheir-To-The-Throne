@@ -8,7 +8,7 @@ public class WeaponManager : MonoBehaviour
     // This class handles all the gun logic
 
     [Header("FOV")]
-    public static float defaultFOV = 60f;
+    public float defaultFOV = 60f;
     [SerializeField] float aimingFOV = 30f;
 
     //Gun vars
@@ -37,10 +37,10 @@ public class WeaponManager : MonoBehaviour
     {
         m_InputHandler = GetComponent<PlayerInput>();
         m_PlayerController = GetComponent<PlayerController>();
-        setFOV(defaultFOV);
+        setFOV(MenuManager.getFov());
         updateHUD();
         ammo.text = currentAmmo + "";
-        aimingFOV = defaultFOV / 2;
+        aimingFOV = MenuManager.getFov() / 2;
     }
 
     void Update()
