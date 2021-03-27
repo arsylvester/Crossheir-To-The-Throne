@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 8914250616963310928}
   - component: {fileID: 8174508931510862216}
   - component: {fileID: 6454559752504505690}
+  - component: {fileID: 8629116793419417464}
   m_Layer: 0
   m_Name: ma_revolver
   m_TagString: Untagged
@@ -399,6 +400,33 @@ PlayableDirector:
     value: {fileID: 8174508931510862216}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &8629116793419417464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8141970569459924970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3a091c287587f47a9eedee3f198da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReloadEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d68512ab612278941a420f0519c50aeb,
+      type: 2}
+  BulletDropEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 64914486101b0904a81b83801c31ad33,
+      type: 2}
+  SpinEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 47e223ca6d7084541a37e8dd84b6c9de,
+      type: 2}
 --- !u!1 &9223061677109917996
 GameObject:
   m_ObjectHideFlags: 0

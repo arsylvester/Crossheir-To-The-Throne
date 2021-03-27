@@ -25,6 +25,64 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="GunFire" ID="{1B6B1E00-64D5-49C2-9F1D-2B8574C73AE0}">
+					<ChildrenList>
+						<Action Name="" ID="{2AE03A87-CE3A-4636-812D-AB5DCB678D5B}" ShortID="881225189">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="450853__kyles__gun-lee-enfield-303-rifle-clean-shot" ID="{817D8EC7-842F-4CD2-B254-0D284E861AEE}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ReloadClick" ID="{3B8E6D5A-2645-44C2-B686-AC41EEB19D59}">
+					<ChildrenList>
+						<Action Name="" ID="{C20F936A-532A-4DCF-B78D-034B7A7C8F96}" ShortID="674249922">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="111676__dredile__revolvercock1" ID="{24C3234C-5241-4EFE-B8BF-3723E1B05C65}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Spin" ID="{F0B651AA-DE20-47FD-A794-82DF3F23E74B}">
+					<ChildrenList>
+						<Action Name="" ID="{3881AFC6-8725-4A6C-A864-87C1FEC0A37E}" ShortID="925686477">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="352719__dalesome__woosh-stick-swung-in-the-air" ID="{1DFB6A3B-74D1-4D0D-925E-A5D3D69AE960}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BulletDrop" ID="{8750A831-2440-46A5-AE4D-0BE295BB533D}">
+					<ChildrenList>
+						<Action Name="" ID="{FEF82F5A-B767-4208-8EA5-784348A877B0}" ShortID="633060054">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BulletDrop1" ID="{96292705-EC0D-410D-A18F-F68870272940}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F2881F9D-447F-40E9-A865-A84D3BE1C36A}" ShortID="960545785">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BulletDrop2" ID="{A0264B47-C325-4CBA-A170-CA2CBDF41649}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{95F9C007-C8F5-4701-84AE-10295A5E66FA}" ShortID="1006181901">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BulletDrop3" ID="{E5B19898-0B27-4FD9-9D60-810C7E7A60E4}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

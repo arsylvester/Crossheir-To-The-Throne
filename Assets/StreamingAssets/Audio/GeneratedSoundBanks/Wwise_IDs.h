@@ -13,6 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BULLETDROP = 238663194U;
+        static const AkUniqueID GUNFIRE = 2975448509U;
+        static const AkUniqueID RELOADCLICK = 3551877634U;
+        static const AkUniqueID SPIN = 823131329U;
         static const AkUniqueID TARGETHIT = 3822001633U;
         static const AkUniqueID TESTEVENT = 1097980931U;
     } // namespace EVENTS
