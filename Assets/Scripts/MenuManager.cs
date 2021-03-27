@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
+//TODO: Clean up unneeded code
+
 public class MenuManager : MonoBehaviour
 {
     public static float sensitivity;
@@ -13,7 +15,6 @@ public class MenuManager : MonoBehaviour
 
 
     [SerializeField] Text sensText;
-    [SerializeField] Text sensActiveText;
     [SerializeField] Text fovText;
 
     [SerializeField] Slider sensSlider;
@@ -78,7 +79,6 @@ public class MenuManager : MonoBehaviour
     {
         sensitivity = n / 100f;
 
-        sensActiveText.text = n + "";
         sensSlider.value = n;
         sensInput.text = n + "";
 

@@ -5427,7 +5427,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensText: {fileID: 1636186408}
-  sensActiveText: {fileID: 1714302632}
   fovText: {fileID: 773938344}
   sensSlider: {fileID: 1141646156}
   fovSlider: {fileID: 1460970324}
