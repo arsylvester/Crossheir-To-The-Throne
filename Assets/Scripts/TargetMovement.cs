@@ -53,7 +53,8 @@ public class TargetMovement : MonoBehaviour
             GetComponentInChildren<Collider>().enabled = false;
             AkSoundEngine.PostEvent("TargetHit", gameObject);
             StartCoroutine(RotateOvertime(transform.eulerAngles.x + hitRotation));
-            this.GetComponentInParent<TargetSetController>().checkIfDefeated();
+            if(this.GetComponentInParent<TargetSetController>() != null)
+                this.GetComponentInParent<TargetSetController>().checkIfDefeated();
         }
     }
 
