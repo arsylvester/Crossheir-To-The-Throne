@@ -25,8 +25,8 @@ public class TimeMaster : MonoBehaviour
         {
             float currentTime = Time.time - startTime;
             int minutes = (int)currentTime / 60;
-            timerText = minutes + ":" + (currentTime - minutes);
-            //print(currentTime);
+            
+            timerText = minutes.ToString("00") + ":" + (currentTime - minutes).ToString("00.##");
         }
         uiText.text = timerText;
     }
