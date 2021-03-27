@@ -39,6 +39,29 @@
 						<ActiveSource Name="Strike" ID="{A264D237-357B-4FAC-B5EF-2A6165FB0DAB}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Coin2(16)" ID="{2E06725B-7BD3-42A1-B863-6D4BD8774616}" ShortID="536447497">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Coin2(16)" ID="{EE952A84-F32D-45F3-9A88-BFA20E7C9EBD}">
+							<Language>SFX</Language>
+							<AudioFile>Coin2(16).wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1026188703"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Coin2(16)" ID="{EE952A84-F32D-45F3-9A88-BFA20E7C9EBD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

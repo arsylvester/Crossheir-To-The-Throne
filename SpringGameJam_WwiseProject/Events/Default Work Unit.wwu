@@ -14,6 +14,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="TargetHit" ID="{9B5A494E-DAB3-41FA-8B06-117C197881EC}">
+					<ChildrenList>
+						<Action Name="" ID="{6BF37E67-1163-4DF5-97FD-0CEC557964EE}" ShortID="78935029">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Coin2(16)" ID="{2E06725B-7BD3-42A1-B863-6D4BD8774616}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
