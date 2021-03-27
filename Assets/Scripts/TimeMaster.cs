@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimeMaster : MonoBehaviour
 {
-    public static string timerText;
+    public static string timerText = "00:00.00";
     public static bool timerActive = false;
 
     private static float startTime = 0;
