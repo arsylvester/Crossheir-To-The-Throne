@@ -103,7 +103,10 @@ public class WeaponManager : MonoBehaviour
                 ammo.text = currentAmmo + "";
                 updateHUD();
             }
-            
+
+            AkSoundEngine.PostEvent("GunFire", gameObject);
+            Animator ani;
+
             return true;
         }
         return false;

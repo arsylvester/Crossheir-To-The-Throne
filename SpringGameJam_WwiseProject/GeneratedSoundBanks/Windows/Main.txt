@@ -1,8 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1097980931	TestEvent			\Default Work Unit\TestEvent	
+	2975448509	GunFire			\Default Work Unit\GunFire	
 	3822001633	TargetHit			\Default Work Unit\TargetHit	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	359345031	450853__kyles__gun-lee-enfield-303-rifle-clean-shot	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\450853__kyles__gun-lee-enfield-303-rifle-clean-shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\450853__kyles__gun-lee-enfield-303-rifle-clean-shot		256320
 	1026188703	Coin2(16)	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\Coin2(16)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Coin2(16)		15838
 	1068684440	Strike	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\Strike_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Strike		241728
 

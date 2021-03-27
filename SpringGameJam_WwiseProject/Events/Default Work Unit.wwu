@@ -25,6 +25,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="GunFire" ID="{1B6B1E00-64D5-49C2-9F1D-2B8574C73AE0}">
+					<ChildrenList>
+						<Action Name="" ID="{2AE03A87-CE3A-4636-812D-AB5DCB678D5B}" ShortID="881225189">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="450853__kyles__gun-lee-enfield-303-rifle-clean-shot" ID="{817D8EC7-842F-4CD2-B254-0D284E861AEE}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

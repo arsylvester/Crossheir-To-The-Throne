@@ -16,11 +16,19 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3537598641">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2228231871">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2975448509" Name="GunFire" ObjectPath="\Events\Default Work Unit\GunFire" DurationType="OneShot" DurationMin="2.669333" DurationMax="2.669333">
+					<IncludedMemoryFiles>
+						<File Id="359345031" Language="SFX">
+							<ShortName>450853__kyles__gun-lee-enfield-303-rifle-clean-shot.wav</ShortName>
+							<Path>SFX\450853__kyles__gun-lee-enfield-303-rifle-clean-shot_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3822001633" Name="TargetHit" ObjectPath="\Events\Default Work Unit\TargetHit" DurationType="OneShot" DurationMin="0.178844" DurationMax="0.178844">
 					<IncludedMemoryFiles>
 						<File Id="1026188703" Language="SFX">
