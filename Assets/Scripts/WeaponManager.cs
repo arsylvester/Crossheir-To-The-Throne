@@ -37,9 +37,10 @@ public class WeaponManager : MonoBehaviour
     {
         m_InputHandler = GetComponent<PlayerInput>();
         m_PlayerController = GetComponent<PlayerController>();
-        setFOV(defaultFOV);
+        setFOV(MenuManager.getFov());
         updateHUD();
         ammo.text = currentAmmo + "";
+        aimingFOV = MenuManager.getFov() / 2;
     }
 
     void Update()
