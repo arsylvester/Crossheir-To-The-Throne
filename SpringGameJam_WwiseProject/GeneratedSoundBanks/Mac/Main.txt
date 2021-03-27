@@ -1,6 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1097980931	TestEvent			\Default Work Unit\TestEvent	
+	3822001633	TargetHit			\Default Work Unit\TargetHit	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	1026188703	Coin2(16)	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\Coin2(16)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Coin2(16)		15838
 	1068684440	Strike	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\Strike_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Strike		241728
 

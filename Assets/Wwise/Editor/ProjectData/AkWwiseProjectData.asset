@@ -94,8 +94,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 07750a400b10a44480e10a69ac9d07a3
     GuidInternal: 
-    m_lastTime: -8585849610249491172
+    m_lastTime: -8585847932423457140
     List:
+    - name: TargetHit
+      guid: 4e495a9bb3dafa418b06117c197881ec
+      id: 3822001633
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: TargetHit
+        ObjectType: 3
+        guid: 4e495a9bb3dafa418b06117c197881ec
+      Path: Events\Default Work Unit\TargetHit
+      maxAttenuation: 0
+      maxDuration: 0.178844
+      minDuration: 0.178844
     - name: TestEvent
       guid: 82c8f2db0ed12f4aa817e239f6cfe8d3
       id: 1097980931
