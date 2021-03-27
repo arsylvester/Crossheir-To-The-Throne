@@ -350,6 +350,7 @@ MonoBehaviour:
   - {fileID: 0}
   dotsActive: 000000
   m_HudManager: {fileID: 0}
+  RevolverAnimator: {fileID: 9123151800519721186}
 --- !u!1 &1146802352625752087
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +519,12 @@ PrefabInstance:
 --- !u!4 &8385567391205073978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8914250616963310928, guid: eb1a471a08f284f2c9050c039ee0ce36,
+    type: 3}
+  m_PrefabInstance: {fileID: 1146802352192684394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9123151800519721186 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8174508931510862216, guid: eb1a471a08f284f2c9050c039ee0ce36,
     type: 3}
   m_PrefabInstance: {fileID: 1146802352192684394}
   m_PrefabAsset: {fileID: 0}
