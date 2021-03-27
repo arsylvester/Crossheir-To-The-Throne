@@ -28,6 +28,8 @@ public class WeaponManager : MonoBehaviour
     PlayerController m_PlayerController;
     [SerializeField] HudManager m_HudManager; //this one needs to be set in the inspector
 
+    [SerializeField] Animator RevolverAnimator;
+
     public bool isAiming { get; private set; }
     public bool wasAiming { get; private set; }
 
@@ -103,7 +105,9 @@ public class WeaponManager : MonoBehaviour
                 ammo.text = currentAmmo + "";
                 updateHUD();
             }
-            
+
+            RevolverAnimator.SetTrigger("shoot");
+
             return true;
         }
         return false;
@@ -134,8 +138,7 @@ public class WeaponManager : MonoBehaviour
                 print("hit: " + h.collider.name);
                 return; //Return to just ignore everything else in the array
             }
-        }
-
+        }  
     }
 
     void tripleKill()
@@ -147,6 +150,7 @@ public class WeaponManager : MonoBehaviour
         //Special reload
         currentAmmo = 3;
         ammo.text = currentAmmo + "";
+        RevolverAnimator.SetTrigger("special reload");
         updateHUD();
     }
 
@@ -170,6 +174,7 @@ public class WeaponManager : MonoBehaviour
         currentAmmo = 3;
         ammo.text = currentAmmo + "";
         //add more code to make this a real reload
+        RevolverAnimator.SetTrigger("reload");
         updateHUD();
     }
 

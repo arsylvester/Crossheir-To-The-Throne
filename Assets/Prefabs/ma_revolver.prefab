@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4617606257237050597}
   - component: {fileID: 2033939837295161224}
   m_Layer: 0
-  m_Name: trigger1
+  m_Name: hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,6 +333,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8914250616963310928}
+  - component: {fileID: 8174508931510862216}
+  - component: {fileID: 6454559752504505690}
   m_Layer: 0
   m_Name: ma_revolver
   m_TagString: Untagged
@@ -359,6 +361,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!95 &8174508931510862216
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8141970569459924970}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68b1adae7852b10469e067dbd18c7b92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &6454559752504505690
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8141970569459924970}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 917487a742590fb45b06ca88fca69f69, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 4195799141801291597, guid: 917487a742590fb45b06ca88fca69f69, type: 2}
+    value: {fileID: 8174508931510862216}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &9223061677109917996
 GameObject:
   m_ObjectHideFlags: 0
