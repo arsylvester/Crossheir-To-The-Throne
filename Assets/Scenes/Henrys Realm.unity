@@ -7845,6 +7845,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1724318476 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8174508931510862216, guid: eb1a471a08f284f2c9050c039ee0ce36,
+    type: 3}
+  m_PrefabInstance: {fileID: 1618572255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1738683540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1360296178231275094, guid: 74212ce01738f1f4599c02467fdf87a9,
@@ -8149,6 +8155,7 @@ MonoBehaviour:
   - {fileID: 532594173}
   dotsActive: 000000
   m_HudManager: {fileID: 945235254}
+  RevolverAnimator: {fileID: 1724318476}
 --- !u!1 &1856891099
 GameObject:
   m_ObjectHideFlags: 0

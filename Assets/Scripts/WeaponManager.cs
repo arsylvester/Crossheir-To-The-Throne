@@ -9,6 +9,7 @@ public class WeaponManager : MonoBehaviour
 
     [Header("FOV")]
     public float defaultFOV = 60f;
+    public float playerFOV = 60f;
     [SerializeField] float aimingFOV = 30f;
 
     //Gun vars
@@ -28,6 +29,8 @@ public class WeaponManager : MonoBehaviour
     PlayerController m_PlayerController;
     [SerializeField] HudManager m_HudManager; //this one needs to be set in the inspector
 
+    [SerializeField] Animator RevolverAnimator;
+
     public bool isAiming { get; private set; }
     public bool wasAiming { get; private set; }
 
@@ -35,9 +38,11 @@ public class WeaponManager : MonoBehaviour
     {
         m_InputHandler = GetComponent<PlayerInput>();
         m_PlayerController = GetComponent<PlayerController>();
-        setFOV(defaultFOV);
+        setFOV(MenuManager.getFov());
         updateHUD();
         ammo.text = currentAmmo + "";
+        playerFOV = MenuManager.getFov();
+        aimingFOV = MenuManager.getFov() / 2;
     }
 
     void Update()
@@ -103,7 +108,11 @@ public class WeaponManager : MonoBehaviour
                 ammo.text = currentAmmo + "";
                 updateHUD();
             }
-            
+
+            AkSoundEngine.PostEvent("GunFire", gameObject);
+
+            RevolverAnimator.SetTrigger("shoot");
+
             return true;
         }
         return false;
@@ -134,8 +143,7 @@ public class WeaponManager : MonoBehaviour
                 print("hit: " + h.collider.name);
                 return; //Return to just ignore everything else in the array
             }
-        }
-
+        }  
     }
 
     void tripleKill()
@@ -147,6 +155,7 @@ public class WeaponManager : MonoBehaviour
         //Special reload
         currentAmmo = 3;
         ammo.text = currentAmmo + "";
+        RevolverAnimator.SetTrigger("special reload");
         updateHUD();
     }
 
@@ -170,6 +179,7 @@ public class WeaponManager : MonoBehaviour
         currentAmmo = 3;
         ammo.text = currentAmmo + "";
         //add more code to make this a real reload
+        RevolverAnimator.SetTrigger("reload");
         updateHUD();
     }
 
@@ -184,7 +194,7 @@ public class WeaponManager : MonoBehaviour
         }
         else if (wasAiming)
         {
-            if (m_PlayerController.PlayerCamera.fieldOfView < defaultFOV)
+            if (m_PlayerController.PlayerCamera.fieldOfView < playerFOV)
                 m_PlayerController.PlayerCamera.fieldOfView++;
             else
                 wasAiming = false;
