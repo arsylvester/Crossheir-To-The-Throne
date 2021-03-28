@@ -32,6 +32,9 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] Animator RevolverAnimator;
     [SerializeField] VisualEffect MuzzleFlash;
+    [SerializeField] GameObject PoolBulletHoleVFX;
+    private int PoolIndex = 0;
+    //Queue<GameObject> PooledBulletHoles;
 
     public bool isAiming { get; private set; }
     public bool wasAiming { get; private set; }
@@ -45,6 +48,18 @@ public class WeaponManager : MonoBehaviour
         ammo.text = currentAmmo + "";
         playerFOV = MenuManager.getFov();
         aimingFOV = MenuManager.getFov() / 2;
+
+        /*Debug.Log("bullet child count: " + PoolBulletHoleVFX.transform.childCount);
+        Debug.Log(PoolBulletHoleVFX.transform.GetChild(0).gameObject);
+
+        // Queue up all the bullet hole vfx to be distributed at runtime
+        for (int i = 0; i < PoolBulletHoleVFX.transform.childCount; i++)
+        {
+            GameObject* BulletHole = PoolBulletHoleVFX.transform.GetChild(i).gameObject;
+            //Debug.Log("")
+            PooledBulletHoles.Enqueue(BulletHole);
+        }
+        Debug.Log("queue size: " + PooledBulletHoles.Count);*/
     }
 
     void Update()
@@ -132,6 +147,7 @@ public class WeaponManager : MonoBehaviour
         for (int k = 0; k < hits.Length; k++)
         {
             RaycastHit h = hits[k];
+            spawnBulletHole(h.point, h.normal);
 
             if (h.collider.CompareTag("Target") && !h.collider.GetComponentInParent<TargetMovement>().isHit) //If bullet collides with a target and target hasn't been hit
             {
@@ -183,6 +199,15 @@ public class WeaponManager : MonoBehaviour
         //add more code to make this a real reload
         RevolverAnimator.SetTrigger("reload");
         updateHUD();
+    }
+
+    void spawnBulletHole(Vector3 pos, Vector3 norm)
+    {
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.transform.position = pos;
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.transform.rotation = Quaternion.LookRotation(norm);
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().Play();
+
+        if(++PoolIndex == PoolBulletHoleVFX.transform.childCount) { PoolIndex = 0; }
     }
 
     void manageAiming() //TODO: Make transition framerate independent

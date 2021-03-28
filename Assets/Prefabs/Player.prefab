@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresOpaqueTextureOption: 1
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
@@ -352,6 +352,8 @@ MonoBehaviour:
   dotsActive: 000000
   m_HudManager: {fileID: 0}
   RevolverAnimator: {fileID: 9123151800519721186}
+  MuzzleFlash: {fileID: 8378101038660385123}
+  PoolBulletHoleVFX: {fileID: 0}
 --- !u!1 &1146802352625752087
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,8 +491,8 @@ VisualEffect:
   m_GameObject: {fileID: 8510958459056257680}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: cf33371f6d26e044e91944a62dfd3322, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -503,7 +505,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 5.177527, y: 3.4149265, z: 0.9524697, w: 1}
+      - m_Value: {x: 10.578589, y: 6.9785457, z: 1.9938703, w: 1}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
@@ -539,6 +541,7 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
