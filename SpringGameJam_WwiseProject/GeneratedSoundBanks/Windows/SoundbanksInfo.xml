@@ -11,12 +11,15 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3132820361">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2208206877">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2306404705">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -25,15 +28,15 @@
 					<IncludedMemoryFiles>
 						<File Id="648394659" Language="SFX">
 							<ShortName>337233__anthousai__bullet-shells-single-consolidated.wav</ShortName>
-							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_0B852FF2.wem</Path>
+							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_C885278A.wem</Path>
 						</File>
 						<File Id="829689240" Language="SFX">
 							<ShortName>337233__anthousai__bullet-shells-single-consolidated.wav</ShortName>
-							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_3C26B311.wem</Path>
+							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_0E9F86B5.wem</Path>
 						</File>
 						<File Id="1002095734" Language="SFX">
 							<ShortName>337233__anthousai__bullet-shells-single-consolidated.wav</ShortName>
-							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_BCA6B571.wem</Path>
+							<Path>SFX\337233__anthousai__bullet-shells-single-consolidated_15BAB1A6.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -45,11 +48,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3551877634" Name="ReloadClick" ObjectPath="\Events\Default Work Unit\ReloadClick" DurationType="OneShot" DurationMin="0.673379" DurationMax="0.673379">
+				<Event Id="3551877634" Name="ReloadClick" ObjectPath="\Events\Default Work Unit\ReloadClick" DurationType="OneShot" DurationMin="0.230795" DurationMax="0.230795">
 					<IncludedMemoryFiles>
 						<File Id="877140193" Language="SFX">
 							<ShortName>111676__dredile__revolvercock1.wav</ShortName>
-							<Path>SFX\111676__dredile__revolvercock1_10C4C929.wem</Path>
+							<Path>SFX\111676__dredile__revolvercock1_E8AAE3DE.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
