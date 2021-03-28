@@ -11,12 +11,15 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3132820361">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="434316600">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2306404705">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -49,7 +52,7 @@
 					<IncludedMemoryFiles>
 						<File Id="877140193" Language="SFX">
 							<ShortName>111676__dredile__revolvercock1.wav</ShortName>
-							<Path>SFX\111676__dredile__revolvercock1_69C9F0D0.wem</Path>
+							<Path>SFX\111676__dredile__revolvercock1_E8AAE3DE.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
