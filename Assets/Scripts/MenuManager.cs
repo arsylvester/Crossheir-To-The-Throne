@@ -31,6 +31,7 @@ public class MenuManager : MonoBehaviour
     private const string FOV_PREF = "fov";
     private const string SENSITIVITY_PREF = "sens";
     private const string YAXIS_PREF = "yaxis";
+    private const string HUD_MINMODE_PREF = "minmode";
 
     #endregion
 
@@ -63,6 +64,22 @@ public class MenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ResumeGame()
+    {
+        PlayerController.isGamePaused = false;
+    }
+
+    public void ResetRun()
+    {
+        //teleport player back to start and reset timer.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //FIX THIS
+    }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void SetPref(string key, float value)
@@ -122,6 +139,16 @@ public class MenuManager : MonoBehaviour
         print("Invert Y Axis set: " + toggle);
     }
 
+    public void setMinMode(bool toggle)
+    {
+        if (toggle)
+            SetPref(HUD_MINMODE_PREF, 1);
+        else
+            SetPref(HUD_MINMODE_PREF, 0);
+
+        print("Hud MinMode: " + toggle);
+    }
+
     public void resetSettings()
     {
         sensitivity = 0.15f;
@@ -147,5 +174,11 @@ public class MenuManager : MonoBehaviour
     {
         int yaxis = PlayerPrefs.GetInt(YAXIS_PREF, 0);
         return yaxis > 0;
+    }
+
+    public static bool getMinMode()
+    {
+        int value = PlayerPrefs.GetInt(HUD_MINMODE_PREF, 0);
+        return value > 0;
     }
 }
