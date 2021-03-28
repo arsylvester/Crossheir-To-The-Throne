@@ -34,7 +34,6 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] VisualEffect MuzzleFlash;
     [SerializeField] GameObject PoolBulletHoleVFX;
     private int PoolIndex = 0;
-    //Queue<GameObject> PooledBulletHoles;
 
     public bool isAiming { get; private set; }
     public bool wasAiming { get; private set; }
@@ -48,18 +47,6 @@ public class WeaponManager : MonoBehaviour
         ammo.text = currentAmmo + "";
         playerFOV = MenuManager.getFov();
         aimingFOV = MenuManager.getFov() / 2;
-
-        /*Debug.Log("bullet child count: " + PoolBulletHoleVFX.transform.childCount);
-        Debug.Log(PoolBulletHoleVFX.transform.GetChild(0).gameObject);
-
-        // Queue up all the bullet hole vfx to be distributed at runtime
-        for (int i = 0; i < PoolBulletHoleVFX.transform.childCount; i++)
-        {
-            GameObject* BulletHole = PoolBulletHoleVFX.transform.GetChild(i).gameObject;
-            //Debug.Log("")
-            PooledBulletHoles.Enqueue(BulletHole);
-        }
-        Debug.Log("queue size: " + PooledBulletHoles.Count);*/
     }
 
     void Update()
@@ -139,7 +126,7 @@ public class WeaponManager : MonoBehaviour
     {
         RaycastHit[] hits;
         hits = Physics.RaycastAll(m_PlayerController.PlayerCamera.transform.position, 
-            m_PlayerController.PlayerCamera.transform.forward, Mathf.Infinity); //TODO: make this not infinity to boost performance.
+            m_PlayerController.PlayerCamera.transform.forward, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore); //TODO: make this not infinity to boost performance.
 
         //RaycastAll returns an unsorted array, so we need to sort by distance from gun
         System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance)); //Honestly i'm too scared to look up how poorly optimized this is
@@ -147,7 +134,6 @@ public class WeaponManager : MonoBehaviour
         for (int k = 0; k < hits.Length; k++)
         {
             RaycastHit h = hits[k];
-            spawnBulletHole(h.point, h.normal);
 
             if (h.collider.CompareTag("Target") && !h.collider.GetComponentInParent<TargetMovement>().isHit) //If bullet collides with a target and target hasn't been hit
             {
@@ -155,10 +141,14 @@ public class WeaponManager : MonoBehaviour
                 print("target hit: " + h.collider.name);
                 missedShot = false;
                 killStreak++;
+                //PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetBool("isTargetImpact", true);
+                spawnBulletHoleTarget(h.point, h.normal, h.transform);
             }
             else
             {
                 print("hit: " + h.collider.name);
+                PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetBool("isTargetImpact", false);
+                spawnBulletHole(h.point, h.normal);
                 return; //Return to just ignore everything else in the array
             }
         }  
@@ -208,6 +198,13 @@ public class WeaponManager : MonoBehaviour
         PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().Play();
 
         if(++PoolIndex == PoolBulletHoleVFX.transform.childCount) { PoolIndex = 0; }
+    }
+
+    void spawnBulletHoleTarget(Vector3 pos, Vector3 norm, Transform ImpactParent)
+    {
+        GameObject Impact = Instantiate(PoolBulletHoleVFX.transform.GetChild(0).gameObject, pos, Quaternion.LookRotation(norm), ImpactParent);
+        Impact.GetComponent<VisualEffect>().Play();
+        Destroy(Impact, 30.0f);
     }
 
     void manageAiming() //TODO: Make transition framerate independent
