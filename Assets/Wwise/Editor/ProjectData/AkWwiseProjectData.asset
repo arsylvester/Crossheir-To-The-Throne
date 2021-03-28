@@ -145,8 +145,8 @@ MonoBehaviour:
         guid: 5a6d8e3b4526c244b686ac41eeb19d59
       Path: Events\Default Work Unit\ReloadClick
       maxAttenuation: 0
-      maxDuration: 0.673379
-      minDuration: 0.673379
+      maxDuration: 0.230795
+      minDuration: 0.230795
     - name: Spin
       guid: aa51b6f020defd47a79482df3f23e74b
       id: 823131329
@@ -255,7 +255,7 @@ MonoBehaviour:
     m_lastTime: -8585847837658711917
     List: []
   ExpandedFileSystemItemIds: 02000000030000000500000006000000090000000a0000000b0000000c000000
-  ExpandedWaapiItemIds: 050000000600000007000000090000000a0000000b0000000c000000
+  ExpandedWaapiItemIds: 050000000600000007000000090000000a0000000b0000000c0000000f00000010000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
