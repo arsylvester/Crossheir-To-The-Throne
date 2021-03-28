@@ -14,6 +14,10 @@ public class PlayerInput : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //Pull from static variables set to the PlayerPref value
+        lookSensitivity = MenuManager.getSens();
+        InvertYAxis = MenuManager.getInvertY();
     }
 
     public bool CanProcessInput()
@@ -74,7 +78,7 @@ public class PlayerInput : MonoBehaviour
             float i = Input.GetAxisRaw(mouseInputName);
 
             // handle inverting vertical input
-            if (InvertYAxis && mouseInputName == "Mouse Y")
+            if (!InvertYAxis && mouseInputName == "Mouse Y")
                 i *= -1f;
 
             // apply sensitivity multiplier
