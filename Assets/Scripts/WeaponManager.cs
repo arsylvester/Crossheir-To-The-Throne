@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] HudManager m_HudManager; //this one needs to be set in the inspector
 
     [SerializeField] Animator RevolverAnimator;
+    [SerializeField] VisualEffect MuzzleFlash;
 
     public bool isAiming { get; private set; }
     public bool wasAiming { get; private set; }
@@ -110,7 +112,7 @@ public class WeaponManager : MonoBehaviour
             }
 
             AkSoundEngine.PostEvent("GunFire", gameObject);
-
+            MuzzleFlash.Play();
             RevolverAnimator.SetTrigger("shoot");
 
             return true;
