@@ -25,6 +25,11 @@ public class PlayerInput : MonoBehaviour
         return Cursor.lockState == CursorLockMode.Locked;
     }
 
+    public bool GetCancelInputDown()
+    {
+        return Input.GetButtonDown("Cancel");
+    }
+
     public bool GetFireInputDown()
     {
         return Input.GetButton("Fire1") && CanProcessInput();

@@ -6,6 +6,9 @@ public class RoomController : MonoBehaviour
 {
     public GameObject door;
     public List<TargetSetController> targetSets;
+    public GameObject nextRoom;
+
+    public bool roomStarted = false;
 
     int activeSet = 0;
 
@@ -28,13 +31,20 @@ public class RoomController : MonoBehaviour
             targetSets[i].deactivateSet();
         }
         door.SetActive(true);
+        roomStarted = false;
     }
 
     public void startRoom()
     {
-        activeSet = 0;
-        targetSets[activeSet].activateSet();
-        door.SetActive(true);
+        if (!roomStarted)
+        {
+            roomStarted = true;
+            activeSet = 0;
+            targetSets[activeSet].activateSet();
+            door.SetActive(true);
+            if (nextRoom != null)
+                nextRoom.GetComponent<RoomController>().roomStarted = false;
+        }
     }
 
     public void nextSet()

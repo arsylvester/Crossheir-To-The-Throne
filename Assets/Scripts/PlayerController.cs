@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour
     public Vector3 CharacterVelocity { get; set; }
     public bool IsGrounded { get; private set; }
 
+    public static bool isGamePaused;
+
     PlayerInput m_InputHandler;
     CharacterController m_Controller;
     WeaponManager m_WeaponManager;
+    [SerializeField] HudManager m_HudManager;
 
     public float RotationMultiplier
     {
@@ -40,12 +43,27 @@ public class PlayerController : MonoBehaviour
         m_WeaponManager = GetComponent<WeaponManager>();
 
         m_Controller.enableOverlapRecovery = true; //no idea what this does lmao
+
+        isGamePaused = false;
     }
 
     void Update()
     {
-        manageAiming();
-        manageMovement();
+        if (!isGamePaused)
+        {
+            manageAiming();
+            manageMovement();
+
+            if (m_InputHandler.GetCancelInputDown())
+                pauseGame();
+        }
+        else
+        {
+            managePauseMenu();
+            if (m_InputHandler.GetCancelInputDown())
+                unpauseGame();
+        }
+            
     }
     
     void manageAiming()
@@ -108,5 +126,31 @@ public class PlayerController : MonoBehaviour
         }
 
         m_Controller.Move(CharacterVelocity * Time.deltaTime);
+    }
+
+    void managePauseMenu()
+    {
+        
+    }
+
+    public void unpauseGame()
+    {
+        isGamePaused = false;
+        Time.timeScale = 1f;
+        m_HudManager.showHud(true);
+        m_HudManager.showPauseMenu(false);
+        m_HudManager.showOptionsMenu(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void pauseGame()
+    {
+        isGamePaused = true;
+        Time.timeScale = 0f;
+        m_HudManager.showHud(false);
+        m_HudManager.showPauseMenu(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
