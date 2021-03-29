@@ -178,7 +178,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 4e495a9bb3dafa418b06117c197881ec
       Path: Events\Default Work Unit\TargetHit
-      maxAttenuation: 0
+      maxAttenuation: 20
       maxDuration: 0.178844
       minDuration: 0.178844
     - name: TestEvent
@@ -272,5 +272,5 @@ MonoBehaviour:
   ExpandedWaapiItemIds: 050000000600000007000000090000000a0000000b0000000c0000000f00000010000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
