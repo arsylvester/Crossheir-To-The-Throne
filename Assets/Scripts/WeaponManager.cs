@@ -137,6 +137,7 @@ public class WeaponManager : MonoBehaviour
 
             if (h.collider.CompareTag("Target") && !h.collider.GetComponentInParent<TargetMovement>().isHit) //If bullet collides with a target and target hasn't been hit
             {
+                AkSoundEngine.PostEvent("TargetHit", gameObject);
                 h.collider.GetComponentInParent<TargetMovement>().MoveToHitPosition(); //Play knock down animation
                 print("target hit: " + h.collider.name);
                 missedShot = false;
@@ -189,6 +190,13 @@ public class WeaponManager : MonoBehaviour
         ammo.text = currentAmmo + "";
         //add more code to make this a real reload
         RevolverAnimator.SetTrigger("reload");
+        updateHUD();
+    }
+
+    public void softReload()
+    {
+        currentAmmo = 3;
+        ammo.text = currentAmmo + "";
         updateHUD();
     }
 
