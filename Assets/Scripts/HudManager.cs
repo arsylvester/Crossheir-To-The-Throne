@@ -9,6 +9,7 @@ public class HudManager : MonoBehaviour
     [SerializeField] Text collateral;
     [SerializeField] GameObject HUD;
     [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject OptionsMenu;
     [SerializeField] GameObject ammoCluster;
     [SerializeField] GameObject xhair;
     private int currentXhair;
@@ -146,5 +147,10 @@ public class HudManager : MonoBehaviour
     public void showPauseMenu(bool b)
     {
         PauseMenu.gameObject.SetActive(b);
+    }
+
+    public void showOptionsMenu(bool b)
+    {
+        OptionsMenu.gameObject.SetActive(b);
     }
 }

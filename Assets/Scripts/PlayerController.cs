@@ -53,27 +53,13 @@ public class PlayerController : MonoBehaviour
             manageMovement();
 
             if (m_InputHandler.GetCancelInputDown())
-            {
-                isGamePaused = true;
-                Time.timeScale = 0f;
-                m_HudManager.showHud(false);
-                m_HudManager.showPauseMenu(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+                pauseGame();
         }
         else
         {
             managePauseMenu();
             if (m_InputHandler.GetCancelInputDown())
-            {
-                isGamePaused = false;
-                Time.timeScale = 1f;
-                m_HudManager.showHud(true);
-                m_HudManager.showPauseMenu(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
+                unpauseGame();
         }
             
     }
@@ -114,5 +100,26 @@ public class PlayerController : MonoBehaviour
     void managePauseMenu()
     {
         
+    }
+
+    public void unpauseGame()
+    {
+        isGamePaused = false;
+        Time.timeScale = 1f;
+        m_HudManager.showHud(true);
+        m_HudManager.showPauseMenu(false);
+        m_HudManager.showOptionsMenu(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void pauseGame()
+    {
+        isGamePaused = true;
+        Time.timeScale = 0f;
+        m_HudManager.showHud(false);
+        m_HudManager.showPauseMenu(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

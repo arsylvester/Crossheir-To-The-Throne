@@ -11,27 +11,42 @@ public class MenuManager : MonoBehaviour
 {
     public static float sensitivity;
     public static float fov;
+    public static float volume;
+    public static float xhairSize;
     public static bool invertY;
+    public static int xhairStyle;
 
+    [SerializeField] PlayerController m_PlayerController;
 
     [SerializeField] Text sensText;
     [SerializeField] Text fovText;
+    [SerializeField] Text volumeText;
+    [SerializeField] Text xhairSizeText;
 
     [SerializeField] Slider sensSlider;
     [SerializeField] Slider fovSlider;
+    [SerializeField] Slider volumeSlider;
+    [SerializeField] Slider xhairSizeSlider;
 
     [SerializeField] InputField sensInput;
     [SerializeField] InputField fovInput;
+    [SerializeField] InputField volumeInput;
+    [SerializeField] InputField xhairSizeInput;
 
     [SerializeField] Toggle yaxisToggle;
+
+    [SerializeField] Dropdown xhairStyleDropdown;
 
 
     #region Player Prefs Keys
 
+    private const string VOLUME_PREF = "volume";
     private const string FOV_PREF = "fov";
     private const string SENSITIVITY_PREF = "sens";
     private const string YAXIS_PREF = "yaxis";
     private const string HUD_MINMODE_PREF = "minmode";
+    private const string XHAIR_SIZE_PREF = "xhair-size";
+    private const string XHAIR_STYLE_PREF = "xhair-style";
 
     #endregion
 
@@ -42,6 +57,8 @@ public class MenuManager : MonoBehaviour
 
         sensitivity = PlayerPrefs.GetFloat(SENSITIVITY_PREF, 0.15f);
         fov = PlayerPrefs.GetFloat(FOV_PREF, 60f);
+        volume = PlayerPrefs.GetFloat(VOLUME_PREF, 90f);
+        xhairSize = PlayerPrefs.GetFloat(XHAIR_SIZE_PREF, 1f);
         int yaxis = PlayerPrefs.GetInt(YAXIS_PREF, 0);
         invertY = yaxis > 0;
 
@@ -68,7 +85,7 @@ public class MenuManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        PlayerController.isGamePaused = false;
+        m_PlayerController.unpauseGame();
     }
 
     public void ResetRun()
@@ -127,6 +144,36 @@ public class MenuManager : MonoBehaviour
     {
         int n = int.Parse(s);
         setFov(n);
+    }
+
+    public void setVolume(float n)
+    {
+        volume = n;
+        volumeSlider.value = n;
+        volumeInput.text = n + "";
+        SetPref(VOLUME_PREF, n);
+        print("Volume set: " + volume);
+    }
+
+    public void setVolume(string s)
+    {
+        int n = int.Parse(s);
+        setVolume(n);
+    }
+
+    public void setXhairSize(float n)
+    {
+        xhairSize = n;
+        xhairSizeSlider.value = n;
+        xhairSizeInput.text = n + "";
+        SetPref(XHAIR_SIZE_PREF, n);
+        print("Xhair Size set: " + n);
+    }
+
+    public void setXhairSize(string s)
+    {
+        int n = int.Parse(s);
+        setXhairSize(n);
     }
 
     public void setYAxis(bool toggle)
