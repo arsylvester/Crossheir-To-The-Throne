@@ -148,6 +148,7 @@ public class WeaponManager : MonoBehaviour
             {
                 print("hit: " + h.collider.name);
                 PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetBool("isTargetImpact", false);
+                PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetVector3("SparkPos", h.point);
                 spawnBulletHole(h.point, h.normal);
                 return; //Return to just ignore everything else in the array
             }
@@ -195,6 +196,7 @@ public class WeaponManager : MonoBehaviour
     {
         PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.transform.position = pos;
         PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.transform.rotation = Quaternion.LookRotation(norm);
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetBool("isTargetImpact", false);
         PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().Play();
 
         if(++PoolIndex == PoolBulletHoleVFX.transform.childCount) { PoolIndex = 0; }
@@ -203,6 +205,8 @@ public class WeaponManager : MonoBehaviour
     void spawnBulletHoleTarget(Vector3 pos, Vector3 norm, Transform ImpactParent)
     {
         GameObject Impact = Instantiate(PoolBulletHoleVFX.transform.GetChild(0).gameObject, pos, Quaternion.LookRotation(norm), ImpactParent);
+        Impact.GetComponent<VisualEffect>().SetVector3("SparkPos", pos);
+        Impact.GetComponent<VisualEffect>().SetBool("isTargetImpact", true);
         Impact.GetComponent<VisualEffect>().Play();
         Destroy(Impact, 30.0f);
     }
