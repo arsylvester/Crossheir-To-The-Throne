@@ -4073,6 +4073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPositionTransform: {fileID: 0}
+  bulletHoles: {fileID: 2115954912}
 --- !u!1001 &661653454
 PrefabInstance:
   m_ObjectHideFlags: 0

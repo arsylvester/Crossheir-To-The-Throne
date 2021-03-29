@@ -178,7 +178,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 4e495a9bb3dafa418b06117c197881ec
       Path: Events\Default Work Unit\TargetHit
-      maxAttenuation: 0
+      maxAttenuation: 20
       maxDuration: 0.178844
       minDuration: 0.178844
     - name: TestEvent

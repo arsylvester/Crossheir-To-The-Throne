@@ -54,7 +54,6 @@ public class TargetMovement : MonoBehaviour
         {
             isHit = true;
             GetComponentInChildren<Collider>().enabled = false;
-            AkSoundEngine.PostEvent("TargetHit", gameObject);
             StartCoroutine(RotateOvertime(downRotation));
             if(this.GetComponentInParent<TargetSetController>() != null)
                 this.GetComponentInParent<TargetSetController>().checkIfDefeated();

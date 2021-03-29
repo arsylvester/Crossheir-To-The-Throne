@@ -6,6 +6,7 @@ public class ResetScene : MonoBehaviour
 {
     [Tooltip("Add a transform if you want to assign a start position. Leave blanck if you want to use the current player position.")]
     [SerializeField] Transform startPositionTransform;
+    [SerializeField] Transform bulletHoles;
     Vector3 startPosition;
     Quaternion startRotation;
     GameObject playerObject;
@@ -60,5 +61,11 @@ public class ResetScene : MonoBehaviour
 
         //Stop Time
         TimeMaster.endTimer();
+
+        //Reset Bullet holes
+        foreach(Transform hole in bulletHoles)
+        {
+            hole.localPosition = Vector3.zero;
+        }
     }
 }
