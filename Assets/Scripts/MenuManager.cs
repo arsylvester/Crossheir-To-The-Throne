@@ -14,27 +14,36 @@ public class MenuManager : MonoBehaviour
     public static float volume;
     public static float xhairSize;
     public static bool invertY;
+    public static bool minmode;
     public static int xhairStyle;
 
+    [Header("I gave up and made this script reference other scripts.")]
     [SerializeField] PlayerController m_PlayerController;
+    [SerializeField] HudManager m_HudManager;
 
+    [Header("Set these to the placeholder text values.")]
     [SerializeField] Text sensText;
     [SerializeField] Text fovText;
     [SerializeField] Text volumeText;
     [SerializeField] Text xhairSizeText;
 
+    [Header("Sliders")]
     [SerializeField] Slider sensSlider;
     [SerializeField] Slider fovSlider;
     [SerializeField] Slider volumeSlider;
     [SerializeField] Slider xhairSizeSlider;
 
+    [Header("Input fields")]
     [SerializeField] InputField sensInput;
     [SerializeField] InputField fovInput;
     [SerializeField] InputField volumeInput;
     [SerializeField] InputField xhairSizeInput;
 
+    [Header("Toggles")]
     [SerializeField] Toggle yaxisToggle;
+    [SerializeField] Toggle minmodeToggle;
 
+    [Header("Drop downs")]
     [SerializeField] Dropdown xhairStyleDropdown;
 
 
@@ -59,16 +68,21 @@ public class MenuManager : MonoBehaviour
         fov = PlayerPrefs.GetFloat(FOV_PREF, 60f);
         volume = PlayerPrefs.GetFloat(VOLUME_PREF, 90f);
         xhairSize = PlayerPrefs.GetFloat(XHAIR_SIZE_PREF, 1f);
+        int mm = PlayerPrefs.GetInt(HUD_MINMODE_PREF, 0);
+        minmode = mm > 0;
         int yaxis = PlayerPrefs.GetInt(YAXIS_PREF, 0);
         invertY = yaxis > 0;
 
         sensSlider.value = sensitivity * 100;
         fovSlider.value = fov;
+        volumeSlider.value = volume;
 
         sensText.text = sensitivity * 100 + "";
         fovText.text = fov + "";
+        volumeText.text = volume + "";
 
         yaxisToggle.isOn = invertY;
+        minmodeToggle.isOn = minmode;
 
     }
 
@@ -189,9 +203,16 @@ public class MenuManager : MonoBehaviour
     public void setMinMode(bool toggle)
     {
         if (toggle)
+        {
             SetPref(HUD_MINMODE_PREF, 1);
+            m_HudManager.goMinMode();
+        }
         else
+        {
             SetPref(HUD_MINMODE_PREF, 0);
+            m_HudManager.exitMinMode();
+        }
+            
 
         print("Hud MinMode: " + toggle);
     }
