@@ -13,13 +13,16 @@ public class TargetMovement : MonoBehaviour
     [SerializeField] Transform trackEnd;
     [SerializeField] float trackMoveSpeed = 1f;
 
+    [SerializeField] GameObject movingPart;
+
     public bool isHit = false;
     float currentTrackLerp = 0;
+    float downRotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        downRotation = movingPart.transform.eulerAngles.z + hitRotation;
     }
 
     // Update is called once per frame
@@ -51,8 +54,7 @@ public class TargetMovement : MonoBehaviour
         {
             isHit = true;
             GetComponentInChildren<Collider>().enabled = false;
-            AkSoundEngine.PostEvent("TargetHit", gameObject);
-            StartCoroutine(RotateOvertime(transform.eulerAngles.x + hitRotation));
+            StartCoroutine(RotateOvertime(downRotation));
             if(this.GetComponentInParent<TargetSetController>() != null)
                 this.GetComponentInParent<TargetSetController>().checkIfDefeated();
         }
@@ -64,18 +66,18 @@ public class TargetMovement : MonoBehaviour
         {
             isHit = false;
             GetComponentInChildren<Collider>().enabled = true;
-            StartCoroutine(RotateOvertime(transform.eulerAngles.x - hitRotation));
+            StartCoroutine(RotateOvertime(movingPart.transform.eulerAngles.z - hitRotation));
         }
     }
 
     IEnumerator RotateOvertime(float newX)
     {
-        float startRotation = transform.eulerAngles.x;
+        float startRotation = movingPart.transform.eulerAngles.z;
         float scaledSpeed = 0;
 
-        while (newX != transform.eulerAngles.x)
+        while (newX != movingPart.transform.eulerAngles.z)
         {
-            transform.eulerAngles = new Vector3(Mathf.LerpAngle(startRotation, newX, scaledSpeed), transform.eulerAngles.y, transform.eulerAngles.z);
+            movingPart.transform.eulerAngles = new Vector3(movingPart.transform.eulerAngles.x, movingPart.transform.eulerAngles.y, Mathf.LerpAngle(startRotation, newX, scaledSpeed));
             scaledSpeed += rotateSpeed * Time.deltaTime;
             //print(scaledSpeed);
             yield return new WaitForEndOfFrame();

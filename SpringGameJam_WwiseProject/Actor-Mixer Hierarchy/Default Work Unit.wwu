@@ -40,7 +40,28 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Coin2(16)" ID="{2E06725B-7BD3-42A1-B863-6D4BD8774616}" ShortID="536447497">
+					<PropertyList>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Sound Effect Attenuation" ID="{BE88A8B7-8BDC-43A2-A12C-D2768721595E}" WorkUnitID="{F43B345B-4DD8-4F5C-AAC3-D29340545535}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
 						</Reference>
@@ -126,6 +147,10 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="111676__dredile__revolvercock1" ID="{E4D0F551-067C-4F5D-8C6A-3BE405B27882}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.230795113744422"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>111676__dredile__revolvercock1.wav</AudioFile>
 							<MediaIDList>

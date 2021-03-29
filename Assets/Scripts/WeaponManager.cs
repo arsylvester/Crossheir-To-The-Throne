@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] HudManager m_HudManager; //this one needs to be set in the inspector
 
     [SerializeField] Animator RevolverAnimator;
+    [SerializeField] VisualEffect MuzzleFlash;
+    [SerializeField] GameObject PoolBulletHoleVFX;
+    private int PoolIndex = 0;
 
     public bool isAiming { get; private set; }
     public bool wasAiming { get; private set; }
@@ -108,7 +112,7 @@ public class WeaponManager : MonoBehaviour
             }
 
             AkSoundEngine.PostEvent("GunFire", gameObject);
-
+            MuzzleFlash.Play();
             RevolverAnimator.SetTrigger("shoot");
 
             return true;
@@ -120,7 +124,7 @@ public class WeaponManager : MonoBehaviour
     {
         RaycastHit[] hits;
         hits = Physics.RaycastAll(m_PlayerController.PlayerCamera.transform.position, 
-            m_PlayerController.PlayerCamera.transform.forward, Mathf.Infinity); //TODO: make this not infinity to boost performance.
+            m_PlayerController.PlayerCamera.transform.forward, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore); //TODO: make this not infinity to boost performance.
 
         //RaycastAll returns an unsorted array, so we need to sort by distance from gun
         System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance)); //Honestly i'm too scared to look up how poorly optimized this is
@@ -131,14 +135,20 @@ public class WeaponManager : MonoBehaviour
 
             if (h.collider.CompareTag("Target") && !h.collider.GetComponentInParent<TargetMovement>().isHit) //If bullet collides with a target and target hasn't been hit
             {
+                AkSoundEngine.PostEvent("TargetHit", gameObject);
                 h.collider.GetComponentInParent<TargetMovement>().MoveToHitPosition(); //Play knock down animation
                 print("target hit: " + h.collider.name);
                 missedShot = false;
                 killStreak++;
+                //PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetBool("isTargetImpact", true);
+                spawnBulletHoleTarget(h.point, h.normal, h.transform);
             }
             else
             {
                 print("hit: " + h.collider.name);
+                PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetBool("isTargetImpact", false);
+                PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetVector3("SparkPos", h.point);
+                spawnBulletHole(h.point, h.normal);
                 return; //Return to just ignore everything else in the array
             }
         }  
@@ -177,6 +187,32 @@ public class WeaponManager : MonoBehaviour
         //add more code to make this a real reload
         RevolverAnimator.SetTrigger("reload");
         updateHUD();
+    }
+
+    public void softReload()
+    {
+        currentAmmo = 3;
+        ammo.text = currentAmmo + "";
+        updateHUD();
+    }
+
+    void spawnBulletHole(Vector3 pos, Vector3 norm)
+    {
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.transform.position = pos;
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.transform.rotation = Quaternion.LookRotation(norm);
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().SetBool("isTargetImpact", false);
+        PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.GetComponent<VisualEffect>().Play();
+
+        if(++PoolIndex == PoolBulletHoleVFX.transform.childCount) { PoolIndex = 0; }
+    }
+
+    void spawnBulletHoleTarget(Vector3 pos, Vector3 norm, Transform ImpactParent)
+    {
+        GameObject Impact = Instantiate(PoolBulletHoleVFX.transform.GetChild(0).gameObject, pos, Quaternion.LookRotation(norm), ImpactParent);
+        Impact.GetComponent<VisualEffect>().SetVector3("SparkPos", pos);
+        Impact.GetComponent<VisualEffect>().SetBool("isTargetImpact", true);
+        Impact.GetComponent<VisualEffect>().Play();
+        Destroy(Impact, 30.0f);
     }
 
     void manageAiming() //TODO: Make transition framerate independent
