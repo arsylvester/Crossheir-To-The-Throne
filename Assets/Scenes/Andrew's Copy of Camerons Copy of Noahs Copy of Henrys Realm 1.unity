@@ -4338,20 +4338,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1146802351738740315, guid: 089b830aff08a184e8b28e48dfbb8ba6,
-        type: 3}
-      propertyPath: m_RequiresOpaqueTextureOption
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1146802352056708362, guid: 089b830aff08a184e8b28e48dfbb8ba6,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1146802352056708465, guid: 089b830aff08a184e8b28e48dfbb8ba6,
-        type: 3}
-      propertyPath: ammo
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1146802352056708465, guid: 089b830aff08a184e8b28e48dfbb8ba6,
         type: 3}
@@ -4368,21 +4358,6 @@ PrefabInstance:
       propertyPath: PoolBulletHoleVFX
       value: 
       objectReference: {fileID: 2115954911}
-    - target: {fileID: 1146802352056708465, guid: 089b830aff08a184e8b28e48dfbb8ba6,
-        type: 3}
-      propertyPath: dots.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1146802352056708465, guid: 089b830aff08a184e8b28e48dfbb8ba6,
-        type: 3}
-      propertyPath: dots.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1146802352056708465, guid: 089b830aff08a184e8b28e48dfbb8ba6,
-        type: 3}
-      propertyPath: dots.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1146802352056708469, guid: 089b830aff08a184e8b28e48dfbb8ba6,
         type: 3}
       propertyPath: m_RootOrder
@@ -4440,14 +4415,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1146802352056708471, guid: 089b830aff08a184e8b28e48dfbb8ba6,
         type: 3}
-      propertyPath: jumpForce
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1146802352056708471, guid: 089b830aff08a184e8b28e48dfbb8ba6,
-        type: 3}
-      propertyPath: GravityModifier
-      value: 60
-      objectReference: {fileID: 0}
+      propertyPath: m_HudManager
+      value: 
+      objectReference: {fileID: 609782276}
     - target: {fileID: 7803635413575922653, guid: 089b830aff08a184e8b28e48dfbb8ba6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

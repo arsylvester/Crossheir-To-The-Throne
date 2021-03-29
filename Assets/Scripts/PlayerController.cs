@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     CharacterController m_Controller;
     WeaponManager m_WeaponManager;
     [SerializeField] HudManager m_HudManager;
+    bool hasJumped;
 
     public float RotationMultiplier
     {
@@ -96,10 +97,15 @@ public class PlayerController : MonoBehaviour
         // smoothly interpolate between our current velocity and the target velocity based on acceleration speed
         CharacterVelocity = Vector3.Lerp(CharacterVelocity, targetVelocity, MovementSharpnessOnGround * Time.deltaTime);
 
+        if (!IsGrounded && m_Controller.isGrounded && hasJumped)
+        {
+            AkSoundEngine.PostEvent("Land", gameObject);
+        }
         IsGrounded = m_Controller.isGrounded;
         // jumping
         if (IsGrounded)
         {
+            hasJumped = false;
             if (m_InputHandler.GetJumpInputDown())
             {
                 // start by canceling out the vertical component of our velocity
@@ -109,7 +115,7 @@ public class PlayerController : MonoBehaviour
                 CharacterVelocity += Vector3.up * jumpForce;
 
                 // play sound
-              
+                AkSoundEngine.PostEvent("JumpStart", gameObject);
 
                 // remember last time we jumped because we need to prevent snapping to ground for a short time
                // m_LastTimeJumped = Time.time;
@@ -117,6 +123,7 @@ public class PlayerController : MonoBehaviour
 
                 // Force grounding to false
                 IsGrounded = false;
+                hasJumped = true;
             }
         }
         else
