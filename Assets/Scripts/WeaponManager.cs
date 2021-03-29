@@ -8,26 +8,33 @@ public class WeaponManager : MonoBehaviour
 {
     // This class handles all the gun logic
 
-    [Header("FOV")]
-    public float defaultFOV = 60f;
-    public float playerFOV = 60f;
-    [SerializeField] float aimingFOV = 30f;
+    //[Header("FOV")]
+    float defaultFOV = 60f;
+    float playerFOV = 60f;
+    float aimingFOV = 30f;
 
-    //Gun vars
+    
     bool isReloading = false;
     int currentAmmo = 3;
     int killStreak = 0;
     int shotStreak = 0;
     bool missedShot = true;
-    
-    [Header("HUD")]
-    public Text ammo;
-    [SerializeField] GameObject bulletImpact;
-    [SerializeField] RawImage[] dots;
-    public bool[] dotsActive = new bool[3];
+    float LastTimeShot = 0;
 
+    [Header("Gun")]
+    [SerializeField] float ShotDelay = 2f;
+    [SerializeField] float ReloadTime = 3f;
+
+
+    //[Header("HUD")]
+    //[SerializeField] GameObject bulletImpact;
+    //[SerializeField] RawImage[] dots;
+    //public bool[] dotsActive = new bool[3];
+
+    
     PlayerInput m_InputHandler;
     PlayerController m_PlayerController;
+    [Header("Not Gun")]
     [SerializeField] HudManager m_HudManager; //this one needs to be set in the inspector
 
     [SerializeField] Animator RevolverAnimator;
@@ -43,7 +50,7 @@ public class WeaponManager : MonoBehaviour
         m_InputHandler = GetComponent<PlayerInput>();
         m_PlayerController = GetComponent<PlayerController>();
         setFOV(MenuManager.getFov());
-        updateHUD();
+        //updateHUD();
         playerFOV = MenuManager.getFov();
         aimingFOV = MenuManager.getFov() / 2;
     }
@@ -80,6 +87,8 @@ public class WeaponManager : MonoBehaviour
 
     bool shoot() //Make sure nothing is preventing you from shooting
     {
+        print("ShotDelay? " + inShotDelay());
+
         if (currentAmmo != 0 && !inShotDelay())
         {
             missedShot = true;
@@ -122,6 +131,8 @@ public class WeaponManager : MonoBehaviour
 
     void handleShoot() //Actually fires the gun
     {
+        LastTimeShot = Time.time;
+        
         RaycastHit[] hits;
         hits = Physics.RaycastAll(m_PlayerController.PlayerCamera.transform.position, 
             m_PlayerController.PlayerCamera.transform.forward, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore); //TODO: make this not infinity to boost performance.
@@ -175,24 +186,33 @@ public class WeaponManager : MonoBehaviour
 
     bool inShotDelay() //Return true if it hasn't been x time since the last shot
     {
-        //if (m_LastTimeShot + DelayBetweenShots < Time.time)
-        //    return true;
+        if (LastTimeShot + ShotDelay >= Time.time)
+            return true;
 
         return false;
     }
 
     void reload()
     {
-        currentAmmo = 3;
+        isReloading = true;
         //add more code to make this a real reload
         RevolverAnimator.SetTrigger("reload");
+        StartCoroutine(waitForReload());
+        waitForReload();
+        //updateHUD();
+    }
+
+    IEnumerator waitForReload()
+    {
+        yield return new WaitForSecondsRealtime(ReloadTime);
+        currentAmmo = 3;
+        isReloading = false;
         updateHUD();
     }
 
     public void softReload()
     {
         currentAmmo = 3;
-        ammo.text = currentAmmo + "";
         updateHUD();
     }
 
