@@ -126,6 +126,10 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="111676__dredile__revolvercock1" ID="{E4D0F551-067C-4F5D-8C6A-3BE405B27882}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.230795113744422"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>111676__dredile__revolvercock1.wav</AudioFile>
 							<MediaIDList>

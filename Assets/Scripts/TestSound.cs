@@ -16,6 +16,7 @@ public class TestSound : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             AkSoundEngine.PostEvent("TestEvent", gameObject);
+            AkSoundEngine.SetRTPCValue("MasterVolume", 50);
         }
     }
 }
