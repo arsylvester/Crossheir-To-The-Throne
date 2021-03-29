@@ -17,11 +17,12 @@ public class TargetMovement : MonoBehaviour
 
     public bool isHit = false;
     float currentTrackLerp = 0;
+    float downRotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        downRotation = movingPart.transform.eulerAngles.z + hitRotation;
     }
 
     // Update is called once per frame
@@ -53,8 +54,7 @@ public class TargetMovement : MonoBehaviour
         {
             isHit = true;
             GetComponentInChildren<Collider>().enabled = false;
-            AkSoundEngine.PostEvent("TargetHit", gameObject);
-            StartCoroutine(RotateOvertime(movingPart.transform.eulerAngles.z + hitRotation));
+            StartCoroutine(RotateOvertime(downRotation));
             if(this.GetComponentInParent<TargetSetController>() != null)
                 this.GetComponentInParent<TargetSetController>().checkIfDefeated();
         }
