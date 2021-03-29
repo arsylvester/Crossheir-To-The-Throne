@@ -45,6 +45,11 @@ public class PlayerInput : MonoBehaviour
         return Input.GetButton("Fire2") && CanProcessInput();
     }
 
+    public bool GetJumpInputDown()
+    {
+        return Input.GetButton("Jump") && CanProcessInput();
+    }
+
     public Vector3 GetMoveInput()
     {
         if (CanProcessInput())
