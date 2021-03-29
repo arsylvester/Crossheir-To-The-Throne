@@ -19,7 +19,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1140135089">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3797233676">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -48,6 +48,22 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="678561523" Name="JumpStart" ObjectPath="\Events\Default Work Unit\JumpStart" DurationType="OneShot" DurationMin="0.395161" DurationMax="0.395161">
+					<IncludedMemoryFiles>
+						<File Id="276616868" Language="SFX">
+							<ShortName>469077__hawkeye-sprout__jumping-on-bed.wav</ShortName>
+							<Path>SFX\469077__hawkeye-sprout__jumping-on-bed_4EB3B06D.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="674522502" Name="Land" ObjectPath="\Events\Default Work Unit\Land" DurationType="OneShot" DurationMin="0.072363" DurationMax="0.072363">
+					<IncludedMemoryFiles>
+						<File Id="898064822" Language="SFX">
+							<ShortName>122122__zimbot__thud-2-dry.wav</ShortName>
+							<Path>SFX\122122__zimbot__thud-2-dry_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3551877634" Name="ReloadClick" ObjectPath="\Events\Default Work Unit\ReloadClick" DurationType="OneShot" DurationMin="0.230795" DurationMax="0.230795">
 					<IncludedMemoryFiles>
 						<File Id="877140193" Language="SFX">
@@ -64,7 +80,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3822001633" Name="TargetHit" ObjectPath="\Events\Default Work Unit\TargetHit" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="0.178844" DurationMax="0.178844">
+				<Event Id="3822001633" Name="TargetHit" ObjectPath="\Events\Default Work Unit\TargetHit" DurationType="OneShot" DurationMin="0.178844" DurationMax="0.178844">
 					<IncludedMemoryFiles>
 						<File Id="1026188703" Language="SFX">
 							<ShortName>Coin2(16).wav</ShortName>

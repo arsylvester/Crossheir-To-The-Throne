@@ -192,7 +192,7 @@ public class WeaponManager : MonoBehaviour
     public void softReload()
     {
         currentAmmo = 3;
-        ammo.text = currentAmmo + "";
+        //ammo.text = currentAmmo + "";
         updateHUD();
     }
 
