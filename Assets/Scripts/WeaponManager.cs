@@ -192,6 +192,13 @@ public class WeaponManager : MonoBehaviour
         updateHUD();
     }
 
+    public void softReload()
+    {
+        currentAmmo = 3;
+        ammo.text = currentAmmo + "";
+        updateHUD();
+    }
+
     void spawnBulletHole(Vector3 pos, Vector3 norm)
     {
         PoolBulletHoleVFX.transform.GetChild(PoolIndex).gameObject.transform.position = pos;

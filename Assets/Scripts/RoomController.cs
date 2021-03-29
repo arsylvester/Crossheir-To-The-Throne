@@ -12,17 +12,22 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < targetSets.Count; i++)
-        {
-            targetSets[i].deactivateSet();
-        }
-        door.SetActive(true);
+        resetRoom();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void resetRoom()
+    {
+        for (int i = 0; i < targetSets.Count; i++)
+        {
+            targetSets[i].deactivateSet();
+        }
+        door.SetActive(true);
     }
 
     public void startRoom()
