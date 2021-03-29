@@ -46,21 +46,21 @@ public class HudManager : MonoBehaviour
         }
     }
 
-    private void goMinMode()
+    public void goMinMode()
     {
         //disable the empty chamber images
         ammoCluster.transform.GetChild(0).gameObject.SetActive(false);
 
-        ammoCluster.GetComponent<RectTransform>().localPosition = new Vector3(0, -69, 0); //nice
+        ammoCluster.GetComponent<RectTransform>().localPosition = new Vector3(0, -38, 0); //nice
 
         ammoCluster.GetComponent<RectTransform>().localScale = new Vector3(0.1f, 0.1f, 1f);
     }
 
-    private void exitMinMode()
+    public void exitMinMode()
     {
         ammoCluster.transform.GetChild(0).gameObject.SetActive(true);
 
-        ammoCluster.GetComponent<RectTransform>().localPosition = new Vector3(0, 270, 0);
+        ammoCluster.GetComponent<RectTransform>().localPosition = new Vector3(0, -270, 0);
 
         ammoCluster.GetComponent<RectTransform>().localScale = new Vector3(0.6f, 0.6f, 1f);
     }
