@@ -76,6 +76,7 @@ public class MenuManager : MonoBehaviour
         fov = PlayerPrefs.GetFloat(FOV_PREF, default_fov);
         volume = PlayerPrefs.GetFloat(VOLUME_PREF, default_volume);
         xhairSize = PlayerPrefs.GetFloat(XHAIR_SIZE_PREF, default_xhairSize);
+        xhairStyle = PlayerPrefs.GetInt(XHAIR_STYLE_PREF, default_xhairStyle);
         int mm = PlayerPrefs.GetInt(HUD_MINMODE_PREF, 0);
         minmode = mm > 0;
         int yaxis = PlayerPrefs.GetInt(YAXIS_PREF, 0);
@@ -92,6 +93,9 @@ public class MenuManager : MonoBehaviour
 
         yaxisToggle.isOn = invertY;
         minmodeToggle.isOn = minmode;
+
+        xhairStyleDropdown.value = xhairStyle;
+        //xhairStyleDropdown.captionText.text = "Select one.";
 
     }
 
@@ -198,6 +202,13 @@ public class MenuManager : MonoBehaviour
     {
         int n = int.Parse(s);
         setXhairSize(n);
+    }
+
+    public void setXhairStyle(int s)
+    {
+        xhairStyle = s;
+        SetPref(XHAIR_STYLE_PREF, s);
+        m_HudManager.setXhair(s);
     }
 
     public void setYAxis(bool toggle)
