@@ -51,6 +51,7 @@ public class TimeMaster : MonoBehaviour
         startTime = Time.time;
         timerActive = true;
         checkPointTimes.Add(startTime);
+        WeaponManager.resetStats();
         //print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
     }
 
