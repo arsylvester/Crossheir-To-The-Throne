@@ -310,6 +310,9 @@ MonoBehaviour:
   AimingRotationMultiplier: 0.5
   MaxSpeedOnGround: 10
   MovementSharpnessOnGround: 13
+  GravityModifier: 70
+  jumpForce: 25
+  m_HudManager: {fileID: 0}
 --- !u!143 &1146802352056708470
 CharacterController:
   m_ObjectHideFlags: 0
