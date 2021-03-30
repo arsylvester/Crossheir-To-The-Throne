@@ -83,6 +83,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="JumpStart" ID="{9BD45FF5-C831-413F-BFE7-946CF39E1805}">
+					<ChildrenList>
+						<Action Name="" ID="{C59CB34F-8512-44E2-8A18-3D5A3CC69EBB}" ShortID="397764583">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="469077__hawkeye-sprout__jumping-on-bed" ID="{3E5543E3-BEC1-456C-A8C9-0BE5C1A7DADF}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Land" ID="{B7398D09-9648-4E9A-B9C8-2442B247D35D}">
+					<ChildrenList>
+						<Action Name="" ID="{33C6CC4D-9796-4195-B505-C0440A1915DF}" ShortID="646470830">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="122122__zimbot__thud-2-dry" ID="{6815ABA6-D320-4941-AC8B-17E00F881873}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

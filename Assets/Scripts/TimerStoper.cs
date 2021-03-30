@@ -18,6 +18,6 @@ public class TimerStoper : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TimeMaster.endTimer();
+        TimeMaster.endTimer(1);
     }
 }

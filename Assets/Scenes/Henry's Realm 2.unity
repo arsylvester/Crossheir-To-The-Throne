@@ -8318,7 +8318,7 @@ MonoBehaviour:
   - {fileID: 197857208}
   - {fileID: 1529738769}
   - {fileID: 528315018}
-  nextRoom: {fileID: 0}
+  nextRoom: {fileID: 1612692806}
   roomStarted: 0
 --- !u!1 &1520109930
 GameObject:
@@ -9085,7 +9085,7 @@ MonoBehaviour:
   - {fileID: 570065732}
   - {fileID: 317152864}
   - {fileID: 108282125}
-  nextRoom: {fileID: 0}
+  nextRoom: {fileID: 324563879}
   roomStarted: 0
 --- !u!1001 &1686496234
 PrefabInstance:

@@ -18,11 +18,13 @@ public class TargetMovement : MonoBehaviour
     public bool isHit = false;
     float currentTrackLerp = 0;
     float downRotation;
+    Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         downRotation = movingPart.transform.eulerAngles.z + hitRotation;
+        startPosition = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -65,6 +67,7 @@ public class TargetMovement : MonoBehaviour
         if (isHit)
         {
             isHit = false;
+            currentTrackLerp = 0;
             GetComponentInChildren<Collider>().enabled = true;
             StartCoroutine(RotateOvertime(movingPart.transform.eulerAngles.z - hitRotation));
         }
