@@ -32,6 +32,9 @@ public class HudManager : MonoBehaviour
         if (isMinMode) //remove the empty chamber images when in minmode
             goMinMode();
 
+        currentXhair = MenuManager.xhairStyle;
+        setXhair(currentXhair);
+
         //get the icons for each of the 3 rounds
         chamberIcons = loadedCluster.GetComponentsInChildren<RawImage>();
     }
@@ -136,6 +139,17 @@ public class HudManager : MonoBehaviour
         {
             chamberIcons[c].enabled = true;
             c++;
+        }
+    }
+
+    public void setXhair(int n)
+    {
+        currentXhair = n;
+        int numberOfChildren = xhair.transform.childCount;
+        print("set xhair: " + n + ", number of kids: " + numberOfChildren);
+        for (int c = 0; c < numberOfChildren; c++)
+        {
+            xhair.transform.GetChild(c).gameObject.SetActive(c == n);
         }
     }
 
