@@ -60,7 +60,7 @@ public class ResetScene : MonoBehaviour
         weapon.softReload();
 
         //Stop Time
-        TimeMaster.endTimer();
+        TimeMaster.endTimer(-1);
 
         //Reset Bullet holes
         foreach(Transform hole in bulletHoles)
