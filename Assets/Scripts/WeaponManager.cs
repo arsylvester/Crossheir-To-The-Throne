@@ -44,7 +44,6 @@ public class WeaponManager : MonoBehaviour
         m_PlayerController = GetComponent<PlayerController>();
         setFOV(MenuManager.getFov());
         updateHUD();
-        ammo.text = currentAmmo + "";
         playerFOV = MenuManager.getFov();
         aimingFOV = MenuManager.getFov() / 2;
     }
@@ -109,7 +108,6 @@ public class WeaponManager : MonoBehaviour
             else
             {
                 currentAmmo -= 1;
-                ammo.text = currentAmmo + "";
                 updateHUD();
             }
 
@@ -164,7 +162,6 @@ public class WeaponManager : MonoBehaviour
 
         //Special reload
         currentAmmo = 3;
-        ammo.text = currentAmmo + "";
         RevolverAnimator.SetTrigger("special reload");
         updateHUD();
     }
@@ -187,7 +184,6 @@ public class WeaponManager : MonoBehaviour
     void reload()
     {
         currentAmmo = 3;
-        ammo.text = currentAmmo + "";
         //add more code to make this a real reload
         RevolverAnimator.SetTrigger("reload");
         updateHUD();
@@ -196,7 +192,7 @@ public class WeaponManager : MonoBehaviour
     public void softReload()
     {
         currentAmmo = 3;
-        ammo.text = currentAmmo + "";
+        //ammo.text = currentAmmo + "";
         updateHUD();
     }
 
@@ -246,16 +242,6 @@ public class WeaponManager : MonoBehaviour
 
     void updateHUD() //Refresh HUD ammo icons to match currentAmmo
     {
-        int c = 0;
-
-        dots[0].enabled = false;
-        dots[1].enabled = false;
-        dots[2].enabled = false;
-
-        while (c < currentAmmo)
-        {
-            dots[c].enabled = true;
-            c++;
-        }
+        m_HudManager.updateAmmo(currentAmmo);
     }
 }

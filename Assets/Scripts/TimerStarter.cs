@@ -8,7 +8,11 @@ public class TimerStarter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TimeMaster.startTimer();
-        room.GetComponent<RoomController>().startRoom();
+        if (!TimeMaster.timerActive)
+        {
+            TimeMaster.startTimer();
+            room.GetComponent<RoomController>().roomStarted = false;
+            room.GetComponent<RoomController>().startRoom();
+        }
     }
 }

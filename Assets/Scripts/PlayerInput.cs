@@ -25,6 +25,11 @@ public class PlayerInput : MonoBehaviour
         return Cursor.lockState == CursorLockMode.Locked;
     }
 
+    public bool GetCancelInputDown()
+    {
+        return Input.GetButtonDown("Cancel");
+    }
+
     public bool GetFireInputDown()
     {
         return Input.GetButton("Fire1") && CanProcessInput();
@@ -43,6 +48,11 @@ public class PlayerInput : MonoBehaviour
     public bool GetAimInputDown()
     {
         return Input.GetButton("Fire2") && CanProcessInput();
+    }
+
+    public bool GetJumpInputDown()
+    {
+        return Input.GetButton("Jump") && CanProcessInput();
     }
 
     public Vector3 GetMoveInput()

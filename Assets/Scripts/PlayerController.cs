@@ -10,13 +10,19 @@ public class PlayerController : MonoBehaviour
     float m_CameraVerticalAngle = 0f;
     public float MaxSpeedOnGround = 10f;
     public float MovementSharpnessOnGround = 15; //"Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite"
+    public float GravityModifier = 10;
+    public float jumpForce = 10;
 
     public Vector3 CharacterVelocity { get; set; }
     public bool IsGrounded { get; private set; }
 
+    public static bool isGamePaused;
+
     PlayerInput m_InputHandler;
     CharacterController m_Controller;
     WeaponManager m_WeaponManager;
+    [SerializeField] HudManager m_HudManager;
+    bool hasJumped;
 
     public float RotationMultiplier
     {
@@ -38,12 +44,27 @@ public class PlayerController : MonoBehaviour
         m_WeaponManager = GetComponent<WeaponManager>();
 
         m_Controller.enableOverlapRecovery = true; //no idea what this does lmao
+
+        isGamePaused = false;
     }
 
     void Update()
     {
-        manageAiming();
-        manageMovement();
+        if (!isGamePaused)
+        {
+            manageAiming();
+            manageMovement();
+
+            if (m_InputHandler.GetCancelInputDown())
+                pauseGame();
+        }
+        else
+        {
+            managePauseMenu();
+            if (m_InputHandler.GetCancelInputDown())
+                unpauseGame();
+        }
+            
     }
     
     void manageAiming()
@@ -72,10 +93,71 @@ public class PlayerController : MonoBehaviour
 
         // calculate the desired velocity from inputs, max speed, and current slope
         Vector3 targetVelocity = worldspaceMoveInput * MaxSpeedOnGround * speedModifier;
-
+         
         // smoothly interpolate between our current velocity and the target velocity based on acceleration speed
         CharacterVelocity = Vector3.Lerp(CharacterVelocity, targetVelocity, MovementSharpnessOnGround * Time.deltaTime);
 
+        if (!IsGrounded && m_Controller.isGrounded && hasJumped)
+        {
+            AkSoundEngine.PostEvent("Land", gameObject);
+        }
+        IsGrounded = m_Controller.isGrounded;
+        // jumping
+        if (IsGrounded)
+        {
+            hasJumped = false;
+            if (m_InputHandler.GetJumpInputDown())
+            {
+                // start by canceling out the vertical component of our velocity
+                CharacterVelocity = new Vector3(CharacterVelocity.x, 0f, CharacterVelocity.z);
+
+                // then, add the jumpSpeed value upwards
+                CharacterVelocity += Vector3.up * jumpForce;
+
+                // play sound
+                AkSoundEngine.PostEvent("JumpStart", gameObject);
+
+                // remember last time we jumped because we need to prevent snapping to ground for a short time
+               // m_LastTimeJumped = Time.time;
+                //HasJumpedThisFrame = true;
+
+                // Force grounding to false
+                IsGrounded = false;
+                hasJumped = true;
+            }
+        }
+        else
+        {
+            // apply the gravity to the velocity
+            CharacterVelocity += Vector3.down * GravityModifier * Time.deltaTime;
+        }
+
         m_Controller.Move(CharacterVelocity * Time.deltaTime);
+    }
+
+    void managePauseMenu()
+    {
+        
+    }
+
+    public void unpauseGame()
+    {
+        isGamePaused = false;
+        Time.timeScale = 1f;
+        m_HudManager.showHud(true);
+        m_HudManager.showPauseMenu(false);
+        m_HudManager.showOptionsMenu(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void pauseGame()
+    {
+        isGamePaused = true;
+        Time.timeScale = 0f;
+        m_HudManager.showHud(false);
+        m_HudManager.showPauseMenu(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
