@@ -1963,6 +1963,8 @@ MonoBehaviour:
   door: {fileID: 1181171192}
   targetSets:
   - {fileID: 1061889764}
+  nextRoom: {fileID: 0}
+  roomStarted: 0
 --- !u!1 &369831069
 GameObject:
   m_ObjectHideFlags: 0
@@ -8296,6 +8298,8 @@ MonoBehaviour:
   - {fileID: 197857208}
   - {fileID: 1529738769}
   - {fileID: 528315018}
+  nextRoom: {fileID: 1612692806}
+  roomStarted: 0
 --- !u!1 &1520109930
 GameObject:
   m_ObjectHideFlags: 0
@@ -9061,6 +9065,8 @@ MonoBehaviour:
   - {fileID: 570065732}
   - {fileID: 317152864}
   - {fileID: 108282125}
+  nextRoom: {fileID: 324563879}
+  roomStarted: 0
 --- !u!1001 &1686496234
 PrefabInstance:
   m_ObjectHideFlags: 0
