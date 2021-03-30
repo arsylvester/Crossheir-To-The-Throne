@@ -19,7 +19,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3797233676">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1726006860">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -40,6 +40,34 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1866025847" Name="FootStep" ObjectPath="\Events\Default Work Unit\FootStep" DurationType="OneShot" DurationMin="0.304200" DurationMax="0.528348">
+					<IncludedMemoryFiles>
+						<File Id="135487342" Language="SFX">
+							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_8D1FD23D.wem</Path>
+						</File>
+						<File Id="215537064" Language="SFX">
+							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_A07F9A68.wem</Path>
+						</File>
+						<File Id="682099175" Language="SFX">
+							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_D90E4850.wem</Path>
+						</File>
+						<File Id="804957345" Language="SFX">
+							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_4BEAD3FC.wem</Path>
+						</File>
+						<File Id="981547691" Language="SFX">
+							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_836DE7E7.wem</Path>
+						</File>
+						<File Id="1015246522" Language="SFX">
+							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_E17EE6B0.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2975448509" Name="GunFire" ObjectPath="\Events\Default Work Unit\GunFire" DurationType="OneShot" DurationMin="2.669333" DurationMax="2.669333">
 					<IncludedMemoryFiles>
 						<File Id="359345031" Language="SFX">
@@ -52,15 +80,15 @@
 					<IncludedMemoryFiles>
 						<File Id="276616868" Language="SFX">
 							<ShortName>469077__hawkeye-sprout__jumping-on-bed.wav</ShortName>
-							<Path>SFX\469077__hawkeye-sprout__jumping-on-bed_4EB3B06D.wem</Path>
+							<Path>SFX\469077__hawkeye-sprout__jumping-on-bed_50B44F4A.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="674522502" Name="Land" ObjectPath="\Events\Default Work Unit\Land" DurationType="OneShot" DurationMin="0.072363" DurationMax="0.072363">
+				<Event Id="674522502" Name="Land" ObjectPath="\Events\Default Work Unit\Land" DurationType="OneShot" DurationMin="0.336221" DurationMax="0.336221">
 					<IncludedMemoryFiles>
-						<File Id="898064822" Language="SFX">
-							<ShortName>122122__zimbot__thud-2-dry.wav</ShortName>
-							<Path>SFX\122122__zimbot__thud-2-dry_10C4C929.wem</Path>
+						<File Id="804957345" Language="SFX">
+							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_4BEAD3FC.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

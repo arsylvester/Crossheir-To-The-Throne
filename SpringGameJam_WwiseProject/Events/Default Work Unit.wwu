@@ -96,10 +96,21 @@
 				</Event>
 				<Event Name="Land" ID="{B7398D09-9648-4E9A-B9C8-2442B247D35D}">
 					<ChildrenList>
-						<Action Name="" ID="{33C6CC4D-9796-4195-B505-C0440A1915DF}" ShortID="646470830">
+						<Action Name="" ID="{C5ABDA86-2235-4506-B839-22D1AC6EA01C}" ShortID="1015620905">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="122122__zimbot__thud-2-dry" ID="{6815ABA6-D320-4941-AC8B-17E00F881873}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+									<ObjectRef Name="FootStep_05" ID="{D02A0E95-939F-4E9A-9784-D8ABC46485DF}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FootStep" ID="{CB30B5D6-2211-43B1-9F34-186CE4489ACB}">
+					<ChildrenList>
+						<Action Name="" ID="{3122135E-A25E-4D03-BE49-63B71CB04732}" ShortID="798047284">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FootSteps" ID="{92BF4561-DCE9-416C-8C27-62C223DECD33}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

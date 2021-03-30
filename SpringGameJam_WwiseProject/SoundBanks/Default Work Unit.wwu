@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="JumpStart" ID="{9BD45FF5-C831-413F-BFE7-946CF39E1805}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TargetHit" ID="{9B5A494E-DAB3-41FA-8B06-117C197881EC}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="FootStep" ID="{CB30B5D6-2211-43B1-9F34-186CE4489ACB}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ReloadClick" ID="{3B8E6D5A-2645-44C2-B686-AC41EEB19D59}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="BulletDrop" ID="{8750A831-2440-46A5-AE4D-0BE295BB533D}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Spin" ID="{F0B651AA-DE20-47FD-A794-82DF3F23E74B}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
