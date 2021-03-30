@@ -17,6 +17,14 @@ public class MenuManager : MonoBehaviour
     public static bool minmode;
     public static int xhairStyle;
 
+    private float default_sensitivity = 0.15f;
+    private float default_fov = 60f;
+    private float default_volume = 90f;
+    private float default_xhairSize = 1f;
+    private bool default_invertY = false;
+    private bool default_minmode = false;
+    private int default_xhairStyle = 0;
+
     [Header("I gave up and made this script reference other scripts.")]
     [SerializeField] PlayerController m_PlayerController;
     [SerializeField] HudManager m_HudManager;
@@ -64,10 +72,11 @@ public class MenuManager : MonoBehaviour
         sensText.text = sensitivity * 100 + "";
         fovText.text = fov + "";
 
-        sensitivity = PlayerPrefs.GetFloat(SENSITIVITY_PREF, 0.15f);
-        fov = PlayerPrefs.GetFloat(FOV_PREF, 60f);
-        volume = PlayerPrefs.GetFloat(VOLUME_PREF, 90f);
-        xhairSize = PlayerPrefs.GetFloat(XHAIR_SIZE_PREF, 1f);
+        sensitivity = PlayerPrefs.GetFloat(SENSITIVITY_PREF, default_sensitivity);
+        fov = PlayerPrefs.GetFloat(FOV_PREF, default_fov);
+        volume = PlayerPrefs.GetFloat(VOLUME_PREF, default_volume);
+        xhairSize = PlayerPrefs.GetFloat(XHAIR_SIZE_PREF, default_xhairSize);
+        xhairStyle = PlayerPrefs.GetInt(XHAIR_STYLE_PREF, default_xhairStyle);
         int mm = PlayerPrefs.GetInt(HUD_MINMODE_PREF, 0);
         minmode = mm > 0;
         int yaxis = PlayerPrefs.GetInt(YAXIS_PREF, 0);
@@ -80,9 +89,13 @@ public class MenuManager : MonoBehaviour
         sensText.text = sensitivity * 100 + "";
         fovText.text = fov + "";
         volumeText.text = volume + "";
+        xhairSizeText.text = xhairSize + "";
 
         yaxisToggle.isOn = invertY;
         minmodeToggle.isOn = minmode;
+
+        xhairStyleDropdown.value = xhairStyle;
+        //xhairStyleDropdown.captionText.text = "Select one.";
 
     }
 
@@ -181,6 +194,7 @@ public class MenuManager : MonoBehaviour
         xhairSizeSlider.value = n;
         xhairSizeInput.text = n + "";
         SetPref(XHAIR_SIZE_PREF, n);
+        m_HudManager.setXhairSize(n);
         print("Xhair Size set: " + n);
     }
 
@@ -188,6 +202,13 @@ public class MenuManager : MonoBehaviour
     {
         int n = int.Parse(s);
         setXhairSize(n);
+    }
+
+    public void setXhairStyle(int s)
+    {
+        xhairStyle = s;
+        SetPref(XHAIR_STYLE_PREF, s);
+        m_HudManager.setXhair(s);
     }
 
     public void setYAxis(bool toggle)
@@ -219,13 +240,13 @@ public class MenuManager : MonoBehaviour
 
     public void resetSettings()
     {
-        sensitivity = 0.15f;
-        fov = 60f;
-        invertY = false;
-
-        setFov(60f);
-        setSensitivity(15);
-        setYAxis(false);
+        setVolume(default_volume);
+        setFov(default_fov);
+        setSensitivity(default_sensitivity * 100);
+        setYAxis(default_invertY);
+        setMinMode(default_minmode);
+        setXhairSize(default_xhairSize);
+        //add xhair style
     }
 
     public static float getFov()
