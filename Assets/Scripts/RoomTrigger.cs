@@ -9,5 +9,6 @@ public class RoomTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         room.GetComponent<RoomController>().startRoom();
+        TimeMaster.checkPoint();
     }
 }
