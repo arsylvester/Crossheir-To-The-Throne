@@ -21,6 +21,9 @@ public class WeaponManager : MonoBehaviour
     bool missedShot = true;
     float LastTimeShot = 0;
 
+
+    public int shotsTaken, shotsHit, maxKillstreak, maxShotstreak;
+
     [Header("Gun")]
     [SerializeField] float ShotDelay = 2f;
     [SerializeField] float ReloadTime = 3f;
@@ -53,6 +56,11 @@ public class WeaponManager : MonoBehaviour
         //updateHUD();
         playerFOV = MenuManager.getFov();
         aimingFOV = MenuManager.getFov() / 2;
+
+        shotsTaken = 0;
+        shotsHit = 0;
+        maxKillstreak = 0;
+        maxShotstreak = 0;
     }
 
     void Update()
@@ -87,12 +95,12 @@ public class WeaponManager : MonoBehaviour
 
     bool shoot() //Make sure nothing is preventing you from shooting
     {
-        print("ShotDelay? " + inShotDelay());
-
         if (currentAmmo != 0 && !inShotDelay())
         {
             missedShot = true;
             int prevKillStreak = killStreak;
+            shotsTaken++;
+
             handleShoot();
 
             if (missedShot)
@@ -101,15 +109,20 @@ public class WeaponManager : MonoBehaviour
                 shotStreak = 0;
             }
             else
+            {
                 shotStreak++;
+                shotsHit++;
+            }
 
             if (killStreak > prevKillStreak + 1)
                 collateral();
 
-            /*
-            if (killStreak != 0 && killStreak % 3 == 0)
-                tripleKill();
-            */
+            if (killStreak > maxKillstreak)
+                maxKillstreak = killStreak;
+
+            if (shotStreak > maxShotstreak)
+                maxShotstreak = shotStreak;
+
             if (shotStreak != 0 && shotStreak % 3 == 0)
             {
                 tripleKill();
@@ -263,5 +276,13 @@ public class WeaponManager : MonoBehaviour
     void updateHUD() //Refresh HUD ammo icons to match currentAmmo
     {
         m_HudManager.updateAmmo(currentAmmo);
+    }
+
+    void resetStats()
+    {
+        maxKillstreak = 0;
+        maxShotstreak = 0;
+        shotsTaken = 0;
+        shotsHit = 0;
     }
 }
