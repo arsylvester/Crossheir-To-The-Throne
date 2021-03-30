@@ -50,15 +50,18 @@ public class TargetMovement : MonoBehaviour
         }
     }
 
-    public void MoveToHitPosition()
+    // status used to determine if target movement effects game flow
+    public void MoveToHitPosition(int status)
     {
         if (!isHit)
         {
             isHit = true;
             GetComponentInChildren<Collider>().enabled = false;
             StartCoroutine(RotateOvertime(downRotation));
-            if(this.GetComponentInParent<TargetSetController>() != null)
+            if (this.GetComponentInParent<TargetSetController>() != null && status > 0)
+            {
                 this.GetComponentInParent<TargetSetController>().checkIfDefeated();
+            }
         }
     }
 
