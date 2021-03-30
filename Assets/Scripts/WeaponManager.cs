@@ -22,10 +22,10 @@ public class WeaponManager : MonoBehaviour
     float LastTimeShot = 0;
 
 
-    public int shotsTaken, shotsHit, maxKillstreak, maxShotstreak;
+    public static int shotsTaken, shotsHit, maxKillstreak, maxShotstreak;
 
     [Header("Gun")]
-    [SerializeField] float ShotDelay = 2f;
+    [SerializeField] float ShotDelay = .2f;
     [SerializeField] float ReloadTime = 3f;
 
 
@@ -278,7 +278,7 @@ public class WeaponManager : MonoBehaviour
         m_HudManager.updateAmmo(currentAmmo);
     }
 
-    void resetStats()
+    public static void resetStats()
     {
         maxKillstreak = 0;
         maxShotstreak = 0;
