@@ -273,6 +273,8 @@ public class WeaponManager : MonoBehaviour
     public void setFOV(float fov)
     {
         m_PlayerController.PlayerCamera.fieldOfView = fov;
+        playerFOV = fov;
+        aimingFOV = fov / 2f;
         //WeaponCamera.fieldOfView = fov * WeaponFovMultiplier;
     }
 

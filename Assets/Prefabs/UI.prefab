@@ -5102,7 +5102,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5553546124478755937}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 795102007}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ExitToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5553546124526621534
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,6 +5323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerController: {fileID: 0}
   m_HudManager: {fileID: 5553546124693198741}
+  m_WeaponManager: {fileID: 0}
+  m_PlayerInput: {fileID: 0}
   sensText: {fileID: 8049560782868608642}
   fovText: {fileID: 4805882857825498691}
   volumeText: {fileID: 7157888468412578527}
