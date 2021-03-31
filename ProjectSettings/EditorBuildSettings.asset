@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 067b7b1c83693b54a90a0af3e92030b3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Henrys Realm.unity
     guid: cfa17d679df635a45891e1f2d05e1fb1
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: afdda3bfeb002bc42a5aa0ed144f12e3
   m_configObjects: {}
