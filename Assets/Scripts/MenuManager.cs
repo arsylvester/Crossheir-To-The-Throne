@@ -28,6 +28,8 @@ public class MenuManager : MonoBehaviour
     [Header("I gave up and made this script reference other scripts.")]
     [SerializeField] PlayerController m_PlayerController;
     [SerializeField] HudManager m_HudManager;
+    [SerializeField] WeaponManager m_WeaponManager;
+    [SerializeField] PlayerInput m_PlayerInput;
 
     [Header("Set these to the placeholder text values.")]
     [SerializeField] Text sensText;
@@ -69,6 +71,9 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        m_PlayerInput = FindObjectOfType<PlayerInput>();
+        m_WeaponManager = FindObjectOfType<WeaponManager>();
+        
         sensText.text = sensitivity * 100 + "";
         fovText.text = fov + "";
 
@@ -102,8 +107,8 @@ public class MenuManager : MonoBehaviour
 
     public void LauchGame()
     {
-        SceneManager.LoadScene("Henrys Realm");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene("Henrys Realm");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame()
@@ -119,7 +124,9 @@ public class MenuManager : MonoBehaviour
     public void ResetRun()
     {
         //teleport player back to start and reset timer.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //FIX THIS
+        ResetScene resetScene = FindObjectOfType<ResetScene>(); //this is terribly unoptimal
+        resetScene.ResetRun();
+        ResumeGame();
     }
 
     public void ExitToMenu()
@@ -147,6 +154,9 @@ public class MenuManager : MonoBehaviour
         //Set PlayerPref to n
         SetPref(SENSITIVITY_PREF, sensitivity);
 
+        if (m_PlayerInput != null)
+            m_PlayerInput.lookSensitivity = sensitivity;
+
         print("Sensitivity set: " + sensitivity);
     }
 
@@ -164,6 +174,9 @@ public class MenuManager : MonoBehaviour
 
         //Set PlayerPref to n
         SetPref(FOV_PREF, n);
+
+        if (m_WeaponManager != null)
+            m_WeaponManager.setFOV(fov);
 
         print("Fov set: " + fov);
     }
@@ -208,9 +221,12 @@ public class MenuManager : MonoBehaviour
 
     public void setXhairStyle(int s)
     {
-        xhairStyle = s;
-        SetPref(XHAIR_STYLE_PREF, s);
-        m_HudManager.setXhair(s);
+        if (m_HudManager != null)
+        {
+            xhairStyle = s;
+            SetPref(XHAIR_STYLE_PREF, s);
+            m_HudManager.setXhair(s);
+        }
     }
 
     public void setYAxis(bool toggle)
@@ -225,19 +241,22 @@ public class MenuManager : MonoBehaviour
 
     public void setMinMode(bool toggle)
     {
-        if (toggle)
+        if (m_HudManager != null)
         {
-            SetPref(HUD_MINMODE_PREF, 1);
-            m_HudManager.goMinMode();
-        }
-        else
-        {
-            SetPref(HUD_MINMODE_PREF, 0);
-            m_HudManager.exitMinMode();
-        }
-            
+            if (toggle)
+            {
+                SetPref(HUD_MINMODE_PREF, 1);
+                m_HudManager.goMinMode();
+            }
+            else
+            {
+                SetPref(HUD_MINMODE_PREF, 0);
+                m_HudManager.exitMinMode();
+            }
 
-        print("Hud MinMode: " + toggle);
+
+            print("Hud MinMode: " + toggle);
+        }
     }
 
     public void resetSettings()
@@ -246,9 +265,13 @@ public class MenuManager : MonoBehaviour
         setFov(default_fov);
         setSensitivity(default_sensitivity * 100);
         setYAxis(default_invertY);
-        setMinMode(default_minmode);
-        setXhairSize(default_xhairSize);
-        //add xhair style
+
+        if (m_HudManager != null)
+        {
+            setMinMode(default_minmode);
+            setXhairSize(default_xhairSize);
+            //add xhair style
+        }
     }
 
     public void playButtonSound()
