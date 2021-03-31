@@ -685,6 +685,143 @@
 						<ActiveSource Name="select" ID="{B8FEA9EE-EAFA-4367-A8A9-C7EA8365D34A}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="352115__inspectorj__dropping-wood-g" ID="{3978FBDA-F1CE-455D-A365-E2CEF6440587}" ShortID="811141330">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Sound Effect Attenuation" ID="{BE88A8B7-8BDC-43A2-A12C-D2768721595E}" WorkUnitID="{F43B345B-4DD8-4F5C-AAC3-D29340545535}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="352115__inspectorj__dropping-wood-g" ID="{05C3C2BB-A32F-4C2B-9A94-D85C529C412D}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.208547801916465"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.719613561553654"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>352115__inspectorj__dropping-wood-g.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="266165212"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="352115__inspectorj__dropping-wood-g" ID="{05C3C2BB-A32F-4C2B-9A94-D85C529C412D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="136771__otbtechno__wood-on-wood" ID="{155E67D5-6377-4AF1-9738-47B41A419841}" ShortID="1006601590">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Sound Effect Attenuation" ID="{BE88A8B7-8BDC-43A2-A12C-D2768721595E}" WorkUnitID="{F43B345B-4DD8-4F5C-AAC3-D29340545535}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="136771__otbtechno__wood-on-wood" ID="{3F67B648-5008-412D-A509-8136FB02317B}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.370264647794602"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.645224489795919"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>136771__otbtechno__wood-on-wood.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="534246075"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="136771__otbtechno__wood-on-wood" ID="{3F67B648-5008-412D-A509-8136FB02317B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="275910__pgonsilva__buzzer" ID="{AC6959A6-A276-4254-AA30-A55A09A47F5A}" ShortID="423516357">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>32</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="90"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Sound Effect Attenuation" ID="{BE88A8B7-8BDC-43A2-A12C-D2768721595E}" WorkUnitID="{F43B345B-4DD8-4F5C-AAC3-D29340545535}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="275910__pgonsilva__buzzer" ID="{1AE77073-5A50-4F53-88EE-0A2238F93609}">
+							<Language>SFX</Language>
+							<AudioFile>275910__pgonsilva__buzzer.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1022833683"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="275910__pgonsilva__buzzer" ID="{1AE77073-5A50-4F53-88EE-0A2238F93609}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Brent Hugh - Claire De Lune (Debussy)" ID="{B83C6515-5BFB-4EFF-B143-8759D0F96E38}" ShortID="830916800">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>50</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Music" ID="{39B51059-5DDD-4B78-8D63-542D618EFD73}" WorkUnitID="{F43B345B-4DD8-4F5C-AAC3-D29340545535}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Brent Hugh - Claire De Lune (Debussy)" ID="{22EBDA47-A855-4199-8230-2101A787FC3E}">
+							<Language>SFX</Language>
+							<AudioFile>Brent Hugh - Claire De Lune (Debussy).wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="828796457"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Brent Hugh - Claire De Lune (Debussy)" ID="{22EBDA47-A855-4199-8230-2101A787FC3E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

@@ -73,6 +73,7 @@ public class TargetMovement : MonoBehaviour
             currentTrackLerp = 0;
             GetComponentInChildren<Collider>().enabled = true;
             StartCoroutine(RotateOvertime(movingPart.transform.eulerAngles.z - hitRotation));
+            AkSoundEngine.PostEvent("TargetUp", gameObject);
         }
     }
 

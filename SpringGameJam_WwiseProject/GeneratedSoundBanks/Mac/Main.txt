@@ -7,9 +7,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	1404805401	DoorOpen			\Default Work Unit\DoorOpen	
 	1432588725	Select			\Default Work Unit\Select	
 	1866025847	FootStep			\Default Work Unit\FootStep	
+	2258979263	Buzzer			\Default Work Unit\Buzzer	
+	2316563647	MuteMusic			\Default Work Unit\MuteMusic	
 	2975448509	GunFire			\Default Work Unit\GunFire	
 	3551877634	ReloadClick			\Default Work Unit\ReloadClick	
+	3742273957	TargetUp			\Default Work Unit\TargetUp	
 	3822001633	TargetHit			\Default Work Unit\TargetHit	
+	3827058668	StartMusic			\Default Work Unit\StartMusic	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	90429713	352719__dalesome__woosh-stick-swung-in-the-air	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\352719__dalesome__woosh-stick-swung-in-the-air_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\352719__dalesome__woosh-stick-swung-in-the-air		107748
@@ -17,16 +21,19 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	215537064	FootStep	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\459964__florianreichelt__footsteps-on-concrete_D76F822D.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep		53724
 	276616868	469077__hawkeye-sprout__jumping-on-bed	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\469077__hawkeye-sprout__jumping-on-bed_50B44F4A.wem		\Actor-Mixer Hierarchy\Default Work Unit\469077__hawkeye-sprout__jumping-on-bed		69772
 	359345031	450853__kyles__gun-lee-enfield-303-rifle-clean-shot	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\450853__kyles__gun-lee-enfield-303-rifle-clean-shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\450853__kyles__gun-lee-enfield-303-rifle-clean-shot		256320
+	534246075	136771__otbtechno__wood-on-wood	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\136771__otbtechno__wood-on-wood_0DBAF72E.wem		\Actor-Mixer Hierarchy\Default Work Unit\136771__otbtechno__wood-on-wood		48564
 	648394659	BulletDrop2	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\337233__anthousai__bullet-shells-single-consolidated_C885278A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullets\BulletDrop2		241240
 	682099175	FootStep_04	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\459964__florianreichelt__footsteps-on-concrete_8DB6323F.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_04		84788
 	728260742	select	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\select_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\select		9150
 	804957345	FootStep_05	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\459964__florianreichelt__footsteps-on-concrete_D6575797.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_05		59372
+	828796457	Brent Hugh - Claire De Lune (Debussy)	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\Brent Hugh - Claire De Lune (Debussy)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Brent Hugh - Claire De Lune (Debussy)		61848640
 	829689240	BulletDrop1	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\337233__anthousai__bullet-shells-single-consolidated_0E9F86B5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullets\BulletDrop1		171560
 	877140193	111676__dredile__revolvercock1	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\111676__dredile__revolvercock1_E8AAE3DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\111676__dredile__revolvercock1		20420
-	950382128	194989__soundmary__unlocking-metal-door	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\194989__soundmary__unlocking-metal-door_A37E3835.wem		\Actor-Mixer Hierarchy\Default Work Unit\194989__soundmary__unlocking-metal-door		171924
+	950382128	194989__soundmary__unlocking-metal-door	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\194989__soundmary__unlocking-metal-door_238F22A3.wem		\Actor-Mixer Hierarchy\Default Work Unit\194989__soundmary__unlocking-metal-door		171924
 	981547691	FootStep_01	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\459964__florianreichelt__footsteps-on-concrete_CDAD2E70.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_01		70668
 	1002095734	BulletDrop3	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\337233__anthousai__bullet-shells-single-consolidated_15BAB1A6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullets\BulletDrop3		264468
 	1015246522	FootStep_02	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\459964__florianreichelt__footsteps-on-concrete_8D84AAA0.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_02		76320
+	1022833683	275910__pgonsilva__buzzer	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\275910__pgonsilva__buzzer_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\275910__pgonsilva__buzzer		274712
 	1026188703	Coin2(16)	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\Coin2(16)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Coin2(16)		15838
 	1068684440	Strike	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Mac\SFX\Strike_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Strike		241728
 

@@ -138,6 +138,53 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="TargetUp" ID="{3B35F921-CF0C-45B5-A1C7-744AFA3068E9}">
+					<ChildrenList>
+						<Action Name="" ID="{F7E7CD3E-1C9F-4125-9E9C-5C2344D5A799}" ShortID="283064463">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="136771__otbtechno__wood-on-wood" ID="{155E67D5-6377-4AF1-9738-47B41A419841}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Buzzer" ID="{182F8BB1-47A1-40DA-95F1-2809D5F856B6}">
+					<ChildrenList>
+						<Action Name="" ID="{F624C98A-F15A-4335-A744-D59A19B032F7}" ShortID="614575650">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="275910__pgonsilva__buzzer" ID="{AC6959A6-A276-4254-AA30-A55A09A47F5A}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="StartMusic" ID="{E2CA8857-ACA5-4FF8-8FC4-C88A91164887}">
+					<ChildrenList>
+						<Action Name="" ID="{AA84F0A6-2AC3-4C06-A466-DCB4A7D0963D}" ShortID="89337354">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Brent Hugh - Claire De Lune (Debussy)" ID="{B83C6515-5BFB-4EFF-B143-8759D0F96E38}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MuteMusic" ID="{FE6EFC65-4E21-4318-91FB-13EB83E4F541}">
+					<ChildrenList>
+						<Action Name="" ID="{6F8C414F-9C7F-4D0E-AA9D-A9CB94475A31}" ShortID="447994264">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Brent Hugh - Claire De Lune (Debussy)" ID="{B83C6515-5BFB-4EFF-B143-8759D0F96E38}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

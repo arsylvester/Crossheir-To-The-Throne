@@ -14,6 +14,7 @@ public class TimeMaster : MonoBehaviour
     private static float startTime = 0;
 
     public Text uiText;
+    public GameObject BuzzerLocation;
 
     // Start is called before the first frame update
     void Start()
