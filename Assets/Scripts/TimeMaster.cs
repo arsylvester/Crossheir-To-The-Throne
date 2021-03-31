@@ -33,6 +33,11 @@ public class TimeMaster : MonoBehaviour
             timerText = timeToString(currentTime);
         }
         uiText.text = timerText;
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            resetHighScore();
+        }
     }
 
     public static string timeToString(float time)
