@@ -14,6 +14,13 @@ public class BoardScript : MonoBehaviour
     [SerializeField] float silverTime = 56f;
     [SerializeField] float bronzeTime = 70f;
 
+    [SerializeField] GameObject S_Medal, A_Medal, B_Medal, C_Medal;
+
+    void Start()
+    {
+        SetAllMedalsInactive();
+    }
+
     public void drawStats()
     {
         BoardTimer.GetComponent<TextMeshPro>().SetText(TimeMaster.timerText);
@@ -34,8 +41,47 @@ public class BoardScript : MonoBehaviour
             "Max KillStreak: " + WeaponManager.maxKillstreak.ToString() + "\n" +
             "Max ShotStreak: " + WeaponManager.maxShotstreak.ToString());
         //((int)(time * 100)).ToString("00")
+
+        float completionTime = TimeMaster.currentTime;
+
+        
+
+        if (completionTime <= devTime)
+        {
+            SetAllMedalsInactive();
+            S_Medal.SetActive(true);
+            return;
+        }
+        else if (completionTime <= goldTime)
+        {
+            SetAllMedalsInactive();
+            A_Medal.SetActive(true);
+            return;
+        }
+        else if (completionTime <= silverTime)
+        {
+            SetAllMedalsInactive();
+            B_Medal.SetActive(true);
+            return;
+        }
+        else if (completionTime <= bronzeTime)
+        {
+            SetAllMedalsInactive();
+            C_Medal.SetActive(true);
+            return;
+        }
+
+    }
+
+    private void SetAllMedalsInactive()
+    {
+        S_Medal.SetActive(true);
+        A_Medal.SetActive(true);
+        B_Medal.SetActive(true);
+        C_Medal.SetActive(true);
     }
 }
+
 
 /* BOARD RECORDS
 __Course Records__

@@ -3682,6 +3682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 207812074}
+  BuzzerLocation: {fileID: 0}
 --- !u!4 &652418269
 Transform:
   m_ObjectHideFlags: 0
@@ -8208,6 +8209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 1518754247}
+  backDoor: {fileID: 0}
 --- !u!65 &1485056701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9782,6 +9784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreBoard: {fileID: 554961458}
+  backDoor: {fileID: 0}
 --- !u!65 &1852100485
 BoxCollider:
   m_ObjectHideFlags: 0
