@@ -16,8 +16,8 @@ public class WeaponManager : MonoBehaviour
     
     bool isReloading = false;
     int currentAmmo = 3;
-    int killStreak = 0;
-    int shotStreak = 0;
+    static int killStreak = 0;
+    static int shotStreak = 0;
     bool missedShot = true;
     float LastTimeShot = 0;
 
@@ -139,6 +139,9 @@ public class WeaponManager : MonoBehaviour
 
             return true;
         }
+        else if (!inShotDelay()) //auto reload
+            reload();
+
         return false;
     }
 
@@ -284,5 +287,7 @@ public class WeaponManager : MonoBehaviour
         maxShotstreak = 0;
         shotsTaken = 0;
         shotsHit = 0;
+        killStreak = 0;
+        shotStreak = 0;
     }
 }
