@@ -9,16 +9,21 @@ public class BoardScript : MonoBehaviour
     [SerializeField] GameObject BoardRecords;
     [SerializeField] GameObject BoardStats;
 
+    [SerializeField] float devTime = 35f;
+    [SerializeField] float goldTime = 47f;
+    [SerializeField] float silverTime = 56f;
+    [SerializeField] float bronzeTime = 70f;
+
     public void drawStats()
     {
         BoardTimer.GetComponent<TextMeshPro>().SetText(TimeMaster.timerText);
         // This is really dumb, but don't worry about it
         BoardRecords.GetComponent<TextMeshPro>().SetText(
             "__Course Records__\n" + 
-            "Dev Time: 09:18.32\n" + 
-            "Gold: 02:34.44\n" + 
-            "Silver: 09:22.88\n" + 
-            "Bronze: 10:21.32\n" + 
+            "Dev Time: " + TimeMaster.timeToString(devTime) + "\n" + 
+            "Gold: " + TimeMaster.timeToString(goldTime) + "\n" + 
+            "Silver: " + TimeMaster.timeToString(silverTime) + "\n" + 
+            "Bronze: " + TimeMaster.timeToString(bronzeTime) + "\n" + 
             "\nYour Best Time:\n" +
             TimeMaster.timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
 
