@@ -1,0 +1,26 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "shaders": {
+        "Main shader": {
+            "parameters": {
+                "Common Parameters": {
+                    "alpha_dither": false,
+                    "alpha_threshold": 0.33000001311302185,
+                    "ao_intensity": 0.75,
+                    "emissive_intensity": 1,
+                    "horizonFade": 1.2999999523162842,
+                    "nbSamples": 16
+                }
+            },
+            "shader": "adobe-dimension",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "DefaultMaterial": {
+            "shader": "Main shader"
+        }
+    }
+}
