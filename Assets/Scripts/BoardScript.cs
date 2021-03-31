@@ -28,9 +28,9 @@ public class BoardScript : MonoBehaviour
         BoardRecords.GetComponent<TextMeshPro>().SetText(
             "__Course Records__\n" + 
             "Dev Time: " + TimeMaster.timeToString(devTime) + "\n" + 
-            "Gold: " + TimeMaster.timeToString(goldTime) + "\n" + 
-            "Silver: " + TimeMaster.timeToString(silverTime) + "\n" + 
-            "Bronze: " + TimeMaster.timeToString(bronzeTime) + "\n" + 
+            "A Rank: " + TimeMaster.timeToString(goldTime) + "\n" + 
+            "B Rank: " + TimeMaster.timeToString(silverTime) + "\n" + 
+            "C Rank: " + TimeMaster.timeToString(bronzeTime) + "\n" + 
             "\nYour Best Time:\n" +
             TimeMaster.timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
 
@@ -73,12 +73,12 @@ public class BoardScript : MonoBehaviour
 
     }
 
-    private void SetAllMedalsInactive()
+    void SetAllMedalsInactive()
     {
-        S_Medal.SetActive(true);
-        A_Medal.SetActive(true);
-        B_Medal.SetActive(true);
-        C_Medal.SetActive(true);
+        S_Medal.SetActive(false);
+        A_Medal.SetActive(false);
+        B_Medal.SetActive(false);
+        C_Medal.SetActive(false);
     }
 }
 
