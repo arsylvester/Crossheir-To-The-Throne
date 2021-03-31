@@ -17,6 +17,7 @@ public class DoorController : MonoBehaviour
             isOpen = true;
             leftPivot.GetComponent<DoorMovement>().MoveToOpenPosition();
             rightPivot.GetComponent<DoorMovement>().MoveToOpenPosition();
+            AkSoundEngine.PostEvent("DoorOpen", gameObject);
         }
     }
 
