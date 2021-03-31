@@ -5,22 +5,15 @@ using UnityEngine;
 public class TimerStoper : MonoBehaviour
 {
     [SerializeField] GameObject scoreBoard;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] GameObject backDoor;
 
     private void OnTriggerEnter(Collider other)
     {
         TimeMaster.endTimer(1);
         scoreBoard.GetComponent<BoardScript>().drawStats();
+        if(backDoor.GetComponent<DoorController>() != null)
+        {
+            backDoor.GetComponent<DoorController>().openDoors();
+        }
     }
 }
