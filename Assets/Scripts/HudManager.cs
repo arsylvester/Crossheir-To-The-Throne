@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HudManager : MonoBehaviour
 {
+    [SerializeField] Text Tutorial;
+
     [SerializeField] Text tripleKill;
     [SerializeField] Text collateral;
     [SerializeField] GameObject HUD;
@@ -37,6 +39,8 @@ public class HudManager : MonoBehaviour
 
         //get the icons for each of the 3 rounds
         chamberIcons = loadedCluster.GetComponentsInChildren<RawImage>();
+
+        StartCoroutine(TutorialAnimation());
     }
 
     void LateUpdate()
@@ -71,6 +75,26 @@ public class HudManager : MonoBehaviour
     public void setXhairSize(float s)
     {
         xhair.transform.GetChild(currentXhair).GetComponent<RectTransform>().localScale = new Vector3(s, s, 1);
+    }
+
+    public IEnumerator TutorialAnimation()
+    {
+        Tutorial.enabled = true;
+        Tutorial.color = new Color(1f, 1f, 1f, 1);
+
+        yield return new WaitForSecondsRealtime(4f);
+
+        float alpha = 1f;
+        float duration = 2f;
+        for (float t = 0f; t < duration; t += Time.deltaTime)
+        {
+            alpha = 1 - (t / duration);
+            Tutorial.color = new Color(1f, 1f, 1f, alpha);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        Tutorial.enabled = false;
     }
 
     public IEnumerator textFeedHelper(Text txt) //I can't think of a better way to do this right now.
