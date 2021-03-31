@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b03443b4edec1248af23a9d535d70347
     GuidInternal: 
-    m_lastTime: -8585844452580145957
+    m_lastTime: -8585844380003443019
     List:
     - name: Main
       guid: c5cf806afd53924e93561d415fec78fa
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 07750a400b10a44480e10a69ac9d07a3
     GuidInternal: 
-    m_lastTime: -8585844452580205795
+    m_lastTime: -8585844380003623054
     List:
     - name: BulletDrop
       guid: 31a850874024a546ae4d0be295bb533d
@@ -113,6 +113,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.37711
       minDuration: 1.37711
+    - name: DoorOpen
+      guid: a075e42d83b90241887e0cb667d4708f
+      id: 1404805401
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: DoorOpen
+        ObjectType: 3
+        guid: a075e42d83b90241887e0cb667d4708f
+      Path: Events\Default Work Unit\DoorOpen
+      maxAttenuation: 20
+      maxDuration: 0.976138
+      minDuration: 0.976138
     - name: FootStep
       guid: d6b530cb1122b1439f34186ce4489acb
       id: 1866025847
@@ -198,6 +215,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.230795
       minDuration: 0.230795
+    - name: Select
+      guid: 2967ff248563fd4e90a8c33b4b3f5eba
+      id: 1432588725
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: Select
+        ObjectType: 3
+        guid: 2967ff248563fd4e90a8c33b4b3f5eba
+      Path: Events\Default Work Unit\Select
+      maxAttenuation: 0
+      maxDuration: 0.103016
+      minDuration: 0.103016
     - name: Spin
       guid: aa51b6f020defd47a79482df3f23e74b
       id: 823131329
@@ -320,7 +354,7 @@ MonoBehaviour:
     m_lastTime: -8585847837658711917
     List: []
   ExpandedFileSystemItemIds: 02000000030000000500000006000000090000000a0000000b0000000c000000
-  ExpandedWaapiItemIds: 050000000600000007000000090000000a0000000b0000000c0000000f00000010000000
+  ExpandedWaapiItemIds: 050000000600000007000000090000000a0000000b0000000c0000000f000000100000001400000015000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -618,6 +618,73 @@
 						<ActiveSource Name="459964__florianreichelt__footsteps-on-concrete" ID="{67060E16-BA3F-478D-84F2-20D95277D8FB}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="194989__soundmary__unlocking-metal-door" ID="{4E1DE4E9-0F0C-4711-8BD5-D52534E4A2B2}" ShortID="414347959">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-150</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Sound Effect Attenuation" ID="{BE88A8B7-8BDC-43A2-A12C-D2768721595E}" WorkUnitID="{F43B345B-4DD8-4F5C-AAC3-D29340545535}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="194989__soundmary__unlocking-metal-door" ID="{FBFB46C7-72E9-48E9-9034-DC64860FB9D4}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="5.70913548387097"/>
+								<Property Name="TrimEnd" Type="Real64" Value="6.60425806451613"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>194989__soundmary__unlocking-metal-door.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="950382128"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="194989__soundmary__unlocking-metal-door" ID="{FBFB46C7-72E9-48E9-9034-DC64860FB9D4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="select" ID="{903E4DA9-55FE-424A-9D07-7A6F8C2166E0}" ShortID="990769533">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{273C5471-A5EC-47B2-9BC7-990F9D33BF04}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{354E5BAE-EC71-41C0-AE2E-54206E44C053}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="select" ID="{B8FEA9EE-EAFA-4367-A8A9-C7EA8365D34A}">
+							<Language>SFX</Language>
+							<AudioFile>select.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="728260742"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="select" ID="{B8FEA9EE-EAFA-4367-A8A9-C7EA8365D34A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

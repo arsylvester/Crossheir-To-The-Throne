@@ -19,7 +19,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1726006860">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1128540960">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -40,31 +40,39 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1404805401" Name="DoorOpen" ObjectPath="\Events\Default Work Unit\DoorOpen" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="0.976138" DurationMax="0.976138">
+					<IncludedMemoryFiles>
+						<File Id="950382128" Language="SFX">
+							<ShortName>194989__soundmary__unlocking-metal-door.wav</ShortName>
+							<Path>SFX\194989__soundmary__unlocking-metal-door_A37E3835.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1866025847" Name="FootStep" ObjectPath="\Events\Default Work Unit\FootStep" DurationType="OneShot" DurationMin="0.304200" DurationMax="0.528348">
 					<IncludedMemoryFiles>
 						<File Id="135487342" Language="SFX">
 							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
-							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_8D1FD23D.wem</Path>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_391CC502.wem</Path>
 						</File>
 						<File Id="215537064" Language="SFX">
 							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
-							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_A07F9A68.wem</Path>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_D76F822D.wem</Path>
 						</File>
 						<File Id="682099175" Language="SFX">
 							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
-							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_D90E4850.wem</Path>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_8DB6323F.wem</Path>
 						</File>
 						<File Id="804957345" Language="SFX">
 							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
-							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_4BEAD3FC.wem</Path>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_D6575797.wem</Path>
 						</File>
 						<File Id="981547691" Language="SFX">
 							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
-							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_836DE7E7.wem</Path>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_CDAD2E70.wem</Path>
 						</File>
 						<File Id="1015246522" Language="SFX">
 							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
-							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_E17EE6B0.wem</Path>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_8D84AAA0.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -88,7 +96,7 @@
 					<IncludedMemoryFiles>
 						<File Id="804957345" Language="SFX">
 							<ShortName>459964__florianreichelt__footsteps-on-concrete.wav</ShortName>
-							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_4BEAD3FC.wem</Path>
+							<Path>SFX\459964__florianreichelt__footsteps-on-concrete_D6575797.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -100,6 +108,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1432588725" Name="Select" ObjectPath="\Events\Default Work Unit\Select" DurationType="OneShot" DurationMin="0.103016" DurationMax="0.103016"/>
 				<Event Id="823131329" Name="Spin" ObjectPath="\Events\Default Work Unit\Spin" DurationType="OneShot" DurationMin="0.560854" DurationMax="0.560854">
 					<IncludedMemoryFiles>
 						<File Id="90429713" Language="SFX">
@@ -125,6 +134,12 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="728260742" Language="SFX">
+					<ShortName>select.wav</ShortName>
+					<Path>SFX\select_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
