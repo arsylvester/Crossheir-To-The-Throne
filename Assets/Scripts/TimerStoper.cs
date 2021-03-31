@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TimerStoper : MonoBehaviour
 {
+    [SerializeField] GameObject scoreBoard;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,6 @@ public class TimerStoper : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         TimeMaster.endTimer(1);
+        scoreBoard.GetComponent<BoardScript>().drawStats();
     }
 }
