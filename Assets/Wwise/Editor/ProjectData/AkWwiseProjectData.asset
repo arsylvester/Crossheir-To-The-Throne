@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b03443b4edec1248af23a9d535d70347
     GuidInternal: 
-    m_lastTime: -8585844341465864145
+    m_lastTime: -8585844308088594264
     List:
     - name: Main
       guid: c5cf806afd53924e93561d415fec78fa
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 07750a400b10a44480e10a69ac9d07a3
     GuidInternal: 
-    m_lastTime: -8585844341466394127
+    m_lastTime: -8585844308088434227
     List:
     - name: BulletDrop
       guid: 31a850874024a546ae4d0be295bb533d
@@ -113,6 +113,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.37711
       minDuration: 1.37711
+    - name: Buzzer
+      guid: b18b2f18a147da4095f12809d5f856b6
+      id: 2258979263
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: Buzzer
+        ObjectType: 3
+        guid: b18b2f18a147da4095f12809d5f856b6
+      Path: Events\Default Work Unit\Buzzer
+      maxAttenuation: 20
+      maxDuration: 1.430458
+      minDuration: 1.430458
     - name: DoorOpen
       guid: a075e42d83b90241887e0cb667d4708f
       id: 1404805401
@@ -198,6 +215,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.336221
       minDuration: 0.336221
+    - name: MuteMusic
+      guid: 65fc6efe214e184391fb13eb83e4f541
+      id: 2316563647
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: MuteMusic
+        ObjectType: 3
+        guid: 65fc6efe214e184391fb13eb83e4f541
+      Path: Events\Default Work Unit\MuteMusic
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: ReloadClick
       guid: 5a6d8e3b4526c244b686ac41eeb19d59
       id: 3551877634
@@ -249,6 +283,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.560854
       minDuration: 0.560854
+    - name: StartMusic
+      guid: 5788cae2a5acf84f8fc4c88a91164887
+      id: 3827058668
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: StartMusic
+        ObjectType: 3
+        guid: 5788cae2a5acf84f8fc4c88a91164887
+      Path: Events\Default Work Unit\StartMusic
+      maxAttenuation: 100
+      maxDuration: 322.128
+      minDuration: 322.128
     - name: TargetHit
       guid: 4e495a9bb3dafa418b06117c197881ec
       id: 3822001633
@@ -266,6 +317,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.178844
       minDuration: 0.178844
+    - name: TargetUp
+      guid: 21f9353b0ccfb545a1c7744afa3068e9
+      id: 3742273957
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 07750a400b10a44480e10a69ac9d07a3
+      - ElementName: TargetUp
+        ObjectType: 3
+        guid: 21f9353b0ccfb545a1c7744afa3068e9
+      Path: Events\Default Work Unit\TargetUp
+      maxAttenuation: 20
+      maxDuration: 0.27496
+      minDuration: 0.27496
     - name: TestEvent
       guid: 82c8f2db0ed12f4aa817e239f6cfe8d3
       id: 1097980931
