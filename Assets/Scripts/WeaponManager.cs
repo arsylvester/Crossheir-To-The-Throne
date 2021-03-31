@@ -16,8 +16,8 @@ public class WeaponManager : MonoBehaviour
     
     bool isReloading = false;
     int currentAmmo = 3;
-    int killStreak = 0;
-    int shotStreak = 0;
+    static int killStreak = 0;
+    static int shotStreak = 0;
     bool missedShot = true;
     float LastTimeShot = 0;
 

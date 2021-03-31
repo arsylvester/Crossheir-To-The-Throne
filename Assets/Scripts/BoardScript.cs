@@ -11,6 +11,6 @@ public class BoardScript : MonoBehaviour
 
     public void drawStats()
     {
-        BoardTimer.GetComponent<TextMeshPro>().SetText(TimeMaster.timeToString());
+        BoardTimer.GetComponent<TextMeshPro>().SetText(TimeMaster.timeToString(TimeMaster.currentTime));
     }
 }
