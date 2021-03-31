@@ -41,7 +41,7 @@ public class ResetScene : MonoBehaviour
         }
     }
 
-    void ResetRun()
+    public void ResetRun()
     {
         print("Reseting run: " + playerObject);
         //Room reset
