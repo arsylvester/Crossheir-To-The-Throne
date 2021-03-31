@@ -175,7 +175,7 @@ MonoBehaviour:
   trackEnd: {fileID: 1360296177887830285}
   trackMoveSpeed: 0.3
   movingPart: {fileID: 4922109385886403407}
-  isHit: 0
+  isHit: 1
 --- !u!64 &5279345564334462594
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -271,6 +271,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ma_cardboard01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257519476116746995, guid: c326613a417be489fa104074706202e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257519476116746995, guid: c326613a417be489fa104074706202e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257519476116746995, guid: c326613a417be489fa104074706202e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257519476116746995, guid: c326613a417be489fa104074706202e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7779022335595666176, guid: c326613a417be489fa104074706202e4,
         type: 3}

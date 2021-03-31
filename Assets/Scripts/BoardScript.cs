@@ -9,8 +9,8 @@ public class BoardScript : MonoBehaviour
     [SerializeField] GameObject BoardRecords;
     [SerializeField] GameObject BoardStats;
 
-    [SerializeField] float devTime = 35f;
-    [SerializeField] float goldTime = 47f;
+    [SerializeField] float devTime = 34f;
+    [SerializeField] float goldTime = 45f;
     [SerializeField] float silverTime = 56f;
     [SerializeField] float bronzeTime = 70f;
 

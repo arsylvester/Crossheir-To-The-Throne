@@ -18,12 +18,14 @@ public class TargetMovement : MonoBehaviour
     public bool isHit = false;
     float currentTrackLerp = 0;
     float downRotation;
+    float upRotation;
     Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        downRotation = movingPart.transform.eulerAngles.z + hitRotation;
+        downRotation = movingPart.transform.eulerAngles.z;
+        upRotation = movingPart.transform.eulerAngles.z - hitRotation;
         startPosition = transform.localPosition;
     }
 
@@ -72,7 +74,7 @@ public class TargetMovement : MonoBehaviour
             isHit = false;
             currentTrackLerp = 0;
             GetComponentInChildren<Collider>().enabled = true;
-            StartCoroutine(RotateOvertime(movingPart.transform.eulerAngles.z - hitRotation));
+            StartCoroutine(RotateOvertime(upRotation));
             AkSoundEngine.PostEvent("TargetUp", gameObject);
         }
     }
