@@ -5,8 +5,10 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{6A80CFC5-53FD-4E92-9356-1D415FEC78FA}">
 					<ObjectInclusionList>
+						<ObjectRef Name="DoorOpen" ID="{2DE475A0-B983-4102-887E-0CB667D4708F}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="JumpStart" ID="{9BD45FF5-C831-413F-BFE7-946CF39E1805}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TargetHit" ID="{9B5A494E-DAB3-41FA-8B06-117C197881EC}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="select" ID="{903E4DA9-55FE-424A-9D07-7A6F8C2166E0}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="FootStep" ID="{CB30B5D6-2211-43B1-9F34-186CE4489ACB}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ReloadClick" ID="{3B8E6D5A-2645-44C2-B686-AC41EEB19D59}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="BulletDrop" ID="{8750A831-2440-46A5-AE4D-0BE295BB533D}" WorkUnitID="{400A7507-100B-44A4-80E1-0A69AC9D07A3}" Origin="Manual" Filter="7"/>
