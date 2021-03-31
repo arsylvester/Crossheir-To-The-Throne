@@ -4345,6 +4345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1146802352056708465, guid: 089b830aff08a184e8b28e48dfbb8ba6,
         type: 3}
+      propertyPath: ShotDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146802352056708465, guid: 089b830aff08a184e8b28e48dfbb8ba6,
+        type: 3}
       propertyPath: bulletImpact
       value: 
       objectReference: {fileID: 899671510}
@@ -4418,6 +4423,11 @@ PrefabInstance:
       propertyPath: m_HudManager
       value: 
       objectReference: {fileID: 609782276}
+    - target: {fileID: 1146802352056708471, guid: 089b830aff08a184e8b28e48dfbb8ba6,
+        type: 3}
+      propertyPath: footStepInterval
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7803635413575922653, guid: 089b830aff08a184e8b28e48dfbb8ba6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

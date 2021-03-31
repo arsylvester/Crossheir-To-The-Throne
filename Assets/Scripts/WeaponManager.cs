@@ -22,10 +22,10 @@ public class WeaponManager : MonoBehaviour
     float LastTimeShot = 0;
 
 
-    public int shotsTaken, shotsHit, maxKillstreak, maxShotstreak;
+    public static int shotsTaken, shotsHit, maxKillstreak, maxShotstreak;
 
     [Header("Gun")]
-    [SerializeField] float ShotDelay = 2f;
+    [SerializeField] float ShotDelay = .2f;
     [SerializeField] float ReloadTime = 3f;
 
 
@@ -163,7 +163,7 @@ public class WeaponManager : MonoBehaviour
             if (h.collider.CompareTag("Target") && !h.collider.GetComponentInParent<TargetMovement>().isHit) //If bullet collides with a target and target hasn't been hit
             {
                 AkSoundEngine.PostEvent("TargetHit", gameObject);
-                h.collider.GetComponentInParent<TargetMovement>().MoveToHitPosition(); //Play knock down animation
+                h.collider.GetComponentInParent<TargetMovement>().MoveToHitPosition(1); //Play knock down animation
                 print("target hit: " + h.collider.name);
                 missedShot = false;
                 killStreak++;
@@ -281,7 +281,7 @@ public class WeaponManager : MonoBehaviour
         m_HudManager.updateAmmo(currentAmmo);
     }
 
-    void resetStats()
+    public static void resetStats()
     {
         maxKillstreak = 0;
         maxShotstreak = 0;

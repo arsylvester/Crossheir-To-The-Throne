@@ -4,19 +4,25 @@ Event	ID	Name			Wwise Object Path	Notes
 	678561523	JumpStart			\Default Work Unit\JumpStart	
 	823131329	Spin			\Default Work Unit\Spin	
 	1097980931	TestEvent			\Default Work Unit\TestEvent	
+	1866025847	FootStep			\Default Work Unit\FootStep	
 	2975448509	GunFire			\Default Work Unit\GunFire	
 	3551877634	ReloadClick			\Default Work Unit\ReloadClick	
 	3822001633	TargetHit			\Default Work Unit\TargetHit	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	90429713	352719__dalesome__woosh-stick-swung-in-the-air	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\352719__dalesome__woosh-stick-swung-in-the-air_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\352719__dalesome__woosh-stick-swung-in-the-air		107748
-	276616868	469077__hawkeye-sprout__jumping-on-bed	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\469077__hawkeye-sprout__jumping-on-bed_4EB3B06D.wem		\Actor-Mixer Hierarchy\Default Work Unit\469077__hawkeye-sprout__jumping-on-bed		69772
+	135487342	FootStep_03	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\459964__florianreichelt__footsteps-on-concrete_8D1FD23D.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_03		93264
+	215537064	FootStep	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\459964__florianreichelt__footsteps-on-concrete_A07F9A68.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep		53724
+	276616868	469077__hawkeye-sprout__jumping-on-bed	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\469077__hawkeye-sprout__jumping-on-bed_50B44F4A.wem		\Actor-Mixer Hierarchy\Default Work Unit\469077__hawkeye-sprout__jumping-on-bed		69772
 	359345031	450853__kyles__gun-lee-enfield-303-rifle-clean-shot	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\450853__kyles__gun-lee-enfield-303-rifle-clean-shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\450853__kyles__gun-lee-enfield-303-rifle-clean-shot		256320
 	648394659	BulletDrop2	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\337233__anthousai__bullet-shells-single-consolidated_C885278A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullets\BulletDrop2		241240
+	682099175	FootStep_04	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\459964__florianreichelt__footsteps-on-concrete_D90E4850.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_04		84788
+	804957345	FootStep_05	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\459964__florianreichelt__footsteps-on-concrete_4BEAD3FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_05		59372
 	829689240	BulletDrop1	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\337233__anthousai__bullet-shells-single-consolidated_0E9F86B5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullets\BulletDrop1		171560
 	877140193	111676__dredile__revolvercock1	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\111676__dredile__revolvercock1_E8AAE3DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\111676__dredile__revolvercock1		20420
-	898064822	122122__zimbot__thud-2-dry	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\122122__zimbot__thud-2-dry_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\122122__zimbot__thud-2-dry		9664
+	981547691	FootStep_01	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\459964__florianreichelt__footsteps-on-concrete_836DE7E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_01		70668
 	1002095734	BulletDrop3	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\337233__anthousai__bullet-shells-single-consolidated_15BAB1A6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullets\BulletDrop3		264468
+	1015246522	FootStep_02	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\459964__florianreichelt__footsteps-on-concrete_E17EE6B0.wem		\Actor-Mixer Hierarchy\Default Work Unit\FootSteps\FootStep_02		76320
 	1026188703	Coin2(16)	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\Coin2(16)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Coin2(16)		15838
 	1068684440	Strike	C:\Unity Projects\Git Kraken\SpringGameJam\SpringGameJam_WwiseProject\.cache\Windows\SFX\Strike_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Strike		241728
 

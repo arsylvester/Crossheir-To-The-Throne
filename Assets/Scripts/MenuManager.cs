@@ -85,6 +85,7 @@ public class MenuManager : MonoBehaviour
         sensSlider.value = sensitivity * 100;
         fovSlider.value = fov;
         volumeSlider.value = volume;
+        AkSoundEngine.SetRTPCValue("MasterVolume", volume);
 
         sensText.text = sensitivity * 100 + "";
         fovText.text = fov + "";
@@ -179,6 +180,7 @@ public class MenuManager : MonoBehaviour
         volumeSlider.value = n;
         volumeInput.text = n + "";
         SetPref(VOLUME_PREF, n);
+        AkSoundEngine.SetRTPCValue("MasterVolume", n);
         print("Volume set: " + volume);
     }
 

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float MovementSharpnessOnGround = 15; //"Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite"
     public float GravityModifier = 10;
     public float jumpForce = 10;
+    public float footStepInterval = 1;
 
     public Vector3 CharacterVelocity { get; set; }
     public bool IsGrounded { get; private set; }
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     WeaponManager m_WeaponManager;
     [SerializeField] HudManager m_HudManager;
     bool hasJumped;
+    float footstepDistanceCounter;
 
     public float RotationMultiplier
     {
@@ -102,6 +104,12 @@ public class PlayerController : MonoBehaviour
             AkSoundEngine.PostEvent("Land", gameObject);
         }
         IsGrounded = m_Controller.isGrounded;
+
+
+
+        // keep track of distance traveled for footsteps sound
+        footstepDistanceCounter += CharacterVelocity.magnitude * Time.deltaTime;
+
         // jumping
         if (IsGrounded)
         {
@@ -124,6 +132,15 @@ public class PlayerController : MonoBehaviour
                 // Force grounding to false
                 IsGrounded = false;
                 hasJumped = true;
+            }
+            else
+            {
+                // footsteps sound
+                if (footstepDistanceCounter >= 1f / footStepInterval)
+                {
+                    footstepDistanceCounter = 0f;
+                    AkSoundEngine.PostEvent("FootStep", gameObject);
+                }
             }
         }
         else
