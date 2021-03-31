@@ -38,7 +38,7 @@ public class TargetSetController : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject child = transform.GetChild(i).gameObject;
-            child.GetComponentInChildren<TargetMovement>().MoveToHitPosition();
+            child.GetComponentInChildren<TargetMovement>().MoveToHitPosition(0);
         }
     }
 

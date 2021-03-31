@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PostShellsEvent : MonoBehaviour
 {
     [SerializeField] GameObject Shells;
     [SerializeField] GameObject SpawnableShell;
+    [SerializeField] GameObject ReloadPoof;
 
     public void DropShells()
     {
@@ -27,6 +29,8 @@ public class PostShellsEvent : MonoBehaviour
 
     public void LoadShells()
     {
+        ReloadPoof.GetComponent<VisualEffect>().Play();
+
         // render shells
         for (int i = 0; i < Shells.transform.childCount; i++)
         {

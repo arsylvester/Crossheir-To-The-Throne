@@ -30,7 +30,14 @@ public class RoomController : MonoBehaviour
         {
             targetSets[i].deactivateSet();
         }
-        door.SetActive(true);
+        if(door.GetComponent<DoorController>() != null)
+        {
+            door.GetComponent<DoorController>().closeDoors(); //new doors
+        }
+        else // support for old doors
+        {
+            door.SetActive(true);
+        }
         roomStarted = false;
     }
 
@@ -41,7 +48,14 @@ public class RoomController : MonoBehaviour
             roomStarted = true;
             activeSet = 0;
             targetSets[activeSet].activateSet();
-            door.SetActive(true);
+            if (door.GetComponent<DoorController>() != null)
+            {
+                door.GetComponent<DoorController>().closeDoors(); // new doors
+            }
+            else // support for old doors
+            {
+                door.SetActive(true); 
+            }
             if (nextRoom != null)
                 nextRoom.GetComponent<RoomController>().roomStarted = false;
         }
@@ -51,8 +65,19 @@ public class RoomController : MonoBehaviour
     {
         activeSet++;
         if (activeSet < targetSets.Count)
+        {
             targetSets[activeSet].activateSet();
+        }
         else
-            door.SetActive(false);
+        {
+            if (door.GetComponent<DoorController>() != null)
+            {
+                door.GetComponent<DoorController>().openDoors(); // new doors
+            }
+            else // support for old doors
+            {
+                door.SetActive(false);
+            }
+        }
     }
 }
