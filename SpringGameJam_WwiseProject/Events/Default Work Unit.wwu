@@ -116,6 +116,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="DoorOpen" ID="{2DE475A0-B983-4102-887E-0CB667D4708F}">
+					<ChildrenList>
+						<Action Name="" ID="{0451C92A-A34B-4542-98C0-DB1559682577}" ShortID="775993437">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="194989__soundmary__unlocking-metal-door" ID="{4E1DE4E9-0F0C-4711-8BD5-D52534E4A2B2}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Select" ID="{24FF6729-6385-4EFD-90A8-C33B4B3F5EBA}">
+					<ChildrenList>
+						<Action Name="" ID="{472A460B-1096-4388-AD38-86C7F07D03BB}" ShortID="481248616">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="select" ID="{903E4DA9-55FE-424A-9D07-7A6F8C2166E0}" WorkUnitID="{639BDB2C-1B8F-48C7-81B2-99A71373A1AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
