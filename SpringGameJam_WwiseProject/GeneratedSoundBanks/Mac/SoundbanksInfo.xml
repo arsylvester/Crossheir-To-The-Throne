@@ -19,7 +19,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1128540960">
+		<SoundBank Id="3161908922" Language="SFX" Hash="608063541">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -40,11 +40,19 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2258979263" Name="Buzzer" ObjectPath="\Events\Default Work Unit\Buzzer" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="1.430458" DurationMax="1.430458">
+					<IncludedMemoryFiles>
+						<File Id="1022833683" Language="SFX">
+							<ShortName>275910__pgonsilva__buzzer.wav</ShortName>
+							<Path>SFX\275910__pgonsilva__buzzer_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1404805401" Name="DoorOpen" ObjectPath="\Events\Default Work Unit\DoorOpen" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="0.976138" DurationMax="0.976138">
 					<IncludedMemoryFiles>
 						<File Id="950382128" Language="SFX">
 							<ShortName>194989__soundmary__unlocking-metal-door.wav</ShortName>
-							<Path>SFX\194989__soundmary__unlocking-metal-door_A37E3835.wem</Path>
+							<Path>SFX\194989__soundmary__unlocking-metal-door_238F22A3.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -100,6 +108,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2316563647" Name="MuteMusic" ObjectPath="\Events\Default Work Unit\MuteMusic" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3551877634" Name="ReloadClick" ObjectPath="\Events\Default Work Unit\ReloadClick" DurationType="OneShot" DurationMin="0.230795" DurationMax="0.230795">
 					<IncludedMemoryFiles>
 						<File Id="877140193" Language="SFX">
@@ -117,11 +126,27 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3827058668" Name="StartMusic" ObjectPath="\Events\Default Work Unit\StartMusic" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="322.127991" DurationMax="322.127991">
+					<IncludedMemoryFiles>
+						<File Id="828796457" Language="SFX">
+							<ShortName>Brent Hugh - Claire De Lune (Debussy).wav</ShortName>
+							<Path>SFX\Brent Hugh - Claire De Lune (Debussy)_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3822001633" Name="TargetHit" ObjectPath="\Events\Default Work Unit\TargetHit" DurationType="OneShot" DurationMin="0.178844" DurationMax="0.178844">
 					<IncludedMemoryFiles>
 						<File Id="1026188703" Language="SFX">
 							<ShortName>Coin2(16).wav</ShortName>
 							<Path>SFX\Coin2(16)_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3742273957" Name="TargetUp" ObjectPath="\Events\Default Work Unit\TargetUp" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="0.274960" DurationMax="0.274960">
+					<IncludedMemoryFiles>
+						<File Id="534246075" Language="SFX">
+							<ShortName>136771__otbtechno__wood-on-wood.wav</ShortName>
+							<Path>SFX\136771__otbtechno__wood-on-wood_0DBAF72E.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
