@@ -63,7 +63,7 @@ public class TimeMaster : MonoBehaviour
             highScore = currentTime;
             checkPointTimes.Add(currentTime);
             PlayerPrefs.SetFloat("HighScore", highScore);
-            print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
+            //print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
         }
         else
         {
