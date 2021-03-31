@@ -251,6 +251,11 @@ public class MenuManager : MonoBehaviour
         //add xhair style
     }
 
+    public void playButtonSound()
+    {
+        AkSoundEngine.PostEvent("Select", gameObject);
+    }
+
     public static float getFov()
     {
         return PlayerPrefs.GetFloat(FOV_PREF);
