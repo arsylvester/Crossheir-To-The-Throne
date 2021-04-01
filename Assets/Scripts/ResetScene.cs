@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResetScene : MonoBehaviour
 {
-    [Tooltip("Add a transform if you want to assign a start position. Leave blanck if you want to use the current player position.")]
+    [Tooltip("Add a transform if you want to assign a start position. Leave blank if you want to use the current player position.")]
     [SerializeField] Transform startPositionTransform;
     [SerializeField] Transform bulletHoles;
     Vector3 startPosition;
@@ -43,7 +43,7 @@ public class ResetScene : MonoBehaviour
 
     public void ResetRun()
     {
-        print("Reseting run: " + playerObject);
+        print("Resetting run: " + playerObject);
         //Room reset
         foreach (RoomController room in rooms)
         {

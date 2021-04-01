@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShotDelay: 0.2
-  ReloadTime: 3
+  ReloadTime: 1.5
   m_HudManager: {fileID: 0}
   RevolverAnimator: {fileID: 9123151800519721186}
   MuzzleFlash: {fileID: 8912267595343329289}
