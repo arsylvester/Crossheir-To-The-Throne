@@ -229,6 +229,7 @@ public class WeaponManager : MonoBehaviour
     public void softReload()
     {
         currentAmmo = 3;
+        RevolverAnimator.SetTrigger("soft reload");
         updateHUD();
     }
 
