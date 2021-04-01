@@ -796,6 +796,8 @@
 								<Value>50</Value>
 							</ValueList>
 						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="SpeakerPanning" Type="int16" Value="1"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -817,6 +819,9 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{78392912-8391-4778-8981-42D8A8756AFA}"/>
+					</PositioningInfo>
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="Brent Hugh - Claire De Lune (Debussy)" ID="{22EBDA47-A855-4199-8230-2101A787FC3E}" Platform="Linked"/>
