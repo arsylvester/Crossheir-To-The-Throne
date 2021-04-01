@@ -87,6 +87,12 @@ public class MenuManager : MonoBehaviour
         int yaxis = PlayerPrefs.GetInt(YAXIS_PREF, 0);
         invertY = yaxis > 0;
 
+        //last minuite fix
+        if (fov == 0f)
+            setFov(default_fov);
+        if (sensitivity == 0f)
+            setSensitivity(default_sensitivity);
+
         sensSlider.value = sensitivity * 100;
         fovSlider.value = fov;
         volumeSlider.value = volume;
