@@ -1,5 +1,121 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1800584387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1800584388}
+  - component: {fileID: 1800584391}
+  - component: {fileID: 1800584390}
+  - component: {fileID: 1800584389}
+  m_Layer: 6
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1800584388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800584387}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1210997188122008587}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!20 &1800584391
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800584387}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 0, b: 0.8579731, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.001
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 1
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 6c6cad07173d45c4c8a4f7c7613ad1a6, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &1800584390
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800584387}
+  m_Enabled: 1
+--- !u!114 &1800584389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800584387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 0
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &629006803794177514
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +128,7 @@ GameObject:
   - component: {fileID: 8466521995305867357}
   - component: {fileID: 4651781104658181482}
   - component: {fileID: 3490863690570781284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +223,7 @@ GameObject:
   - component: {fileID: 1210997187580134875}
   - component: {fileID: 1210997187580134869}
   - component: {fileID: 1210997187580134874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Board Stats Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +393,7 @@ GameObject:
   - component: {fileID: 1210997187674398182}
   - component: {fileID: 1210997187674398176}
   - component: {fileID: 1210997187674398177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Board Records Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210997188122008587}
   - component: {fileID: 1210997188122008584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: The Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,6 +586,7 @@ Transform:
   - {fileID: 1210997187674398182}
   - {fileID: 1210997187580134875}
   - {fileID: 5460244597744697422}
+  - {fileID: 1800584388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -508,7 +625,7 @@ GameObject:
   - component: {fileID: 1210997188207176748}
   - component: {fileID: 1210997188207176749}
   - component: {fileID: 1210997188207176754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +673,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4dad30bbe2213eb4d8312f7bb6190866, type: 2}
+  - {fileID: 2100000, guid: cf95fafa87c521e4f9f6c87c8b19df66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -602,7 +719,7 @@ GameObject:
   - component: {fileID: 1210997188412815714}
   - component: {fileID: 1210997188412815708}
   - component: {fileID: 1210997188412815709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Board Timer Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +889,7 @@ GameObject:
   - component: {fileID: 1210997188489715044}
   - component: {fileID: 1210997188489715045}
   - component: {fileID: 1210997188489715050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +937,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5aaee4111611af43b5abbff184fe5fa, type: 2}
+  - {fileID: 2100000, guid: 51a457ff2458f4141b8b25c3d0eec1b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -867,7 +984,7 @@ GameObject:
   - component: {fileID: 2663340534641226220}
   - component: {fileID: 1256468603741579375}
   - component: {fileID: 2963437952252740804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: S Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +1080,7 @@ GameObject:
   - component: {fileID: 3343306351486748847}
   - component: {fileID: 2166708320908745853}
   - component: {fileID: 8626815953692843151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: A Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1176,7 @@ GameObject:
   - component: {fileID: 4725899255784507070}
   - component: {fileID: 2149783883426023838}
   - component: {fileID: 2643362057362476436}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: C Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5460244597744697422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Medal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
