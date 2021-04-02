@@ -7,6 +7,7 @@ public class RoomController : MonoBehaviour
     public GameObject door;
     public List<TargetSetController> targetSets;
     public GameObject nextRoom;
+    public Transform SpeakerPosition;
 
     public bool roomStarted = false;
 
@@ -58,6 +59,8 @@ public class RoomController : MonoBehaviour
             }
             if (nextRoom != null)
                 nextRoom.GetComponent<RoomController>().roomStarted = false;
+
+            MusicPlayer.MoveToRoom(SpeakerPosition.position);
         }
     }
 

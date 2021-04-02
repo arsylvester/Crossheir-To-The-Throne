@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+    static GameObject instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = gameObject;
         AkSoundEngine.PostEvent("StartMusic", gameObject);
     }
 
@@ -14,5 +17,10 @@ public class MusicPlayer : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public static void MoveToRoom(Vector3 roomPosition)
+    {
+        instance.transform.position = roomPosition;
     }
 }

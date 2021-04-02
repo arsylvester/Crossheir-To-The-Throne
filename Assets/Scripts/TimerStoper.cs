@@ -6,6 +6,7 @@ public class TimerStoper : MonoBehaviour
 {
     [SerializeField] GameObject scoreBoard;
     [SerializeField] GameObject backDoor;
+    [SerializeField] Transform speakerPosition;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class TimerStoper : MonoBehaviour
         {
             TimeMaster.endTimer(1);
             AkSoundEngine.PostEvent("Buzzer", gameObject);
+            MusicPlayer.MoveToRoom(speakerPosition.position);
             scoreBoard.GetComponent<BoardScript>().drawStats();
             if (backDoor.GetComponent<DoorController>() != null)
             {
