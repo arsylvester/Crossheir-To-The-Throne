@@ -19,7 +19,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="608063541">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1777387530">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -126,11 +126,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3827058668" Name="StartMusic" ObjectPath="\Events\Default Work Unit\StartMusic" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="322.127991" DurationMax="322.127991">
+				<Event Id="3827058668" Name="StartMusic" ObjectPath="\Events\Default Work Unit\StartMusic" MaxAttenuation="100.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="828796457" Language="SFX">
 							<ShortName>Brent Hugh - Claire De Lune (Debussy).wav</ShortName>
-							<Path>SFX\Brent Hugh - Claire De Lune (Debussy)_10C4C929.wem</Path>
+							<Path>SFX\Brent Hugh - Claire De Lune (Debussy)_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
