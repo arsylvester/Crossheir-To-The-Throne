@@ -9,6 +9,15 @@ public class DoorController : MonoBehaviour
     [SerializeField] GameObject rightPivot;
 
     public bool isOpen = false;
+    
+    /*
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            openDoors();
+        }
+    }*/
 
     public void openDoors()
     {

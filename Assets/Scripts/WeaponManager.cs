@@ -9,7 +9,6 @@ public class WeaponManager : MonoBehaviour
     // This class handles all the gun logic
 
     //[Header("FOV")]
-    float defaultFOV = 60f;
     float playerFOV = 60f;
     float aimingFOV = 30f;
 
@@ -54,6 +53,15 @@ public class WeaponManager : MonoBehaviour
         m_PlayerController = GetComponent<PlayerController>();
         setFOV(MenuManager.getFov());
         //updateHUD();
+
+        //last minuite fix
+        MenuManager m_MenuManager = GetComponent<MenuManager>();
+        if (MenuManager.getFov() == 0f)
+            m_MenuManager.setFov(60f);
+        if (MenuManager.getSens() == 0f)
+            m_MenuManager.setSensitivity(15f);
+
+
         playerFOV = MenuManager.getFov();
         aimingFOV = MenuManager.getFov() / 2;
 
@@ -72,7 +80,7 @@ public class WeaponManager : MonoBehaviour
 
         if (m_InputHandler.GetReloadButtonDown())
         {
-            // isAiming = false;
+            //isAiming = false;
             reload();
             return;
         }
@@ -211,7 +219,9 @@ public class WeaponManager : MonoBehaviour
     void reload()
     {
         isReloading = true;
-        //add more code to make this a real reload
+        isAiming = false;
+        setFOV(playerFOV); //force player out of zoom
+        
         RevolverAnimator.SetTrigger("reload");
         StartCoroutine(waitForReload());
         waitForReload();

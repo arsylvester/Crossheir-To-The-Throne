@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            managePauseMenu();
             if (m_InputHandler.GetCancelInputDown())
                 unpauseGame();
         }
@@ -150,11 +149,6 @@ public class PlayerController : MonoBehaviour
         }
 
         m_Controller.Move(CharacterVelocity * Time.deltaTime);
-    }
-
-    void managePauseMenu()
-    {
-        
     }
 
     public void unpauseGame()

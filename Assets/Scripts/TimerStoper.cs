@@ -9,12 +9,15 @@ public class TimerStoper : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TimeMaster.endTimer(1);
-        AkSoundEngine.PostEvent("Buzzer", gameObject);
-        scoreBoard.GetComponent<BoardScript>().drawStats();
-        if(backDoor.GetComponent<DoorController>() != null)
+        if (TimeMaster.timerActive)
         {
-            backDoor.GetComponent<DoorController>().openDoors();
+            TimeMaster.endTimer(1);
+            AkSoundEngine.PostEvent("Buzzer", gameObject);
+            scoreBoard.GetComponent<BoardScript>().drawStats();
+            if (backDoor.GetComponent<DoorController>() != null)
+            {
+                backDoor.GetComponent<DoorController>().openDoors();
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using TMPro;
 public class BoardScript : MonoBehaviour
 {
     [SerializeField] GameObject BoardTimer;
+    [SerializeField] GameObject BoardRoomTimes;
     [SerializeField] GameObject BoardRecords;
     [SerializeField] GameObject BoardStats;
 
@@ -24,22 +25,33 @@ public class BoardScript : MonoBehaviour
     public void drawStats()
     {
         BoardTimer.GetComponent<TextMeshPro>().SetText(TimeMaster.timerText);
+
+        // Individual Rooms
+        BoardRoomTimes.GetComponent<TextMeshPro>().SetText(
+            "__Individual Rooms__\n" +
+            "Room 1\t" + TimeMaster.getCheckpoint(1) + "\n" +
+            "Room 2\t" + TimeMaster.getCheckpoint(2) + "\n" +
+            "Room 3\t" + TimeMaster.getCheckpoint(3) + "\n" +
+            "Room 4\t" + TimeMaster.getCheckpoint(4) + "\n" +
+            "Room 5\t" + TimeMaster.getCheckpoint(5));
+
         // This is really dumb, but don't worry about it
         BoardRecords.GetComponent<TextMeshPro>().SetText(
-            "__Course Records__\n" + 
-            "Dev Time: " + TimeMaster.timeToString(devTime) + "\n" + 
-            "A Rank: " + TimeMaster.timeToString(goldTime) + "\n" + 
-            "B Rank: " + TimeMaster.timeToString(silverTime) + "\n" + 
-            "C Rank: " + TimeMaster.timeToString(bronzeTime) + "\n" + 
-            "\nYour Best Time:\n" +
-            TimeMaster.timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
+            "__Course Records__\n" +
+            "S Rank:\t" + TimeMaster.timeToString(devTime) + "\n" +
+            "A Rank:\t" + TimeMaster.timeToString(goldTime) + "\n" +
+            "B Rank:\t" + TimeMaster.timeToString(silverTime) + "\n" +
+            "C Rank:\t" + TimeMaster.timeToString(bronzeTime) + "\n" +
+            "\n" + getLeaderBoard());
 
         BoardStats.GetComponent<TextMeshPro>().SetText(
             "__Stats__\n" + 
             "Total Shots: " + WeaponManager.shotsTaken.ToString() + "\n" + 
             "Accuracy: " + (int)(((float)WeaponManager.shotsHit / (float)WeaponManager.shotsTaken) * 100) + "%\n" + 
             "Max KillStreak: " + WeaponManager.maxKillstreak.ToString() + "\n" +
-            "Max ShotStreak: " + WeaponManager.maxShotstreak.ToString());
+            "Max ShotStreak: " + WeaponManager.maxShotstreak.ToString() + "\n" +
+            "\nYour Best Time:\n" +
+            TimeMaster.timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
         //((int)(time * 100)).ToString("00")
 
         float completionTime = TimeMaster.currentTime;
@@ -79,6 +91,16 @@ public class BoardScript : MonoBehaviour
         A_Medal.SetActive(false);
         B_Medal.SetActive(false);
         C_Medal.SetActive(false);
+    }
+
+    string getLeaderBoard() // This is where I'll put the online leaderboard code
+    {
+        string str = "__Leader Board__\n" +
+            "quaintt\t" + 29.31f + "\n" +
+            "Plomp\t" + 31.59f + "\n" +
+            "Sparkfire\t" + 34.39f;
+
+        return str;
     }
 }
 

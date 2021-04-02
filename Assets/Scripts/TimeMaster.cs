@@ -10,6 +10,7 @@ public class TimeMaster : MonoBehaviour
     public static float currentTime = 0;
     public static float highScore = 9999f;
     public static List<float> checkPointTimes = new List<float>();
+    public static List<float> PRVcheckPointTimes = new List<float>();
 
     private static float startTime = 0;
 
@@ -21,8 +22,6 @@ public class TimeMaster : MonoBehaviour
     {
         highScore = PlayerPrefs.GetFloat("HighScore", 9999f);
         //print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
-
-        checkPointTimes.Clear();
     }
 
     // Update is called once per frame
@@ -54,6 +53,7 @@ public class TimeMaster : MonoBehaviour
 
     public static void startTimer()
     {
+        checkPointTimes.Clear();
         startTime = Time.time;
         timerActive = true;
         checkPointTimes.Add(startTime);
@@ -64,22 +64,36 @@ public class TimeMaster : MonoBehaviour
     public static void endTimer(int status)
     {
         timerActive = false;
+        checkPointTimes.Add(Time.time);
+        PRVcheckPointTimes = checkPointTimes;
+        //PRVcheckPointTimes.Sort();
+
         if (status > 0 && currentTime < highScore)
         {
             highScore = currentTime;
-            checkPointTimes.Add(currentTime);
+            
             PlayerPrefs.SetFloat("HighScore", highScore);
             //print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
-        }
-        else
-        {
-            checkPointTimes.Clear();
         }
     }
 
     public static void checkPoint()
     {
         checkPointTimes.Add(Time.time);
+        print(Time.time);
+    }
+
+    public static string getCheckpoint(int ckpt)
+    {
+        if (checkPointTimes.Count < ckpt)
+        {
+            return "-1";
+        }
+
+        print(checkPointTimes[ckpt] + " - " + checkPointTimes[ckpt - 1]);
+
+        float time = checkPointTimes[ckpt] - checkPointTimes[ckpt - 1];
+        return timeToString(time);
     }
 
     public static void resetHighScore()
