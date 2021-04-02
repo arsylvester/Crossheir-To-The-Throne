@@ -2765,7 +2765,7 @@ GameObject:
   - component: {fileID: 826184103}
   - component: {fileID: 826184102}
   - component: {fileID: 826184101}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: The Board Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
