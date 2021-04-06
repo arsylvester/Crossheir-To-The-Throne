@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class BoardScript : MonoBehaviour
 {
@@ -50,8 +51,7 @@ public class BoardScript : MonoBehaviour
             "Accuracy: " + (int)(((float)WeaponManager.shotsHit / (float)WeaponManager.shotsTaken) * 100) + "%\n" + 
             "Max KillStreak: " + WeaponManager.maxKillstreak.ToString() + "\n" +
             "Max ShotStreak: " + WeaponManager.maxShotstreak.ToString() + "\n" +
-            "\nYour Best Time:\n" +
-            TimeMaster.timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
+            "Full Reloads: " + WeaponManager.timesReloaded.ToString() + "\n");
         //((int)(time * 100)).ToString("00")
 
         float completionTime = TimeMaster.currentTime;
@@ -95,10 +95,33 @@ public class BoardScript : MonoBehaviour
 
     string getLeaderBoard() // This is where I'll put the online leaderboard code
     {
-        string str = "__Leader Board__\n" +
+        Dictionary<string, float> leaderboard = new Dictionary<string, float>();
+        string playerUsername = "You\t";
+        //playerUsername = "<color=\"yellow\">" + playerUsername + "</color>";
+
+        leaderboard.Add("quaintt", 29.31f);
+        leaderboard.Add("Plomp", 31.59f);
+        leaderboard.Add("Sparkfire", 34.39f);
+        leaderboard.Add("Bowling", 36.66f);
+        leaderboard.Add("GiantRat", 39.85f);
+        leaderboard.Add(playerUsername, PlayerPrefs.GetFloat("HighScore", 9999f));
+
+        string str = "__Leader Board__\n";
+
+        foreach (KeyValuePair<string, float> item in leaderboard.OrderBy(key=> key.Value))
+        {
+            if (item.Key == playerUsername)
+            {
+                str += "<color=\"yellow\">" + item.Key + "\t" + TimeMaster.timeToString(item.Value) + "</color>\n";
+            }
+            else
+                str += item.Key + "\t" + TimeMaster.timeToString(item.Value) + "\n";
+        }
+
+/*        string str = "__Leader Board__\n" +
             "quaintt\t" + 29.31f + "\n" +
             "Plomp\t" + 31.59f + "\n" +
-            "Sparkfire\t" + 34.39f;
+            "Sparkfire\t" + 34.39f;*/
 
         return str;
     }

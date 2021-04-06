@@ -19,6 +19,7 @@ public class WeaponManager : MonoBehaviour
     static int shotStreak = 0;
     bool missedShot = true;
     float LastTimeShot = 0;
+    public static int timesReloaded = 0;
 
 
     public static int shotsTaken, shotsHit, maxKillstreak, maxShotstreak;
@@ -69,6 +70,7 @@ public class WeaponManager : MonoBehaviour
         shotsHit = 0;
         maxKillstreak = 0;
         maxShotstreak = 0;
+        timesReloaded = 0;
     }
 
     void Update()
@@ -224,12 +226,11 @@ public class WeaponManager : MonoBehaviour
         
         RevolverAnimator.SetTrigger("reload");
         StartCoroutine(waitForReload());
-        waitForReload();
-        //updateHUD();
     }
 
     IEnumerator waitForReload()
     {
+        timesReloaded++; // add to reload count statistic
         yield return new WaitForSecondsRealtime(ReloadTime);
         currentAmmo = 3;
         isReloading = false;
@@ -302,5 +303,6 @@ public class WeaponManager : MonoBehaviour
         shotsHit = 0;
         killStreak = 0;
         shotStreak = 0;
+        timesReloaded = 0;
     }
 }
