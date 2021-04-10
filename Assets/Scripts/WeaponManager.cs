@@ -125,7 +125,7 @@ public class WeaponManager : MonoBehaviour
             }
 
             if (killStreak > prevKillStreak + 1)
-                collateral();
+                collateral(killStreak-prevKillStreak); //pass through the number of targets hit with the shot
 
             if (killStreak > maxKillstreak)
                 maxKillstreak = killStreak;
@@ -141,6 +141,11 @@ public class WeaponManager : MonoBehaviour
             {
                 currentAmmo -= 1;
                 updateHUD();
+            }
+
+            if (shotStreak != 0 && shotStreak % 10 == 0)
+            {
+                EventFeed.instance.AddEvent("Streak", "" + shotStreak); //call event for current shot streak
             }
 
             AkSoundEngine.PostEvent("GunFire", gameObject);
@@ -195,7 +200,8 @@ public class WeaponManager : MonoBehaviour
     {
         //Display triple kill graphic on HUD
         print("Triple Kill");
-        m_HudManager.DisplayTripleKill();
+        //m_HudManager.DisplayTripleKill();
+        EventFeed.instance.AddEvent("Hat Trick");
 
         //Special reload
         currentAmmo = 3;
@@ -203,11 +209,16 @@ public class WeaponManager : MonoBehaviour
         updateHUD();
     }
 
-    void collateral()
+    void collateral(int targetsHit)
     {
         //Display collateral graphic on HUD
         print("Collateral");
-        m_HudManager.DisplayCollateral();
+        //m_HudManager.DisplayCollateral();
+
+        if (targetsHit > 2)
+            EventFeed.instance.AddEvent("Collateral", "" + (targetsHit - 1));
+        else
+            EventFeed.instance.AddEvent("Collateral");
     }
 
     bool inShotDelay() //Return true if it hasn't been x time since the last shot
