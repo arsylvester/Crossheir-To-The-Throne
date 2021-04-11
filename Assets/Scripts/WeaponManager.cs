@@ -306,7 +306,7 @@ public class WeaponManager : MonoBehaviour
         m_HudManager.updateAmmo(currentAmmo);
     }
 
-    public static void resetStats()
+    public static void resetStats() //Reset all stats to default values. Called whenever a run is reset.
     {
         maxKillstreak = 0;
         maxShotstreak = 0;
@@ -315,5 +315,6 @@ public class WeaponManager : MonoBehaviour
         killStreak = 0;
         shotStreak = 0;
         timesReloaded = 0;
+        EventFeed.instance.ClearAll();
     }
 }

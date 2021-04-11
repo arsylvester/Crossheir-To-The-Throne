@@ -160,6 +160,7 @@ public class PlayerController : MonoBehaviour
         m_HudManager.showOptionsMenu(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        EventFeed.instance.FadeOutAll();
     }
 
     public void pauseGame()

@@ -10,6 +10,7 @@ public class EventFeed : MonoBehaviour
 
     [Header("Variables")]
     [SerializeField] int maximumEvents;
+    [SerializeField] float fadeInDuration;
     [SerializeField] float fadeOutStartingPause;
     [SerializeField] float fadeOutDuration;
 
@@ -27,9 +28,10 @@ public class EventFeed : MonoBehaviour
         evt.transform.SetAsLastSibling();
         EventItem evtItem = evt.GetComponent<EventItem>();
         evtItem.SetName(name);
+        evtItem.hasMultiplier = true;
         evtItem.SetMultiplier(multi);
         activeItems.Enqueue(evt); //add to the queue of active items
-        StartCoroutine(evtItem.FadeOut(fadeOutStartingPause, fadeOutDuration));
+        StartCoroutine(evtItem.FadeIn(fadeInDuration, fadeOutStartingPause, fadeOutDuration));
     }
 
     public void AddEvent(string name)
@@ -40,9 +42,9 @@ public class EventFeed : MonoBehaviour
         evt.transform.SetAsLastSibling();
         EventItem evtItem = evt.GetComponent<EventItem>();
         evtItem.SetName(name);
-        evtItem.EnableMultiplier(false);
+        evtItem.hasMultiplier = false;
         activeItems.Enqueue(evt);
-        StartCoroutine(evtItem.FadeOut(fadeOutStartingPause, fadeOutDuration));
+        StartCoroutine(evtItem.FadeIn(fadeInDuration, fadeOutStartingPause, fadeOutDuration));
     }
 
     public void DeleteOverflow()
@@ -55,6 +57,36 @@ public class EventFeed : MonoBehaviour
             if (temp != null)
                 Destroy(temp);
         }
+    }
+
+    public void ClearAll()
+    {
+        while (activeItems.Count > 0)
+        {
+            GameObject temp = activeItems.Peek();
+            activeItems.Dequeue();
+
+            if (temp != null)
+                Destroy(temp);
+        }
+    }
+
+    public void FadeOutAll() /*Used for restarting the fade out for all active items*/
+    {
+        //this method is needed because of a bug where items freeze animations when the game is paused.
+
+        print("fade out all");
+
+        DeleteOverflow();
+
+        GameObject[] items = activeItems.ToArray();
+
+        foreach(GameObject item in items)
+        {
+            if (item != null)
+                StartCoroutine(item.GetComponent<EventItem>().FadeOut(fadeOutStartingPause, fadeOutDuration));
+        }
+            
     }
 
     public void TestEvent()
