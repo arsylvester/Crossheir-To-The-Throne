@@ -4,7 +4,7 @@ A first person shooter where you're limited to three shots. Shoot all the target
 The game was developed in seven days as part of the SGDA Spring 2021 Game Jam. 
 
 ## Installation
-The playable build of the game is available for download at [indyandy.itch.io/crossheir-to-the-throne](https://indyandy.itch.io/crossheir-to-the-throne)
+Windows builds of the game are available on the [releases page](https://github.com/arsylvester/SpringGameJam/releases). Downloads are also available on the game's [itch.io page](https://indyandy.itch.io/crossheir-to-the-throne).
 
 ## Controls
 `W,A,S,D` : Move
