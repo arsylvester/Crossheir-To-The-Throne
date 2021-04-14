@@ -1,7 +1,7 @@
 # Crossheir to the Throne
 A first person shooter where you're limited to three shots. Shoot all the targets and race to the finish to get the best time.
 
-The game was developed in seven days as part of the SGDA Spring 2021 Game Jam. 
+The game was originally developed in seven days for the SGDA Spring 2021 Game Jam. The theme of the game jam was "Rule of 3".
 
 ## Installation
 Windows builds of the game are available on the [releases page](https://github.com/arsylvester/SpringGameJam/releases). Downloads are also available on the game's [itch.io page](https://indyandy.itch.io/crossheir-to-the-throne).
