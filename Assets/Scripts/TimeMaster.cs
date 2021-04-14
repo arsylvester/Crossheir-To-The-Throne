@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,14 +18,12 @@ public class TimeMaster : MonoBehaviour
     public Text uiText;
     public GameObject BuzzerLocation;
 
-    // Start is called before the first frame update
     void Start()
     {
         highScore = PlayerPrefs.GetFloat("HighScore", 9999f);
         //print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(timerActive)
@@ -42,13 +41,9 @@ public class TimeMaster : MonoBehaviour
 
     public static string timeToString(float time)
     {
-        // Unity String formatting is actually garbage
-        int minutes = (int)time / 60;
-        time = time % 60;
-        int seconds = (int)time;
-        time -= seconds;
-        string str = minutes.ToString("00") + ":" + seconds.ToString("00") + "." + ((int)(time * 100)).ToString("00");
-        return str;
+        // I fixed this. - Henry
+        var ts = TimeSpan.FromSeconds(time);
+        return ts.ToString("mm\\:ss\\.ff");
     }
 
     public static void startTimer()
@@ -58,7 +53,6 @@ public class TimeMaster : MonoBehaviour
         timerActive = true;
         checkPointTimes.Add(startTime);
         WeaponManager.resetStats();
-        //print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
     }
 
     public static void endTimer(int status)
@@ -71,9 +65,7 @@ public class TimeMaster : MonoBehaviour
         if (status > 0 && currentTime < highScore)
         {
             highScore = currentTime;
-            
             PlayerPrefs.SetFloat("HighScore", highScore);
-            //print("HIGHSCORE: " + timeToString(PlayerPrefs.GetFloat("HighScore", 9999f)));
         }
     }
 
@@ -89,8 +81,6 @@ public class TimeMaster : MonoBehaviour
         {
             return "-1";
         }
-
-        print(checkPointTimes[ckpt] + " - " + checkPointTimes[ckpt - 1]);
 
         float time = checkPointTimes[ckpt] - checkPointTimes[ckpt - 1];
         return timeToString(time);

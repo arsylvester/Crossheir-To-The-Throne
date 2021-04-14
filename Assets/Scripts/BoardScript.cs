@@ -102,7 +102,7 @@ public class BoardScript : MonoBehaviour
         leaderboard.Add("quaintt", 29.31f);
         leaderboard.Add("Plomp", 31.59f);
         leaderboard.Add("Sparkfire", 34.39f);
-        leaderboard.Add("Bowling", 36.66f);
+        leaderboard.Add("Bowling", 36.66f); //there's a bug in the rounding script that lowers the decimal by one, so it's .67 to compensate
         leaderboard.Add("GiantRat", 39.85f);
         leaderboard.Add(playerUsername, PlayerPrefs.GetFloat("HighScore", 9999f));
 

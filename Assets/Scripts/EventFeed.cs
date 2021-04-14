@@ -14,13 +14,12 @@ public class EventFeed : MonoBehaviour
     [SerializeField] float fadeOutStartingPause;
     [SerializeField] float fadeOutDuration;
 
-    // Start is called before the first frame update
     void Start()
     {
         instance = this;
     }
 
-    public void AddEvent(string name, string multi) //overflow method with multiplier input
+    public void AddEvent(string name, string multi) /*Overloaded method with input for multiplier text*/
     {
         DeleteOverflow(); //if there isn't enough room, delete the oldest event
         
@@ -34,7 +33,7 @@ public class EventFeed : MonoBehaviour
         StartCoroutine(evtItem.FadeIn(fadeInDuration, fadeOutStartingPause, fadeOutDuration));
     }
 
-    public void AddEvent(string name)
+    public void AddEvent(string name) /*Add event to event feed with its text set to the input string.*/
     {
         DeleteOverflow();
 
@@ -47,7 +46,7 @@ public class EventFeed : MonoBehaviour
         StartCoroutine(evtItem.FadeIn(fadeInDuration, fadeOutStartingPause, fadeOutDuration));
     }
 
-    public void DeleteOverflow()
+    public void DeleteOverflow() /*Destroy any events older than the maximum event value.*/
     {
         while (activeItems.Count > maximumEvents)
         {
@@ -59,7 +58,7 @@ public class EventFeed : MonoBehaviour
         }
     }
 
-    public void ClearAll()
+    public void ClearAll() /*Destroy all events in the event feed.*/
     {
         while (activeItems.Count > 0)
         {
@@ -71,7 +70,7 @@ public class EventFeed : MonoBehaviour
         }
     }
 
-    public void FadeOutAll() /*Used for restarting the fade out for all active items*/
+    public void FadeOutAll() /*Start/restart the fade out for all active items*/
     {
         //this method is needed because of a bug where items freeze animations when the game is paused.
 
@@ -87,15 +86,5 @@ public class EventFeed : MonoBehaviour
                 StartCoroutine(item.GetComponent<EventItem>().FadeOut(fadeOutStartingPause, fadeOutDuration));
         }
             
-    }
-
-    public void TestEvent()
-    {
-        AddEvent("SHOT STREAK", "10");
-        AddEvent("SHOT STREAK", "15");
-        AddEvent("SHOT STREAK", "20");
-        AddEvent("SHOT STREAK", "25");
-        AddEvent("SHOT STREAK", "30");
-        AddEvent("SHOT STREAK", "35");
     }
 }

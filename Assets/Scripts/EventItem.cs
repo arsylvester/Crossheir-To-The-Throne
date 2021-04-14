@@ -9,12 +9,6 @@ public class EventItem : MonoBehaviour
     [SerializeField] Text eventMultiplier;
     public bool hasMultiplier;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //eventMultiplier.text = "";
-    }
-
     public void SetName(string n)
     {
         eventName.text = n;
@@ -47,6 +41,8 @@ public class EventItem : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.22f);
 
         /*
+        //Play a seperate animation for the multiplier text.
+
         if (hasMultiplier)
         {
             //eventMultiplier.enabled = true;
@@ -68,7 +64,7 @@ public class EventItem : MonoBehaviour
         StartCoroutine(FadeOut(pause, out_duration));
     }
 
-    public IEnumerator FadeOut(float pause, float duration) //fade out name and multiplier text over a duration, then destroy the gameObject.
+    public IEnumerator FadeOut(float pause, float duration) /*fade out name and multiplier text over a duration, then destroy the gameObject.*/
     {
         GameObject temp = gameObject; //we need a temp reference in case the real object is destroyed mid loop
         eventName.color = new Color(1f, 0.8660925f, 0.2311321f, 1); //set to 1 alpha
